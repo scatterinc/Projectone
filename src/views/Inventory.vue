@@ -6,38 +6,36 @@
     </div>
     <div class="table-container">
       <perfect-scrollbar>
-        <b-table :items="filteredData" :fields="fields" :small="true">
-          <template #cell(extPrice)="{item}">
-            {{ item.quantity *  item.price }}
-          </template>
-        </b-table>
+        <b-table :items="filteredData" :fields="inventory.cols" :small="true"></b-table>
       </perfect-scrollbar>
     </div>
   </div>
 </template>
 <script>
-import sales from '@/assets/data/inventory.json';
+import inventory from '@/assets/data/inventory.json';
 import search from '../store/search';
-import { initial, last } from 'lodash';
+import { zipObject } from 'lodash';
 export default {
   name: 'Inventory',
   data: () => ({
-    sales,
-    fields: initial(Object.keys(sales[0])).concat([{
-      key: 'extPrice',
-      label: 'Ex. Price'
-    }, last(Object.keys(sales[0]))])
+    inventory
   }),
   computed: {
     term () {
       return search.term;
     },
     filteredData () {
-      return this.sales.filter(i => i.name.toLowerCase().indexOf(this.term) > -1);
+      return this.rows.filter(i => {
+        return (i['Item Name'].toLowerCase().indexOf(this.term) > -1) ||
+          (i.Manufacturer.toLowerCase().indexOf(this.term) > -1);
+      });
+    },
+    rows () {
+      return inventory.data.map(item => zipObject(inventory.cols, item));
     }
   },
   mounted () {
-    console.log(sales);
+    console.log(this.rows);
   },
   beforeDestroy () {
     search.term = '';

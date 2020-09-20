@@ -13,10 +13,10 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="w-100">
         <b-nav-item class="flex-grow-1">
-          <b-form-input class="search-input" placeholder="Search" v-model="term"></b-form-input>
+          <b-form-input class="search-input" placeholder="Search" v-model="term" />
         </b-nav-item>
         <b-nav-item>
-            <b-btn variant="primary"><power-icon size="1x" class="custom-class"></power-icon> Sign out</b-btn>
+            <b-btn variant="primary"><power-icon size="1x" class="custom-class" /> Sign out</b-btn>
         </b-nav-item>
         <!--<b-nav-item-dropdown text="Lang" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
@@ -40,8 +40,15 @@
 
 <script>
 import search from '../store/search';
+import { PowerIcon } from 'vue-feather-icons';
 export default {
   name: 'TopNavbar',
+  components: {
+    PowerIcon
+  },
+  mounted () {
+
+  },
   computed: {
     term: {
       get: function () {
@@ -53,15 +60,6 @@ export default {
     }
   }
 };
-</script>
-<script>
-import { PowerIcon } from 'vue-feather-icons'
-
-export default {
-  components: {
-    PowerIcon
-  }
-}
 </script>
 <style scoped lang="scss">
 .navbar-brand {
