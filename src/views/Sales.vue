@@ -53,11 +53,13 @@
       <b-row>
         <b-col>
           <b-button-group>
-            <b-button v-for="(button, key) in bottomBar"
-                      variant="info"
-                      class="test"
-                      :key="key"
-                      v-text="button"/>
+            <template v-for="(button, key) in bottomBar">
+              <b-button v-b-modal="button.modal"
+                        variant="info"
+                        class="test"
+                        :key="key"
+                        v-text="button.name" />
+            </template>
           </b-button-group>
         </b-col>
         <b-col class="text-right" cols="12" md="auto"><b>Total</b></b-col>
@@ -87,6 +89,9 @@
         </b-col>
       </b-row>
     </b-container>
+    <b-modal id="example">
+      TEST
+    </b-modal>
 
   </div>
 
@@ -97,10 +102,12 @@ import search from '../store/search';
 import { initial, last } from 'lodash';
 import SalesActions from '@/components/SalesActions';
 import FeatherIcon from '@/components/FeatherIcon';
+import putOnHold from '@/mixins/putOnHold';
 
 export default {
   name: 'Sales',
   components: { SalesActions, FeatherIcon },
+  mixins: [putOnHold],
   data: () => ({
     sales,
     fields: initial(Object.keys(sales[0])).concat([{
@@ -108,8 +115,8 @@ export default {
       label: 'Ex. Price'
     }, last(Object.keys(sales[0]))]),
     bottomBar: [
-      'Cash', 'Debit', 'Credit', 'Cheque', 'Gift', 'Account'
-    ]
+      { name: 'Cash', modal: 'example' }, 'Debit', 'Credit', 'Cheque', 'Gift', 'Account'
+    ].map(item => typeof item === 'string' ? { name: item } : item)
   }),
   computed: {
     term () {
@@ -128,15 +135,6 @@ export default {
     }
   },
   methods: {
-    putOnHold () {
-      console.log('put on hold');
-    },
-    save () {
-      console.log('Should save...');
-    },
-    cancel () {
-      console.log('Should cancel...');
-    },
     print () {
       console.log('Should print...');
     }
@@ -185,5 +183,8 @@ export default {
   .btn-space {
     margin-right: 5px;
   }
+}
+.modal-backdrop {
+  opacity: .42;
 }
 </style>

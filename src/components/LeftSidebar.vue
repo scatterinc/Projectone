@@ -8,6 +8,12 @@
         <feather-icon v-if="route.icon" :icon="route.icon" />
         <span class="ml-3">{{ route.name }}</span>
       </b-list-group-item>
+      <b-list-group-item class="custom-nav-item">
+        <b-btn v-for="(n, key) in 10" v-text="n" :key="key"
+               variant="outline-primary"
+               class="mr-1 mb-1"
+        />
+      </b-list-group-item>
     </b-list-group>
   </div>
 </template>
@@ -42,6 +48,10 @@ export default {
         color: white;
         border-color: rgba(0,0,0,.125);
       }
+    }
+    .custom-nav-item {
+      height: 200px;
+      padding: .75rem .5rem;
     }
   }
 </style>

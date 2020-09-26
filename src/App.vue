@@ -30,6 +30,6 @@ export default {
 .left-sidebar {
   background-color: #f8f9fa;
   border-right: 1px solid #dfe0e1;
-  min-width: 230px;
+  width: 230px;
 }
 </style>
