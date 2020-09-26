@@ -5,18 +5,19 @@
                          v-for="route in routes"
                          :key="route.path"
                          :to="route.path">
-        <component :is="route.icon" class="mr-3" />
-        <span>{{ route.name }}</span>
+        <feather-icon v-if="route.icon" :icon="route.icon" />
+        <span class="ml-3">{{ route.name }}</span>
       </b-list-group-item>
     </b-list-group>
   </div>
-</template>
+  </template>
 <script>
 import router from '@/router';
+import FeatherIcon from '@/components/FeatherIcon';
 export default {
   name: 'left-sidebar',
-  mounted () {
-    console.log(router);
+  components: {
+    FeatherIcon
   },
   computed: {
     routes () {

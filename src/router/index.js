@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import { MonitorIcon, TagIcon, PackageIcon, HomeIcon, BookIcon, UsersIcon, SettingsIcon, GridIcon, BarChart2Icon, TruckIcon } from 'vue-feather-icons';
 
 Vue.use(VueRouter);
 
@@ -10,7 +9,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    icon: MonitorIcon
+    icon: 'MonitorIcon'
   },
   {
     path: '/sales',
@@ -19,7 +18,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Sales.vue'),
-    icon: TagIcon
+    icon: 'TagIcon'
   },
   {
     path: '/inventory',
@@ -28,7 +27,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Inventory.vue'),
-    icon: PackageIcon
+    icon: 'PackageIcon'
   },
   {
     path: '/customer',
@@ -37,7 +36,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Customer.vue'),
-    icon: UsersIcon
+    icon: 'ShoppingCartIcon'
   },
   {
     path: '/bank',
@@ -46,7 +45,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Bank.vue'),
-    icon: HomeIcon
+    icon: 'HomeIcon'
   },
   {
     path: '/accounting',
@@ -55,7 +54,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Accounting.vue'),
-    icon: BookIcon
+    icon: 'BookIcon'
   },
   {
     path: '/vendor',
@@ -64,7 +63,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Vendor.vue'),
-    icon: TruckIcon
+    icon: 'TruckIcon'
   },
   {
     path: '/employee',
@@ -73,7 +72,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Employee.vue'),
-    icon: GridIcon
+    icon: 'UsersIcon'
   },
   {
     path: '/reports',
@@ -82,7 +81,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Reports.vue'),
-    icon: BarChart2Icon
+    icon: 'BarChart2Icon'
   },
   {
     path: '/preference',
@@ -91,7 +90,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Preference.vue'),
-    icon: SettingsIcon
+    icon: 'SettingsIcon'
   },
   {
     path: '/connection',
