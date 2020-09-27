@@ -1,30 +1,28 @@
 <template>
   <div class="sales">
-    <b-container class="Sales Header">
-      <b-row>
-        <b-col><h1>Sales</h1></b-col>
-        <b-col>2 of 3</b-col>
-        <b-col class="text-right">
-          <div>
-            <b-dropdown variant="transparent" text="Customer">
-              <b-dropdown-item href="#">An item</b-dropdown-item>
-              <b-dropdown-item href="#">Another item</b-dropdown-item>
-            </b-dropdown>
-            <b-dropdown variant="transparent" text="Text2">
-              <b-dropdown-item href="#">An item</b-dropdown-item>
-              <b-dropdown-item href="#">Another item</b-dropdown-item>
-            </b-dropdown>
-            <b-dropdown variant="transparent" icon="SettingsIcon">
-              <b-dropdown-item href="#">An item</b-dropdown-item>
-              <b-dropdown-item href="#">Another item</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="UserIcon" /> John Doe
-              </template>
-            </b-dropdown>
-          </div>
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-row>
+      <b-col><h1>Sales</h1></b-col>
+      <b-col>2 of 3</b-col>
+      <b-col class="text-right">
+        <div>
+          <b-dropdown variant="transparent" text="Customer">
+            <b-dropdown-item href="#">An item</b-dropdown-item>
+            <b-dropdown-item href="#">Another item</b-dropdown-item>
+          </b-dropdown>
+          <b-dropdown variant="transparent" text="Text2">
+            <b-dropdown-item href="#">An item</b-dropdown-item>
+            <b-dropdown-item href="#">Another item</b-dropdown-item>
+          </b-dropdown>
+          <b-dropdown variant="transparent" icon="SettingsIcon">
+            <b-dropdown-item href="#">An item</b-dropdown-item>
+            <b-dropdown-item href="#">Another item</b-dropdown-item>
+            <template #button-content>
+              <feather-icon size="1x" icon="UserIcon" /> John Doe
+            </template>
+          </b-dropdown>
+        </div>
+      </b-col>
+    </b-row>
     <div class="position-relative">
       <div class="table-header-borders"></div>
     </div>
@@ -92,9 +90,7 @@
     <b-modal id="example">
       TEST
     </b-modal>
-
   </div>
-
 </template>
 <script>
 import sales from '@/assets/data/sales.json';
@@ -145,43 +141,37 @@ export default {
 };
 </script>
 <style lang="scss">
-.table-header-borders {
-  position: absolute;
-  height: 34px;
-  border: solid #eee;
-  border-width: 1px 0;
-  z-index: 1;
-  pointer-events: none;
-  width: calc(100% - 7px);
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .1), 0 0 1px 0 rgba(0, 0, 0, .07), 0 1px 1px -1px rgba(0, 0, 0, .06);
-}
-
-.table-container {
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: relative;
-  height: 400px;
-
-  .ps {
+.sales {
+  .table-header-borders {
+    height: 34px;
+  }
+  .table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
     height: 400px;
-  }
 
-  th {
-    position: sticky;
-    top: 0;
-    background-color: white;
-  }
+    .ps {
+      height: 400px;
+    }
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    left: 0;
-  }
+    th {
+      position: sticky;
+      top: 0;
+      background-color: white;
+    }
 
-  .btn-space {
-    margin-right: 5px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+    }
+
+    .btn-space {
+      margin-right: 5px;
+    }
   }
 }
 .modal-backdrop {

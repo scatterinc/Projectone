@@ -4,7 +4,7 @@
       <b-col>
         <div class="d-flex justify-content-between">
           <h1>Accounting</h1>
-          <div class="text-right">
+          <div>
             <b-button-group>
               <b-button variant="outline-secondary">Share</b-button>
               <b-button class="mr-2" variant="outline-secondary">Export</b-button>
@@ -12,154 +12,6 @@
             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
                                v-bind="dd"
                                :key="key" />
-            <b-dropdown variant="transparent" v-b-tooltip="'Payables'">
-              <template #button-content>
-                <feather-icon size="1x" icon="CreditCardIcon"/>
-                Payables
-              </template>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="FileTextIcon"/>
-                Accounts Payable
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="FileTextIcon"/>
-                Enter Bill
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="AwardIcon"/>
-                Pay Bill
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                Purchase Order
-              </b-dropdown-item>
-            </b-dropdown>
-            <b-dropdown variant="transparent">
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="FileTextIcon"/>
-                Fixed Asset
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="AwardIcon"/>
-                Entity
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                Closing Date
-              </b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="BriefcaseIcon"/>
-                Accountant
-              </template>
-            </b-dropdown>
-            <b-dropdown variant="transparent">
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="FileTextIcon"/>
-                Profit & Loss
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="AwardIcon"/>
-                Balance Sheet
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="AwardIcon"/>
-                Cash Flows
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                Trial balance
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                General Ledger
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                General Journal
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                Taxes
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                Budgets
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                Audit Trail
-              </b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="TrendingUpIcon"/>
-                Financials
-              </template>
-            </b-dropdown>
-            <b-dropdown variant="transparent">
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="FileTextIcon"/>
-                Chart of Account
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="FileTextIcon"/>
-                Items
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="FileTextIcon"/>
-                Template
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="AwardIcon"/>
-                Document Centre
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="ToolIcon"/>
-                Settings
-              </b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="CropIcon"/>
-              </template>
-            </b-dropdown>
-            <b-dropdown variant="transparent">
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="SettingsIcon"/>
-                Settings
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="BellIcon"/>
-                Notification
-                <b-badge variant="info" pill>14</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="MessageSquareIcon"/>
-                Message
-                <b-badge variant="info" pill>6</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="LogOutIcon"/>
-                Logout
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#">
-                <feather-icon size="1x" icon="LockIcon"/>
-                Lock
-              </b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="UserIcon"/>
-                John Doe
-              </template>
-            </b-dropdown>
           </div>
         </div>
       </b-col>
@@ -167,12 +19,10 @@
   </b-container>
 </template>
 <script>
-import FeatherIcon from '@/components/FeatherIcon';
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
-import userDropdown from '@/util/userDropdown';
 
 export default {
-  components: { FeatherIcon, DropdownBarItem },
+  components: { DropdownBarItem },
   data: () => ({
     dropdownBar: [{
       name: 'Ledger',
@@ -186,12 +36,78 @@ export default {
         null,
         { name: 'Trial Balance', icon: 'FileTextIcon' }
       ]
-    }].concat(userDropdown)
+    }, {
+      name: 'Receivables',
+      icon: 'DownloadIcon',
+      expanded: true,
+      items: [
+        { name: 'Accounts Receivable', icon: 'FileTextIcon' },
+        null,
+        { name: 'Invoice', icon: 'FileTextIcon' },
+        { name: 'Estimate', icon: 'AwardIcon' },
+        null,
+        { name: 'Sales Receipt', icon: 'ToolIcon' },
+        { name: 'Receive Payment', icon: 'ToolIcon' },
+        null,
+        { name: 'Statement', icon: 'ToolIcon' }
+      ]
+    }, {
+      name: 'Payables',
+      icon: 'CreditCardIcon',
+      expanded: true,
+      items: [
+        { name: 'Accounts Payable', icon: 'FileTextIcon' },
+        null,
+        { name: 'Enter Bill', icon: 'FileTextIcon' },
+        { name: 'Pay Bill', icon: 'AwardIcon' },
+        null,
+        { name: 'Purchase Order', icon: 'ToolIcon' }
+      ]
+    }, {
+      name: 'Accountant',
+      icon: 'BriefcaseIcon',
+      expanded: true,
+      items: [
+        { name: 'Fixed Asset', icon: 'FileTextIcon' },
+        null,
+        { name: 'Entity', icon: 'AwardIcon' },
+        null,
+        { name: 'Closing Date', icon: 'ToolIcon' }
+      ]
+    }, {
+      name: 'Financials',
+      icon: 'TrendingUpIcon',
+      expanded: true,
+      items: [
+        { name: 'Profit & Loss', icon: 'FileTextIcon' },
+        null,
+        { name: 'Balance Sheet', icon: 'AwardIcon' },
+        { name: 'Cash Flows', icon: 'AwardIcon' },
+        null,
+        { name: 'Trial balance', icon: 'ToolIcon' },
+        { name: 'General Ledger', icon: 'ToolIcon' },
+        { name: 'General Journal', icon: 'ToolIcon' },
+        null,
+        { name: 'Taxes', icon: 'ToolIcon' },
+        null,
+        { name: 'Budgets', icon: 'ToolIcon' },
+        { name: 'Audit Trail', icon: 'ToolIcon' }
+      ]
+    }, {
+      name: '',
+      icon: 'CropIcon',
+      expanded: true,
+      right: true,
+      items: [
+        { name: 'Chart of Account', icon: 'FileTextIcon' },
+        { name: 'Items', icon: 'FileTextIcon' },
+        { name: 'Template', icon: 'FileTextIcon' },
+        null,
+        { name: 'Document Centre', icon: 'AwardIcon' },
+        null,
+        { name: 'Settings', icon: 'ToolIcon' }
+      ]
+    }]
   })
 };
 </script>
-<style>
-.tooltip {
-  opacity: .9;
-}
-</style>

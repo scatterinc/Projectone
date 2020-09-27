@@ -32,4 +32,10 @@ export default {
   border-right: 1px solid #dfe0e1;
   width: 230px;
 }
+:focus {
+  outline: none;
+}
+.dropdown-menu {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.1), 0 2px 2px 0 rgba(0,0,0,.07), 0 3px 1px -2px rgba(0,0,0,.06)
+}
 </style>

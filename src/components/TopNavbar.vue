@@ -15,9 +15,40 @@
         <b-nav-item class="flex-grow-1">
           <b-form-input class="search-input" placeholder="Search" v-model="term" />
         </b-nav-item>
-        <b-nav-item>
+        <b-nav-dd variant="transparent" right>
+          <template #button-content>
+            <feather-icon size="1x" icon="UserIcon"/>
+            John Doe
+          </template>
+          <b-dropdown-item href="#">
+            <feather-icon size="1x" icon="SettingsIcon"/>
+            Settings
+          </b-dropdown-item>
+          <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item href="#">
+            <feather-icon size="1x" icon="BellIcon"/>
+            Notification
+            <b-badge variant="info" pill>14</b-badge>
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <feather-icon size="1x" icon="MessageSquareIcon"/>
+            Message
+            <b-badge variant="info" pill>6</b-badge>
+          </b-dropdown-item>
+          <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item href="#">
+            <feather-icon size="1x" icon="LogOutIcon"/>
+            Logout
+          </b-dropdown-item>
+          <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item href="#">
+            <feather-icon size="1x" icon="LockIcon"/>
+            Lock
+          </b-dropdown-item>
+        </b-nav-dd>
+        <!--<b-nav-item>
             <b-btn variant="primary"><power-icon size="1x" class="custom-class" /> Sign out</b-btn>
-        </b-nav-item>
+        </b-nav-item>-->
         <!--<b-nav-item-dropdown text="Lang" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
           <b-dropdown-item href="#">ES</b-dropdown-item>
@@ -40,11 +71,11 @@
 
 <script>
 import search from '../store/search';
-import { PowerIcon } from 'vue-feather-icons';
+import FeatherIcon from '@/components/FeatherIcon';
 export default {
   name: 'TopNavbar',
   components: {
-    PowerIcon
+    FeatherIcon
   },
   mounted () {
 
