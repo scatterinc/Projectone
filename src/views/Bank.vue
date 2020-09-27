@@ -1,6 +1,5 @@
 <template>
-  <div class="bank">
-     <b-container   class="Bank Header">
+ <b-container class="bank">
       <b-row>
         <b-col><h1>Bank</h1></b-col>
         <div class="text-right">
@@ -90,7 +89,6 @@
         </div>
                    </b-row>
         </b-container>
-        </div>
 </template>
 <script>
 import FeatherIcon from '@/components/FeatherIcon';

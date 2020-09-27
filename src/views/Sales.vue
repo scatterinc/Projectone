@@ -3,47 +3,20 @@
     <b-container class="Sales Header">
       <b-row>
         <b-col><h1>Sales</h1></b-col>
-        <b-col>new Date().toLocaleString()</b-col>
+        <b-col>2 of 3</b-col>
         <b-col class="text-right">
           <div>
             <b-dropdown variant="transparent" text="Customer">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="UserPlusIcon" /> Add</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="UserXIcon" /> Remove</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="UserCheckIcon" /> Profile</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="ShoppingCartIcon" /> Customer
-              </template>
+              <b-dropdown-item href="#">An item</b-dropdown-item>
+              <b-dropdown-item href="#">Another item</b-dropdown-item>
             </b-dropdown>
-            <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="RotateCcwIcon" /> Return</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="InboxIcon" /> On-Hold
-              <b-badge variant="info" pill>2</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LayersIcon" /> End of Day</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="ActivityIcon" /> History</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="InboxIcon" />Open Cash Drawer</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="CropIcon" />
-              </template>
+            <b-dropdown variant="transparent" text="Text2">
+              <b-dropdown-item href="#">An item</b-dropdown-item>
+              <b-dropdown-item href="#">Another item</b-dropdown-item>
             </b-dropdown>
-                <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="SettingsIcon" /> Settings</b-dropdown-item>
-               <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="BellIcon" /> Notification
-                <b-badge variant="info" pill>14</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-item href="#"> <feather-icon size="1x" icon="MessageSquareIcon" /> Message
-                <b-badge variant="info" pill>6</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LogOutIcon" /> Logout</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LockIcon" /> Lock</b-dropdown-item>
+            <b-dropdown variant="transparent" icon="SettingsIcon">
+              <b-dropdown-item href="#">An item</b-dropdown-item>
+              <b-dropdown-item href="#">Another item</b-dropdown-item>
               <template #button-content>
                 <feather-icon size="1x" icon="UserIcon" /> John Doe
               </template>
@@ -80,11 +53,13 @@
       <b-row>
         <b-col>
           <b-button-group>
-            <b-button v-for="(button, key) in bottomBar"
-                      variant="info"
-                      class="test"
-                      :key="key"
-                      v-text="button"/>
+            <template v-for="(button, key) in bottomBar">
+              <b-button v-b-modal="button.modal"
+                        variant="info"
+                        class="test"
+                        :key="key"
+                        v-text="button.name" />
+            </template>
           </b-button-group>
         </b-col>
         <b-col class="text-right" cols="12" md="auto"><b>Total</b></b-col>
@@ -107,13 +82,16 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col>
-          <b-button variant="light"><feather-icon size="1x" icon="MoreHorizontalIcon" /></b-button>
+          <b-button variant="light">Light</b-button>
         </b-col>
         <b-col class="text-right">
           <sales-actions :sales-actions="salesActions"/>
         </b-col>
       </b-row>
     </b-container>
+    <b-modal id="example">
+      TEST
+    </b-modal>
 
   </div>
 
@@ -124,10 +102,12 @@ import search from '../store/search';
 import { initial, last } from 'lodash';
 import SalesActions from '@/components/SalesActions';
 import FeatherIcon from '@/components/FeatherIcon';
+import putOnHold from '@/mixins/putOnHold';
 
 export default {
   name: 'Sales',
   components: { SalesActions, FeatherIcon },
+  mixins: [putOnHold],
   data: () => ({
     sales,
     fields: initial(Object.keys(sales[0])).concat([{
@@ -135,8 +115,8 @@ export default {
       label: 'Ex. Price'
     }, last(Object.keys(sales[0]))]),
     bottomBar: [
-      'Cash', 'Debit', 'Credit', 'Cheque', 'Gift', 'Account'
-    ]
+      { name: 'Cash', modal: 'example' }, 'Debit', 'Credit', 'Cheque', 'Gift', 'Account'
+    ].map(item => typeof item === 'string' ? { name: item } : item)
   }),
   computed: {
     term () {
@@ -155,15 +135,6 @@ export default {
     }
   },
   methods: {
-    putOnHold () {
-      console.log('put on hold');
-    },
-    save () {
-      console.log('Should save...');
-    },
-    cancel () {
-      console.log('Should cancel...');
-    },
     print () {
       console.log('Should print...');
     }
@@ -212,5 +183,8 @@ export default {
   .btn-space {
     margin-right: 5px;
   }
+}
+.modal-backdrop {
+  opacity: .42;
 }
 </style>

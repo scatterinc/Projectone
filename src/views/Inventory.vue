@@ -72,7 +72,7 @@
   <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Cost $10,000</b></div></div>
   </div>
     </div>
-  </template>
+</template>
 <script>
 import inventory from '@/assets/data/inventory.json';
 import search from '../store/search';
