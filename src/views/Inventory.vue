@@ -1,7 +1,65 @@
 <template>
   <div class="inventory">
-    <h1>Inventory</h1>
-    <div class="position-relative">
+     <b-container class="Inventory Header">
+      <b-row>
+        <b-col><h1>Inventory</h1></b-col>
+        <b-col class="text-right">
+          <div>
+          <b-button class="mr-1" variant="secondary"><feather-icon size="1x" icon="ListIcon" /> Detail</b-button>
+          <b-button class="mr-1" variant="secondary"><feather-icon size="1x" icon="PlusCircleIcon" /> Add</b-button>
+          <b-button variant="secondary"><feather-icon size="1x" icon="Edit3Icon" /> Edit</b-button>
+          </div>
+        </b-col>
+        <b-col class="text-right">
+           <div>
+            <b-dropdown variant="transparent" text="Customer">
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="PlusSquareIcon" /> Add Recipe</b-dropdown-item>
+              <b-dropdown-divider></b-dropdown-divider>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="ListIcon" /> Detail</b-dropdown-item>
+              <template #button-content>
+                <feather-icon size="1x" icon="Share2Icon" />
+              </template>
+            </b-dropdown>
+            <b-dropdown variant="transparent">
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="TruckIcon" /> Receiving</b-dropdown-item>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Purchase Order</b-dropdown-item>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="InboxIcon" /> On-Hold
+              <b-badge variant="info" pill>2</b-badge>
+              </b-dropdown-item>
+              <b-dropdown-divider></b-dropdown-divider>
+              <a></a>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="ClipboardIcon" /> Logs </b-dropdown-item>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="ClipboardIcon" />  Physical Count </b-dropdown-item>
+              <b-dropdown-divider></b-dropdown-divider>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="ActivityIcon" /> History</b-dropdown-item>
+              <b-dropdown-divider></b-dropdown-divider>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
+              <template #button-content>
+                <feather-icon size="1x" icon="CropIcon" />
+              </template>
+            </b-dropdown>
+                <b-dropdown variant="transparent">
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="SettingsIcon" /> Settings</b-dropdown-item>
+               <b-dropdown-divider></b-dropdown-divider>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="BellIcon" /> Notification
+                <b-badge variant="info" pill>14</b-badge>
+              </b-dropdown-item>
+              <b-dropdown-item href="#"> <feather-icon size="1x" icon="MessageSquareIcon" /> Message
+                <b-badge variant="info" pill>6</b-badge>
+              </b-dropdown-item>
+              <b-dropdown-divider></b-dropdown-divider>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="LogOutIcon" /> Logout</b-dropdown-item>
+              <b-dropdown-divider></b-dropdown-divider>
+              <b-dropdown-item href="#"><feather-icon size="1x" icon="LockIcon" /> Lock</b-dropdown-item>
+              <template #button-content>
+                <feather-icon size="1x" icon="UserIcon" /> John Doe
+              </template>
+            </b-dropdown>
+          </div>
+        </b-col>
+          </b-row>
+        </b-container>
+        <div class="position-relative">
       <div class="table-header-borders"></div>
     </div>
     <div class="table-container">
@@ -9,14 +67,20 @@
         <b-table :items="filteredData" :fields="inventory.cols" :small="true"></b-table>
       </perfect-scrollbar>
     </div>
+      <div class="row mx-md-n5">
+  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Items 100</b></div></div>
+  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Cost $10,000</b></div></div>
   </div>
-</template>
+    </div>
+  </template>
 <script>
 import inventory from '@/assets/data/inventory.json';
 import search from '../store/search';
 import { zipObject } from 'lodash';
+import FeatherIcon from '@/components/FeatherIcon';
 export default {
   name: 'Inventory',
+  components: { FeatherIcon },
   data: () => ({
     inventory
   }),
