@@ -9,10 +9,10 @@
         <span class="ml-3">{{ route.name }}</span>
       </b-list-group-item>
       <b-list-group-item class="custom-nav-item">
-        <b-btn v-for="(n, key) in 10" v-text="n" :key="key"
+        <b-btn v-for="(n, key) in bottomButtons" :key="key"
                variant="outline-primary"
                class="mr-1 mb-1"
-        />
+        ><feather-icon :icon="n.icon" /></b-btn>
       </b-list-group-item>
     </b-list-group>
   </div>
@@ -22,6 +22,13 @@ import router from '@/router';
 import FeatherIcon from '@/components/FeatherIcon';
 export default {
   name: 'left-sidebar',
+  data: () => ({
+    bottomButtons: [{
+      icon: 'FileIcon'
+    }, {
+      icon: 'FileTextIcon'
+    }]
+  }),
   components: {
     FeatherIcon
   },
