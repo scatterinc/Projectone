@@ -22,6 +22,9 @@
           <template #cell(extPrice)="{item}">
             {{ item.quantity * item.price }}
           </template>
+          <template #cell(qty)="{item, value}">
+            <b-input :value="value" @input="updateQty($event, item)"></b-input>
+          </template>
         </b-table>
       </perfect-scrollbar>
     </div>
@@ -81,12 +84,9 @@
       </b-row>
     </b-container>
   </div>
-
 </template>
 <script>
-import sales from '@/assets/data/sales.json';
 import search from '../store/search';
-import { initial, last } from 'lodash';
 import SalesActions from '@/components/SalesActions';
 import FeatherIcon from '@/components/FeatherIcon';
 import putOnHold from '@/mixins/putOnHold';
@@ -95,6 +95,7 @@ import userDropdown from '@/util/userDropdown';
 import saleDnaDropdown from '@/util/saleDnaDropdown';
 import saleCusDropdown from '@/util/saleCusDropdown';
 import editingModal from '@/store/editingModal';
+import cart from '@/store/cart';
 
 export default {
   name: 'Sales',
@@ -106,11 +107,13 @@ export default {
   },
   mixins: [putOnHold],
   data: () => ({
-    sales,
-    fields: initial(Object.keys(sales[0])).concat([{
+    /* fields: initial(Object.keys(sales[0])).concat([{
       key: 'extPrice',
       label: 'Ex. Price'
-    }, last(Object.keys(sales[0]))]),
+    }, last(Object.keys(sales[0]))]), */
+    fields: [
+      'id', 'name', 'price', 'qty', 'extPrice', 'tax'
+    ],
     bottomBar: [
       {
         name: 'Cash',
@@ -141,6 +144,14 @@ export default {
     debitAmount: 0
   }),
   computed: {
+    sales: {
+      get () {
+        return cart.items;
+      },
+      set (items) {
+        cart.items = items;
+      }
+    },
     paymentAmount () {
       return ['cash', 'cheque', 'credit', 'debit']
         .map(prop => this[prop + 'Amount'])
@@ -211,6 +222,10 @@ export default {
       editingModal.title = title;
       editingModal.amount = this[prop];
       editingModal.updater = (val) => { this[prop] = val; };
+    },
+    updateQty (value, item) {
+      const cartItem = cart.items.find(ci => ci.id === item.id);
+      cartItem.qty = value;
     }
   },
   beforeDestroy () {
@@ -219,43 +234,37 @@ export default {
 };
 </script>
 <style lang="scss">
-.table-header-borders {
-  position: absolute;
-  height: 34px;
-  border: solid #eee;
-  border-width: 1px 0;
-  z-index: 1;
-  pointer-events: none;
-  width: calc(100% - 7px);
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .1), 0 0 1px 0 rgba(0, 0, 0, .07), 0 1px 1px -1px rgba(0, 0, 0, .06);
-}
-
-.table-container {
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: relative;
-  height: 400px;
-
-  .ps {
+.sales {
+  .table-header-borders {
+    height: 34px;
+  }
+  .table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
     height: 400px;
-  }
 
-  th {
-    position: sticky;
-    top: 0;
-    background-color: white;
-  }
+    .ps {
+      height: 400px;
+    }
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    left: 0;
-  }
+    th {
+      position: sticky;
+      top: 0;
+      background-color: white;
+    }
 
-  .btn-space {
-    margin-right: 5px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+    }
+
+    .btn-space {
+      margin-right: 5px;
+    }
   }
 }
 
