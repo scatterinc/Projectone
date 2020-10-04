@@ -9,15 +9,17 @@
         </b-col>
       </b-row>
     </b-container>
+    <editing-modal/>
   </div>
 </template>
 
 <script>
 import LeftSidebar from '@/components/LeftSidebar';
 import TopNavbar from '@/components/TopNavbar';
+import EditingModal from '@/components/EditingModal';
 
 export default {
-  components: { TopNavbar, LeftSidebar }
+  components: { EditingModal, TopNavbar, LeftSidebar }
 };
 </script>
 
