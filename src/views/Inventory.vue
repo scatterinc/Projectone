@@ -178,29 +178,30 @@ export default {
 .ps__rail-y {
   z-index: 1;
 }
+.inventory {
+  height:calc(100vh - 190px);
+  .table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+    .ps {
+      height: 100%;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      background-color: #ecf0f1;
+    }
 
-.table-container {
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: relative;
-  height: 400px;
-
-  .ps {
-    height: 400px;
-  }
-
-  th {
-    position: sticky;
-    top: 0;
-    background-color: #ecf0f1;
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    left: 0;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+    }
   }
 }
+
 </style>
