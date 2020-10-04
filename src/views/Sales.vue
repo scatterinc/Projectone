@@ -6,21 +6,9 @@
         <b-col>2 of 3</b-col>
         <b-col class="text-right">
           <div>
-            <b-dropdown variant="transparent" text="Customer">
-              <b-dropdown-item href="#">An item</b-dropdown-item>
-              <b-dropdown-item href="#">Another item</b-dropdown-item>
-            </b-dropdown>
-            <b-dropdown variant="transparent" text="Text2">
-              <b-dropdown-item href="#">An item</b-dropdown-item>
-              <b-dropdown-item href="#">Another item</b-dropdown-item>
-            </b-dropdown>
-            <b-dropdown variant="transparent" icon="SettingsIcon">
-              <b-dropdown-item href="#">An item</b-dropdown-item>
-              <b-dropdown-item href="#">Another item</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="UserIcon" /> John Doe
-              </template>
-            </b-dropdown>
+          <dropdown-bar-item v-for="(dd, key) in dropdownBar"
+                               v-bind="dd"
+                               :key="key" />
           </div>
         </b-col>
       </b-row>
@@ -81,18 +69,66 @@
 
     <b-container class="bv-example-row">
       <b-row>
-        <b-col>
-          <b-button variant="light">Light</b-button>
+        <b-col class="text-left">
+          <b-button variant="light">
+              <feather-icon size="1x" icon="MoreHorizontalIcon" />
+          </b-button>
         </b-col>
         <b-col class="text-right">
           <sales-actions :sales-actions="salesActions"/>
         </b-col>
       </b-row>
     </b-container>
-    <b-modal id="example">
-      TEST
+     <!-- MODAL LONG --HELP CASH-->
+    <b-modal id="CashModal" centered title="Cash">
+           <b-form inline class="text-right">
+             <a class="mr-3"> Amount </a>
+    <label class="sr-only" for="inline-form-input-name">Cashamount</label>
+    <b-input
+      id="PayAmount"
+      class="mb-2 mr-sm-2 mb-sm-0 text-right"
+      placeholder="0.00"
+    ></b-input>
+       </b-form>
+               <template v-slot:modal-footer="{ clear, close, save }">
+            <!-- Emulate built in modal footer ok and cancel button actions -->
+      <b-button size="sm" variant="secondary" @click="clear('ClearFields()')">
+        Clear
+      </b-button>
+      <b-button size="sm" variant="secondary" @click="close('forget')">
+        Close
+      </b-button>
+      <!-- Button with custom close trigger value -->
+      <b-button size="sm" variant="info" @click="save()">
+        Save
+      </b-button>
+    </template>
     </b-modal>
-
+     <!-- MODAL LONG --HELP Debit-->
+    <b-modal id="DebitModal" centered title="Debit">
+           <b-form inline class="text-right">
+             <a class="mr-3"> Amount </a>
+    <label class="sr-only" for="inline-form-input-name">debitamount</label>
+    <b-input
+      id="inline-form-input-name"
+      class="mb-2 mr-sm-2 mb-sm-0 text-right"
+      placeholder="0.00"
+    ></b-input>
+       </b-form>
+               <template v-slot:modal-footer="{ clear, close, save }">
+            <!-- Emulate built in modal footer ok and cancel button actions -->
+      <b-button size="sm" variant="secondary" @click="clear()">
+        Clear
+      </b-button>
+      <b-button size="sm" variant="secondary" @click="close('forget')">
+        Close
+      </b-button>
+      <!-- Button with custom close trigger value -->
+      <b-button size="sm" variant="info" @click="save()">
+        Save
+      </b-button>
+    </template>
+    </b-modal>
   </div>
 
 </template>
@@ -103,10 +139,15 @@ import { initial, last } from 'lodash';
 import SalesActions from '@/components/SalesActions';
 import FeatherIcon from '@/components/FeatherIcon';
 import putOnHold from '@/mixins/putOnHold';
+import DropdownBarItem from '@/components/DropdownBarItem.vue';
+import userDropdown from '@/util/userDropdown';
+import saleDnaDropdown from '@/util/saleDnaDropdown';
+import saleCusDropdown from '@/util/saleCusDropdown';
 
 export default {
   name: 'Sales',
-  components: { SalesActions, FeatherIcon },
+  // eslint-disable-next-line vue/no-unused-components
+  components: { SalesActions, FeatherIcon, DropdownBarItem },
   mixins: [putOnHold],
   data: () => ({
     sales,
@@ -115,8 +156,10 @@ export default {
       label: 'Ex. Price'
     }, last(Object.keys(sales[0]))]),
     bottomBar: [
-      { name: 'Cash', modal: 'example' }, 'Debit', 'Credit', 'Cheque', 'Gift', 'Account'
-    ].map(item => typeof item === 'string' ? { name: item } : item)
+      { name: 'Cash', modal: 'CashModal' }, { name: 'Debit', modal: 'DebitModal' }, 'Credit', 'Cheque', 'Gift', 'Account'
+    ].map(item => typeof item === 'string' ? { name: item } : item),
+    dropdownBar: [
+    ].concat(saleCusDropdown, saleDnaDropdown, userDropdown)
   }),
   computed: {
     term () {

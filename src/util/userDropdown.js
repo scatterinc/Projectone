@@ -1,16 +1,15 @@
 export default {
-  name: 'Receivables',
-  icon: 'DownloadIcon',
+  name: 'Jane Doe',
+  icon: 'UserIcon',
   expanded: true,
   items: [
-    { name: 'Accounts Receivable', icon: 'FileTextIcon' },
+    { name: 'Settings', icon: 'SettingsIcon' },
     null,
-    { name: 'Invoice', icon: 'FileTextIcon' },
-    { name: 'Estimate', icon: 'AwardIcon' },
+    { name: 'Notification', icon: 'BellIcon' },
+    { name: 'Message', icon: 'MessageSquareIcon' },
     null,
-    { name: 'Sales Receipt', icon: 'ToolIcon' },
-    { name: 'Receive Payment', icon: 'ToolIcon' },
+    { name: 'Logout', icon: 'LogOutIcon' },
     null,
-    { name: 'Statement', icon: 'ToolIcon' }
+    { name: 'Lock', icon: 'LockIcon' }
   ]
 };

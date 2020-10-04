@@ -12,49 +12,9 @@
         </b-col>
         <b-col class="text-right">
            <div>
-            <b-dropdown variant="transparent" text="Customer">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="PlusSquareIcon" /> Add Recipe</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="ListIcon" /> Detail</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="Share2Icon" />
-              </template>
-            </b-dropdown>
-            <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="TruckIcon" /> Receiving</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Purchase Order</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="InboxIcon" /> On-Hold
-              <b-badge variant="info" pill>2</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <a></a>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="ClipboardIcon" /> Logs </b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="ClipboardIcon" />  Physical Count </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="ActivityIcon" /> History</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="CropIcon" />
-              </template>
-            </b-dropdown>
-                <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="SettingsIcon" /> Settings</b-dropdown-item>
-               <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="BellIcon" /> Notification
-                <b-badge variant="info" pill>14</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-item href="#"> <feather-icon size="1x" icon="MessageSquareIcon" /> Message
-                <b-badge variant="info" pill>6</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LogOutIcon" /> Logout</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LockIcon" /> Lock</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="UserIcon" /> John Doe
-              </template>
-            </b-dropdown>
+                 <dropdown-bar-item v-for="(dd, key) in dropdownBar"
+                               v-bind="dd"
+                               :key="key" />
           </div>
         </b-col>
           </b-row>
@@ -78,11 +38,18 @@ import inventory from '@/assets/data/inventory.json';
 import search from '../store/search';
 import { zipObject } from 'lodash';
 import FeatherIcon from '@/components/FeatherIcon';
+import DropdownBarItem from '@/components/DropdownBarItem.vue';
+import userDropdown from '@/util/userDropdown';
+import invDnaDropdown from '@/util/invDnaDropdown';
+import invRecDropdown from '@/util/invRecDropdown';
+
 export default {
   name: 'Inventory',
-  components: { FeatherIcon },
+  components: { FeatherIcon, DropdownBarItem },
   data: () => ({
-    inventory
+    inventory,
+    dropdownBar: [
+    ].concat(invRecDropdown, invDnaDropdown, userDropdown)
   }),
   computed: {
     term () {

@@ -1,104 +1,46 @@
 <template>
-  <div class="preference">
-     <b-container   class="Preference Header">
-      <b-row>
-        <b-col><h1>Preference</h1></b-col>
-        <div class="text-right">
-        <b-button-group>
-      <b-button variant="outline-secondary">Share</b-button>
-      <b-button class="mr-2" variant="outline-secondary">Export</b-button>
-    </b-button-group>
-    <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Invoice</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Estimate</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="AwardIcon" /> Rewards</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="SidebarIcon" /> Company
-              </template>
-              </b-dropdown>
-              <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Invoice</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Estimate</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="AwardIcon" /> Rewards</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="DownloadIcon" /> Security
-              </template>
-              </b-dropdown>
-                  <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Invoice</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Estimate</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="AwardIcon" /> Rewards</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="CreditCardIcon" /> Users
-              </template>
-              </b-dropdown>
-              <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Invoice</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Estimate</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="AwardIcon" /> Rewards</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="BriefcaseIcon" /> Hardware
-              </template>
-              </b-dropdown>
-                <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Invoice</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Estimate</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="AwardIcon" /> Rewards</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="TrendingUpIcon" /> Alerts
-              </template>
-              </b-dropdown>
-              <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Invoice</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Estimate</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="AwardIcon" /> Rewards</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="CropIcon" />
-              </template>
-            </b-dropdown>
-                <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="SettingsIcon" /> Settings</b-dropdown-item>
-               <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="BellIcon" /> Notification
-                <b-badge variant="info" pill>14</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-item href="#"> <feather-icon size="1x" icon="MessageSquareIcon" /> Message
-                <b-badge variant="info" pill>6</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LogOutIcon" /> Logout</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LockIcon" /> Lock</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="UserIcon" /> John Doe
-              </template>
-            </b-dropdown>
+  <b-container :fluid="true" class="accounting">
+    <b-row>
+      <b-col>
+        <div class="d-flex justify-content-between">
+          <h1>Preference</h1>
+          <div class="text-right">
+            <b-button-group>
+              <b-button variant="outline-secondary">Share</b-button>
+              <b-button class="mr-2" variant="outline-secondary">Export</b-button>
+            </b-button-group>
+            <!----Drop Down Top------>
+            <dropdown-bar-item v-for="(dd, key) in dropdownBar"
+                               v-bind="dd"
+                               :key="key" />
+                </div>
         </div>
-                   </b-row>
-        </b-container>
-        </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 <script>
 import FeatherIcon from '@/components/FeatherIcon';
+import DropdownBarItem from '@/components/DropdownBarItem.vue';
+import preComDropdown from '@/util/preComDropdown';
+import preSecDropdown from '@/util/preSecDropdown';
+import preUseDropdown from '@/util/preUseDropdown';
+import preHarDropdown from '@/util/preHarDropdown';
+import preAleDropdown from '@/util/preAleDropdown';
+import preDnaDropdown from '@/util/preDnaDropdown';
+import userDropdown from '@/util/userDropdown';
+
 export default {
-  components: { FeatherIcon }
+  // eslint-disable-next-line vue/no-unused-components
+  components: { FeatherIcon, DropdownBarItem },
+  data: () => ({
+    dropdownBar: [
+    ].concat(preComDropdown, preSecDropdown, preUseDropdown, preHarDropdown, preAleDropdown, preDnaDropdown, userDropdown)
+  })
 };
 </script>
+<style>
+.tooltip {
+  opacity: .9;
+}
+</style>
