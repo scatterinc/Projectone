@@ -1,6 +1,6 @@
 export default {
   name: 'Deposit',
-  icon: 'TrendingUpIcon',
+  icon: 'DownloadIcon',
   expanded: true,
   items: [
     { name: 'Make Deposit', icon: 'FileTextIcon' },

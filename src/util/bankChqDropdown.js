@@ -1,6 +1,6 @@
 export default {
   name: 'Cheque',
-  icon: 'TrendingUpIcon',
+  icon: 'SidebarIcon',
   expanded: true,
   items: [
     { name: 'Write Cheque', icon: 'FileTextIcon' },

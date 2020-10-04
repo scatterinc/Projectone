@@ -1,6 +1,6 @@
 export default {
   name: 'Loans',
-  icon: 'TrendingUpIcon',
+  icon: 'GridIcon',
   expanded: true,
   items: [
     { name: 'Loan Centre', icon: 'FileTextIcon' }

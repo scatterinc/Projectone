@@ -1,6 +1,6 @@
 export default {
   name: 'Credit Card',
-  icon: 'TrendingUpIcon',
+  icon: 'CreditCardIcon',
   expanded: true,
   items: [
     { name: 'Enter Charges', icon: 'FileTextIcon' },
