@@ -70,39 +70,52 @@ export default {
   },
   beforeDestroy () {
     search.term = '';
+  },
+  methods: {
+    addToCart (row) {
+      console.log(row);
+    }
   }
 };
 </script>
 <style lang="scss">
 .table-header-borders {
   position: absolute;
-  height: 34px;
-  border: solid #eee;
+  height: 58px;
+  border: solid #ecf0f1;
   border-width: 1px 0;
   z-index: 1;
   pointer-events: none;
-  width: calc(100% - 7px);
-  box-shadow: 0 0 3px 0 rgba(0,0,0,.1), 0 0 1px 0 rgba(0,0,0,.07), 0 1px 1px -1px rgba(0,0,0,.06);
+  width: 100%;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .1), 0 0 1px 0 rgba(0, 0, 0, .07), 0 1px 1px -1px rgba(0, 0, 0, .06);
 }
-.table-container {
-  overflow-y: auto;
-  overflow-x:hidden;
-  position: relative;
-  height: 400px;
-  .ps {
-    height: 400px;
-  }
-  th {
-    position: sticky;
-    top: 0;
-    background-color: white;
-  }
-  &:before{
-    content: '';
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    left: 0;
+.ps__rail-y {
+  z-index: 1;
+}
+.inventory {
+  height:calc(100vh - 190px);
+  .table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+    .ps {
+      height: 100%;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      background-color: #ecf0f1;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+    }
   }
 }
+
 </style>

@@ -6,9 +6,9 @@
         <b-col>2 of 3</b-col>
         <b-col class="text-right">
           <div>
-          <dropdown-bar-item v-for="(dd, key) in dropdownBar"
+            <dropdown-bar-item v-for="(dd, key) in dropdownBar"
                                v-bind="dd"
-                               :key="key" />
+                               :key="key"/>
           </div>
         </b-col>
       </b-row>
@@ -21,6 +21,9 @@
         <b-table :items="filteredData" :fields="fields" :small="true">
           <template #cell(extPrice)="{item}">
             {{ item.quantity * item.price }}
+          </template>
+          <template #cell(qty)="{item, value}">
+            <b-input :value="value" @input="updateQty($event, item)"></b-input>
           </template>
         </b-table>
       </perfect-scrollbar>
@@ -43,10 +46,11 @@
           <b-button-group>
             <template v-for="(button, key) in bottomBar">
               <b-button v-b-modal="button.modal"
+                        @click="updateEditingModal(button.modalTitle, button.amountProp)"
                         variant="info"
                         class="test"
                         :key="key"
-                        v-text="button.name" />
+                        v-text="button.name"/>
             </template>
           </b-button-group>
         </b-col>
@@ -58,7 +62,7 @@
       <b-row>
         <b-col></b-col>
         <b-col class="text-right" cols="12" md="auto">Payment</b-col>
-        <b-col class="text-right" col lg="2">$0.00</b-col>
+        <b-col class="text-right" col lg="2">{{ toCurrency(paymentAmount) }}</b-col>
       </b-row>
       <b-row>
         <b-col></b-col>
@@ -71,7 +75,7 @@
       <b-row>
         <b-col class="text-left">
           <b-button variant="light">
-              <feather-icon size="1x" icon="MoreHorizontalIcon" />
+            <feather-icon size="1x" icon="MoreHorizontalIcon"/>
           </b-button>
         </b-col>
         <b-col class="text-right">
@@ -79,63 +83,10 @@
         </b-col>
       </b-row>
     </b-container>
-     <!-- MODAL LONG --HELP CASH-->
-    <b-modal id="CashModal" centered title="Cash">
-           <b-form inline class="text-right">
-             <a class="mr-3"> Amount </a>
-    <label class="sr-only" for="inline-form-input-name">Cashamount</label>
-    <b-input
-      id="PayAmount"
-      class="mb-2 mr-sm-2 mb-sm-0 text-right"
-      placeholder="0.00"
-    ></b-input>
-       </b-form>
-               <template v-slot:modal-footer="{ clear, close, save }">
-            <!-- Emulate built in modal footer ok and cancel button actions -->
-      <b-button size="sm" variant="secondary" @click="clear('ClearFields()')">
-        Clear
-      </b-button>
-      <b-button size="sm" variant="secondary" @click="close('forget')">
-        Close
-      </b-button>
-      <!-- Button with custom close trigger value -->
-      <b-button size="sm" variant="info" @click="save()">
-        Save
-      </b-button>
-    </template>
-    </b-modal>
-     <!-- MODAL LONG --HELP Debit-->
-    <b-modal id="DebitModal" centered title="Debit">
-           <b-form inline class="text-right">
-             <a class="mr-3"> Amount </a>
-    <label class="sr-only" for="inline-form-input-name">debitamount</label>
-    <b-input
-      id="inline-form-input-name"
-      class="mb-2 mr-sm-2 mb-sm-0 text-right"
-      placeholder="0.00"
-    ></b-input>
-       </b-form>
-               <template v-slot:modal-footer="{ clear, close, save }">
-            <!-- Emulate built in modal footer ok and cancel button actions -->
-      <b-button size="sm" variant="secondary" @click="clear()">
-        Clear
-      </b-button>
-      <b-button size="sm" variant="secondary" @click="close('forget')">
-        Close
-      </b-button>
-      <!-- Button with custom close trigger value -->
-      <b-button size="sm" variant="info" @click="save()">
-        Save
-      </b-button>
-    </template>
-    </b-modal>
   </div>
-
 </template>
 <script>
-import sales from '@/assets/data/sales.json';
 import search from '../store/search';
-import { initial, last } from 'lodash';
 import SalesActions from '@/components/SalesActions';
 import FeatherIcon from '@/components/FeatherIcon';
 import putOnHold from '@/mixins/putOnHold';
@@ -143,25 +94,70 @@ import DropdownBarItem from '@/components/DropdownBarItem.vue';
 import userDropdown from '@/util/userDropdown';
 import saleDnaDropdown from '@/util/saleDnaDropdown';
 import saleCusDropdown from '@/util/saleCusDropdown';
+import editingModal from '@/store/editingModal';
+import cart from '@/store/cart';
 
 export default {
   name: 'Sales',
   // eslint-disable-next-line vue/no-unused-components
-  components: { SalesActions, FeatherIcon, DropdownBarItem },
+  components: {
+    SalesActions,
+    FeatherIcon,
+    DropdownBarItem
+  },
   mixins: [putOnHold],
   data: () => ({
-    sales,
-    fields: initial(Object.keys(sales[0])).concat([{
+    /* fields: initial(Object.keys(sales[0])).concat([{
       key: 'extPrice',
       label: 'Ex. Price'
-    }, last(Object.keys(sales[0]))]),
+    }, last(Object.keys(sales[0]))]), */
+    fields: [
+      'id', 'name', 'price', 'qty', 'extPrice', 'tax'
+    ],
     bottomBar: [
-      { name: 'Cash', modal: 'CashModal' }, { name: 'Debit', modal: 'DebitModal' }, 'Credit', 'Cheque', 'Gift', 'Account'
+      {
+        name: 'Cash',
+        modal: 'EditingModal',
+        amountProp: 'cashAmount',
+        modalTitle: 'Edit cash amount'
+      }, {
+        name: 'Debit',
+        modal: 'EditingModal',
+        amountProp: 'debitAmount',
+        modalTitle: 'Edit debit amount'
+      }, {
+        name: 'Credit',
+        modal: 'EditingModal',
+        amountProp: 'creditAmount',
+        modalTitle: 'Edit credit amount'
+      }, {
+        name: 'Cheque',
+        modal: 'EditingModal',
+        amountProp: 'chequeAmount',
+        modalTitle: 'Edit cheque amount'
+      }, 'Gift', 'Account'
     ].map(item => typeof item === 'string' ? { name: item } : item),
-    dropdownBar: [
-    ].concat(saleCusDropdown, saleDnaDropdown, userDropdown)
+    dropdownBar: [].concat(saleCusDropdown, saleDnaDropdown, userDropdown),
+    cashAmount: 0,
+    chequeAmount: 0,
+    creditAmount: 0,
+    debitAmount: 0
   }),
   computed: {
+    sales: {
+      get () {
+        return cart.items;
+      },
+      set (items) {
+        cart.items = items;
+      }
+    },
+    paymentAmount () {
+      return ['cash', 'cheque', 'credit', 'debit']
+        .map(prop => this[prop + 'Amount'])
+        .reduce((a, b) => a + Number(b) || 0, 0);
+      // return Number(this.cashAmount || 0) + Number(this.checkAmount || 0) + Number(this.debitAmount || 0) + Number(this.chequeAmount || 0);
+    },
     term () {
       return search.term;
     },
@@ -170,16 +166,66 @@ export default {
     },
     salesActions () {
       return [
-        { text: 'Put on Hold', action: this.putOnHold, variant: 'info' },
-        { text: 'Cancel', action: this.cancel },
-        { text: 'Save Only', action: this.save },
-        { text: 'Save & Print', action: () => { this.save(); this.print(); } }
-      ].map(item => ({ ...item, variant: item.variant || 'primary' }));
+        {
+          text: 'Put on Hold',
+          action: this.putOnHold,
+          variant: 'info'
+        },
+        {
+          text: 'Cancel',
+          action: this.cancel
+        },
+        {
+          text: 'Save Only',
+          action: this.save
+        },
+        {
+          text: 'Save & Print',
+          action: () => {
+            this.save();
+            this.print();
+          }
+        }
+      ].map(item => ({
+        ...item,
+        variant: item.variant || 'primary'
+      }));
+    },
+    editingModalTitle: {
+      get () {
+        return editingModal.title;
+      },
+      set (val) {
+        editingModal.title = val;
+      }
+    },
+    editingModalAmount: {
+      get () {
+        return editingModal.amount;
+      },
+      set (val) {
+        editingModal.amount = val;
+      }
     }
   },
   methods: {
     print () {
       console.log('Should print...');
+    },
+    toCurrency (amount) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      }).format(amount);
+    },
+    updateEditingModal (title, prop) {
+      editingModal.title = title;
+      editingModal.amount = this[prop];
+      editingModal.updater = (val) => { this[prop] = val; };
+    },
+    updateQty (value, item) {
+      const cartItem = cart.items.find(ci => ci.id === item.id);
+      cartItem.qty = value;
     }
   },
   beforeDestroy () {
@@ -188,45 +234,40 @@ export default {
 };
 </script>
 <style lang="scss">
-.table-header-borders {
-  position: absolute;
-  height: 34px;
-  border: solid #eee;
-  border-width: 1px 0;
-  z-index: 1;
-  pointer-events: none;
-  width: calc(100% - 7px);
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .1), 0 0 1px 0 rgba(0, 0, 0, .07), 0 1px 1px -1px rgba(0, 0, 0, .06);
-}
-
-.table-container {
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: relative;
-  height: 400px;
-
-  .ps {
+.sales {
+  .table-header-borders {
+    height: 34px;
+  }
+  .table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
     height: 400px;
-  }
 
-  th {
-    position: sticky;
-    top: 0;
-    background-color: white;
-  }
+    .ps {
+      height: 400px;
+    }
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    left: 0;
-  }
+    th {
+      position: sticky;
+      top: 0;
+      background-color: white;
+    }
 
-  .btn-space {
-    margin-right: 5px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+    }
+
+    .btn-space {
+      margin-right: 5px;
+    }
   }
 }
+
 .modal-backdrop {
   opacity: .42;
 }

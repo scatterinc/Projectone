@@ -4,12 +4,11 @@
       <b-col>
         <div class="d-flex justify-content-between">
           <h1>Accounting</h1>
-          <div class="text-right">
+          <div>
             <b-button-group>
               <b-button variant="outline-secondary">Share</b-button>
               <b-button class="mr-2" variant="outline-secondary">Export</b-button>
             </b-button-group>
-            <!----Drop Down Top------>
             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
                                v-bind="dd"
                                :key="key" />
@@ -20,7 +19,6 @@
   </b-container>
 </template>
 <script>
-import FeatherIcon from '@/components/FeatherIcon';
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
 import receivableDropdown from '@/util/accRecDropdown';
 import payablesDropdown from '@/util/accPayDropdown';
@@ -30,8 +28,7 @@ import accDnaDropdown from '@/util/accDnaDropdown';
 import userDropdown from '@/util/userDropdown';
 
 export default {
-  // eslint-disable-next-line vue/no-unused-components
-  components: { FeatherIcon, DropdownBarItem },
+  components: { DropdownBarItem },
   data: () => ({
     dropdownBar: [{
       name: 'Ledger',
@@ -49,8 +46,3 @@ export default {
   })
 };
 </script>
-<style>
-.tooltip {
-  opacity: .9;
-}
-</style>

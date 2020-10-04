@@ -9,15 +9,17 @@
         </b-col>
       </b-row>
     </b-container>
+    <editing-modal/>
   </div>
 </template>
 
 <script>
 import LeftSidebar from '@/components/LeftSidebar';
 import TopNavbar from '@/components/TopNavbar';
+import EditingModal from '@/components/EditingModal';
 
 export default {
-  components: { TopNavbar, LeftSidebar }
+  components: { EditingModal, TopNavbar, LeftSidebar }
 };
 </script>
 
@@ -31,5 +33,11 @@ export default {
   background-color: #f8f9fa;
   border-right: 1px solid #dfe0e1;
   width: 230px;
+}
+:focus {
+  outline: none;
+}
+.dropdown-menu {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.1), 0 2px 2px 0 rgba(0,0,0,.07), 0 3px 1px -2px rgba(0,0,0,.06)
 }
 </style>

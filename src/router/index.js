@@ -14,91 +14,61 @@ const routes = [
   {
     path: '/sales',
     name: 'Sales',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Sales.vue'),
+    component: () => import(/* webpackChunkName: "sales" */ '../views/Sales.vue'),
     icon: 'TagIcon'
   },
   {
     path: '/inventory',
     name: 'Inventory',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Inventory.vue'),
+    component: () => import(/* webpackChunkName: "inventory" */ '../views/Inventory.vue'),
     icon: 'PackageIcon'
   },
   {
     path: '/customer',
     name: 'Customer',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Customer.vue'),
+    component: () => import(/* webpackChunkName: "customer" */ '../views/Customer.vue'),
     icon: 'ShoppingCartIcon'
   },
   {
     path: '/bank',
     name: 'Bank',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Bank.vue'),
+    component: () => import(/* webpackChunkName: "bank" */ '../views/Bank.vue'),
     icon: 'HomeIcon'
   },
   {
     path: '/accounting',
     name: 'Accounting',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Accounting.vue'),
+    component: () => import(/* webpackChunkName: "accounting" */ '../views/Accounting.vue'),
     icon: 'BookIcon'
   },
   {
     path: '/vendor',
     name: 'Vendor',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Vendor.vue'),
+    component: () => import(/* webpackChunkName: "vendor" */ '../views/Vendor.vue'),
     icon: 'TruckIcon'
   },
   {
     path: '/employee',
     name: 'Employee',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Employee.vue'),
+    component: () => import(/* webpackChunkName: "employee" */ '../views/Employee.vue'),
     icon: 'UsersIcon'
   },
   {
     path: '/reports',
     name: 'Reports',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Reports.vue'),
+    component: () => import(/* webpackChunkName: "reports" */ '../views/Reports.vue'),
     icon: 'BarChart2Icon'
   },
   {
     path: '/preference',
     name: 'Preference',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Preference.vue'),
+    component: () => import(/* webpackChunkName: "preference" */ '../views/Preference.vue'),
     icon: 'SettingsIcon'
   },
   {
     path: '/connection',
     name: 'Storage & Connection',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Connection.vue')
+    component: () => import(/* webpackChunkName: "connection" */ '../views/Connection.vue')
   }
 ];
 

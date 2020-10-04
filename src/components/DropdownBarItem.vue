@@ -1,5 +1,5 @@
 <template>
-  <b-dropdown variant="transparent">
+  <b-dropdown variant="transparent" :right="right">
     <template #button-content>
       <span v-if="expanded">
         <feather-icon size="1x" :icon="icon"/>
@@ -15,7 +15,6 @@
     </template>
   </b-dropdown>
 </template>
-
 <script>
 
 import FeatherDdItem from '@/components/FeatherDdItem';
@@ -23,7 +22,7 @@ import FeatherIcon from '@/components/FeatherIcon';
 
 export default {
   name: 'DropdownBarItem',
-  props: ['name', 'icon', 'items', 'expanded'],
+  props: ['name', 'icon', 'items', 'expanded', 'right'],
   components: {
     FeatherDdItem,
     FeatherIcon
