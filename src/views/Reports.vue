@@ -17,6 +17,9 @@
         </div>
       </b-col>
     </b-row>
+    <div>
+    <font-awesome-icon :icon="myIcon" />
+  </div>
   </b-container>
 </template>
 <script>
@@ -29,13 +32,16 @@ import repEmpDropdown from '@/util/repEmpDropdown';
 import repCusDropdown from '@/util/repCusDropdown';
 import repDnaDropdown from '@/util/repDnaDropdown';
 import userDropdown from '@/util/userDropdown';
+import fontawesome from '@/components/fontawesome';
 
 export default {
   // eslint-disable-next-line vue/no-unused-components
-  components: { FeatherIcon, DropdownBarItem },
+  components: { FeatherIcon, DropdownBarItem, fontawesome },
   data: () => ({
     dropdownBar: [
-    ].concat(repAccDropdown, repSalDropdown, repInvDropdown, repEmpDropdown, repCusDropdown, repDnaDropdown, userDropdown)
+    ].concat(repAccDropdown, repSalDropdown, repInvDropdown, repEmpDropdown, repCusDropdown, repDnaDropdown, userDropdown),
+    fontawesome: [
+    ].concat(fontawesome)
   })
 };
 </script>

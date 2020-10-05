@@ -10,9 +10,9 @@
       </b-list-group-item>
       <b-list-group-item class="custom-nav-item">
         <b-btn v-for="(n, key) in bottomButtons" :key="key"
-               variant="outline-primary"
-               class="mr-1 mb-1"
-        ><feather-icon :icon="n.icon" /></b-btn>
+               variant="light"
+               class="mr-0.05 mb-0.05"
+               ><feather-icon :icon="n.icon" /></b-btn>
       </b-list-group-item>
     </b-list-group>
   </div>
@@ -24,9 +24,23 @@ export default {
   name: 'left-sidebar',
   data: () => ({
     bottomButtons: [{
+      icon: 'DatabaseIcon'
+    }, {
+      icon: 'ServerIcon'
+    }, {
+      icon: 'GlobeIcon'
+    }, {
+      icon: 'HardDriveIcon'
+    }, {
+      icon: 'CloudIcon'
+    }, {
       icon: 'FileIcon'
     }, {
-      icon: 'FileTextIcon'
+      icon: 'HelpCircleIcon'
+    }, {
+      icon: 'InfoIcon'
+    }, {
+      icon: 'AlertTriangleIcon'
     }]
   }),
   components: {

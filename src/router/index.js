@@ -67,8 +67,9 @@ const routes = [
   },
   {
     path: '/connection',
-    name: 'Storage & Connection',
-    component: () => import(/* webpackChunkName: "connection" */ '../views/Connection.vue')
+    name: 'Premium',
+    component: () => import(/* webpackChunkName: "connection" */ '../views/Connection.vue'),
+    icon: 'PocketIcon'
   }
 ];
 
