@@ -25,7 +25,7 @@
             </b-list-group>
           </div>
         </b-nav-item>
-        <b-nav-dd variant="transparent" right>
+        <!--<b-nav-dd variant="transparent" right>
           <template #button-content>
             <feather-icon size="1x" icon="UserIcon"/>
             John Doe
@@ -55,10 +55,10 @@
             <feather-icon size="1x" icon="LockIcon"/>
             Lock
           </b-dropdown-item>
-        </b-nav-dd>
-        <!--<b-nav-item>
-            <b-btn variant="primary"><power-icon size="1x" class="custom-class" /> Sign out</b-btn>
-        </b-nav-item>-->
+        </b-nav-dd>-->
+        <b-nav-item>
+                   <b-btn variant="primary"><feather-icon icon="PowerIcon" size="1x" class="custom-class" /> Sign out</b-btn>
+        </b-nav-item>
         <!--<b-nav-item-dropdown text="Lang" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
           <b-dropdown-item href="#">ES</b-dropdown-item>
@@ -87,6 +87,7 @@ import cart from '@/store/cart';
 export default {
   name: 'TopNavbar',
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     FeatherIcon
   },
   data: () => ({
@@ -152,7 +153,7 @@ export default {
   position: absolute;
   top: 100%;
   background-color: white;
-  border: 1px solid red;
+  border: 1px solid rgb(248, 243, 243);
   width: calc(100% - 15px);
   display: none;
 }

@@ -3,7 +3,9 @@
     <b-container class="Sales Header">
       <b-row>
         <b-col><h1>Sales</h1></b-col>
-        <b-col>2 of 3</b-col>
+        <b-col>
+          1&2
+        </b-col>
         <b-col class="text-right">
           <div>
             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
@@ -22,8 +24,9 @@
           <template #cell(extPrice)="{item}">
             {{ item.quantity * item.price }}
           </template>
+          <!----QUANTITY INPUT--->
           <template #cell(qty)="{item, value}">
-            <b-input :value="value" @input="updateQty($event, item)"></b-input>
+          <b-input class="w-25 text-right" :value="value" @input="updateQty($event, item)" ></b-input>
           </template>
         </b-table>
       </perfect-scrollbar>
@@ -96,6 +99,7 @@ import saleDnaDropdown from '@/util/saleDnaDropdown';
 import saleCusDropdown from '@/util/saleCusDropdown';
 import editingModal from '@/store/editingModal';
 import cart from '@/store/cart';
+import datetime from '@/util/datetime';
 
 export default {
   name: 'Sales',
@@ -112,7 +116,7 @@ export default {
       label: 'Ex. Price'
     }, last(Object.keys(sales[0]))]), */
     fields: [
-      'id', 'name', 'price', 'qty', 'extPrice', 'tax'
+      'id', 'name', 'qty', 'price', 'extPrice', 'tax'
     ],
     bottomBar: [
       {
@@ -141,7 +145,9 @@ export default {
     cashAmount: 0,
     chequeAmount: 0,
     creditAmount: 0,
-    debitAmount: 0
+    debitAmount: 0,
+    datetime:
+      [].concat(datetime)
   }),
   computed: {
     sales: {
@@ -270,5 +276,8 @@ export default {
 
 .modal-backdrop {
   opacity: .42;
+}
+.b-input {
+  width: 5px
 }
 </style>
