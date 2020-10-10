@@ -5,9 +5,38 @@
         <b-col><h1>Inventory</h1></b-col>
         <b-col class="text-right">
           <div>
-          <b-button class="mr-1" variant="secondary"><feather-icon size="1x" icon="ListIcon" /> Detail</b-button>
-          <b-button class="mr-1" variant="secondary"><feather-icon size="1x" icon="PlusCircleIcon" /> Add</b-button>
+          <b-button  v-b-toggle.sidebar-right class="mr-1" variant="secondary"><feather-icon size="1x" icon="ListIcon" /> Detail</b-button>
+          <b-button v-b-modal.modal-center class="mr-1" variant="secondary"><feather-icon size="1x" icon="PlusCircleIcon" /> Add</b-button>
           <b-button variant="secondary"><feather-icon size="1x" icon="Edit3Icon" /> Edit</b-button>
+          <!----Move to component--->
+          <b-modal id="modal-center" centered title="Add Item">
+             <p class="my-1">Item Name
+                 <b-input />
+                 <b-row bordertop="black">
+                   <!---Leftside-->
+                   <b-col>
+                   Department  <b-input/>
+                   Item Description  <b-input/>
+                   Price  <b-input/>
+                   Cost  <b-input/>
+                   Tax  <b-input/>
+                   UPC  <b-input/>
+                   </b-col>
+                   <!---Rightside-->
+                   <b-col>
+                      Measure <b-input/>
+                      Reorder Point <b-input/>
+                      Vendor<b-btn variant="transparent"><feather-icon size="1x" icon="PlusCircleIcon"/></b-btn> <b-input/><b-col></b-col>
+                      Manufacturer<b-input/>
+                      Picture <b-input/>
+                      </b-col>
+                 </b-row>
+
+             </p>
+          </b-modal>
+           <!----Move to component--->
+            <div>
+        </div>
           </div>
         </b-col>
         <b-col class="text-right">
@@ -31,6 +60,16 @@
   <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Items 100</b></div></div>
   <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Cost $10,000</b></div></div>
   </div>
+  <!-----------------This is just a test to remove--->
+          <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
+      <div class="px-3 py-2">
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+          in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </p>
+        <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
+      </div>
+    </b-sidebar>
     </div>
 </template>
 <script>

@@ -12,7 +12,7 @@
         <b-btn v-for="(n, key) in bottomButtons" :key="key"
                variant="light"
                class="mr-0.05 mb-0.05"
-               ><feather-icon :icon="n.icon" /></b-btn>
+               ><feather-icon :icon="n.icon" /><b-tooltip/></b-btn>
       </b-list-group-item>
     </b-list-group>
   </div>
