@@ -70,6 +70,12 @@ const routes = [
     name: 'Premium',
     component: () => import(/* webpackChunkName: "connection" */ '../views/Connection.vue'),
     icon: 'PocketIcon'
+  },
+  {
+    path: '/saleshistory',
+    name: 'History',
+    component: () => import(/* webpackChunkName: "saleshistory" */ '../views/SalesHistory.vue'),
+    icon: 'SettingsIcon'
   }
 ];
 

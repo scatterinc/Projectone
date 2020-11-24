@@ -2,7 +2,7 @@
   <div class="left-sidebar">
     <b-list-group>
       <b-list-group-item :class="{active: route.name === $route.name }"
-                         v-for="route in routes"
+                         v-for="route in filteredRoutes"
                          :key="route.path"
                          :to="route.path">
         <feather-icon v-if="route.icon" :icon="route.icon" />
@@ -49,6 +49,9 @@ export default {
   computed: {
     routes () {
       return router.options.routes;
+    },
+    filteredRoutes () {
+      return this.routes.filter(o => ['/', '/sales', '/inventory', '/customer', '/bank', '/accounting', '/vendor', '/employee', '/reports', '/preference', '/connection'].includes(o.path));
     }
   }
 };
