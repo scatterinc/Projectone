@@ -1,4 +1,5 @@
 <template>
+<div>
   <b-container :fluid="true" class="accounting">
     <b-row>
       <b-col>
@@ -21,6 +22,8 @@
     <font-awesome-icon :icon="myIcon" />
   </div>
   </b-container>
+  <p class="border-top"></p>
+  </div>
 </template>
 <script>
 import FeatherIcon from '@/components/FeatherIcon';

@@ -1,5 +1,6 @@
 <template>
   <div>
-      <h4>Storage & Connection</h4>
+      <h1>Premium</h1>
+      <p class="border-top"></p>
     </div>
 </template>

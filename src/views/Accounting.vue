@@ -1,4 +1,5 @@
 <template>
+<div>
   <b-container :fluid="true" class="accounting">
     <b-row>
       <b-col>
@@ -17,6 +18,8 @@
       </b-col>
     </b-row>
   </b-container>
+  <p class="border-top"></p>
+  </div>
 </template>
 <script>
 import DropdownBarItem from '@/components/DropdownBarItem.vue';

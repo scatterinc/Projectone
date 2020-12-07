@@ -14,7 +14,8 @@
           </div>
         </b-col>
       </b-row>
-    </b-container>
+          </b-container>
+          <p class="border-top"></p>
     <div class="position-relative">
       <div class="table-header-borders"></div>
     </div>

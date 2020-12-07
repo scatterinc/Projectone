@@ -47,6 +47,7 @@
         </b-col>
           </b-row>
         </b-container>
+        <p class="border-top"></p>
         </div>
 </template>
 <script>
