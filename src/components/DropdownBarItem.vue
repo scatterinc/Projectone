@@ -10,7 +10,7 @@
       </span>
     </template>
     <template v-for="(item, key) in items">
-      <feather-dd-item :name="item.name" :icon="item.icon" v-if="item" :key="key"/>
+      <feather-dd-item v-bind="item" v-if="item" :key="key"/>
       <b-dd-divider v-else :key="key"/>
     </template>
   </b-dropdown>
@@ -22,7 +22,7 @@ import FeatherIcon from '@/components/FeatherIcon';
 
 export default {
   name: 'DropdownBarItem',
-  props: ['name', 'icon', 'items', 'expanded', 'right'],
+  props: ['name', 'icon', 'items', 'expanded', 'right', 'to'],
   components: {
     FeatherDdItem,
     FeatherIcon

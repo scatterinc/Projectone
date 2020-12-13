@@ -14,11 +14,18 @@
       <b-navbar-nav class="w-100">
         <b-nav-item class="flex-grow-1 search-container">
           <b-form-input class="search-input" placeholder="Search" v-model="term"
+                        @keydown.up="changeItemSelection(-1)"
+                        autocomplete="off"
+                        @keydown.down="changeItemSelection(1)"
+                        @keydown.enter="addToCart(selectedItem)"
                         @input="searchItems" />
-          <div class="autocomplete-container">
+          <div class="autocomplete-container" v-if="$route.path === '/sales' && this.filteredItems.length">
             <b-list-group>
-              <b-list-group-item class="d-flex justify-content-between" v-for="(item, key) in filteredItems" :key="key"
-                                 @click="addToCart(item)">
+              <b-list-group-item class="d-flex justify-content-between"
+                                 v-for="(item, key) in filteredItems"
+                                 :key="key"
+                                 :active="key === selectedItem"
+                                 @click="addToCart(key)">
                 <span v-text="item[1]"></span>
                 <span v-text="item[9]"></span>
               </b-list-group-item>
@@ -91,10 +98,17 @@ export default {
     FeatherIcon
   },
   data: () => ({
-    filteredItems: []
+    filteredItems: [],
+    selectedItem: 0
   }),
-  mounted () {
-
+  watch: {
+    '$route.path': {
+      handler (val) {
+        if (val === '/sales') {
+          this.filteredItems = [];
+        }
+      }
+    }
   },
   computed: {
     term: {
@@ -107,23 +121,35 @@ export default {
     }
   },
   methods: {
+    changeItemSelection (value) {
+      if (this.selectedItem + value < 0) {
+        this.selectedItem = this.filteredItems.length - 1;
+      } else if (this.selectedItem + value > this.filteredItems.length - 1) {
+        this.selectedItem = 0;
+      } else {
+        this.selectedItem = this.selectedItem + value;
+      }
+    },
     searchItems (term) {
       if (term.length > 2) {
         this.filteredItems = inventory.data.filter(item => item[1].toLowerCase().indexOf(term.toLowerCase().trim()) > -1);
-        console.log(this.filteredItems);
       }
     },
-    addToCart (item) {
+    addToCart (key) {
+      const item = this.filteredItems[key];
       // map your item
       const cartItem = cart.items.find(ci => ci.id === item[0]);
       if (cartItem) {
-        cartItem.qty += 1;
+        cartItem.quantity += 1;
       } else {
         cart.items.push({
           id: item[0],
           name: item[1],
           price: item[9],
-          qty: 1
+          quantity: 1,
+          get extPrice () {
+            return this.price * this.quantity;
+          }
         });
       }
     }

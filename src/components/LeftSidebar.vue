@@ -12,7 +12,9 @@
         <b-btn v-for="(n, key) in bottomButtons" :key="key"
                variant="light"
                class="mr-0.05 mb-0.05"
-               ><feather-icon :icon="n.icon" /><b-tooltip/></b-btn>
+               v-b-tooltip.hover :title="n.tooltip || ''">
+          <feather-icon :icon="n.icon" />
+        </b-btn>
       </b-list-group-item>
     </b-list-group>
   </div>
@@ -24,9 +26,11 @@ export default {
   name: 'left-sidebar',
   data: () => ({
     bottomButtons: [{
-      icon: 'DatabaseIcon'
+      icon: 'DatabaseIcon',
+      tooltip: 'Database'
     }, {
-      icon: 'ServerIcon'
+      icon: 'ServerIcon',
+      tooltip: 'Server'
     }, {
       icon: 'GlobeIcon'
     }, {

@@ -33,6 +33,7 @@ export default {
   background-color: #f8f9fa;
   border-right: 1px solid #dfe0e1;
   width: 230px;
+  min-width: 230px;
 }
 :focus {
   outline: none;

@@ -3,10 +3,11 @@
     <b-container class="Sales Header">
       <b-row>
         <b-col><h1>Sales</h1></b-col>
-        <b-col>
-          1&2
+        <b-col class="d-flex align-items-center">
+          {{ new Date(Date.now()).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}
+          {{ new Date(Date.now()).toLocaleTimeString('en-US') }}
         </b-col>
-        <b-col class="text-right">
+        <b-col class="d-flex align-items-center justify-content-end">
           <div>
             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
                                v-bind="dd"
@@ -26,8 +27,8 @@
             {{ item.quantity * item.price }}
           </template>
           <!----QUANTITY INPUT--->
-          <template #cell(qty)="{item, value}">
-          <b-input class="w-25 text-right" :value="value" @input="updateQty($event, item)" ></b-input>
+          <template #cell(quantity)="{item, value}">
+          <b-input class="w-25 text-right" :value="value" @input="updateQty($event, item)" type="number" min="1"/>
           </template>
         </b-table>
       </perfect-scrollbar>
@@ -36,7 +37,7 @@
       <b-row>
         <b-col class="text-center"><b> 12 Items</b></b-col>
         <b-col class="text-right" cols="12" md="auto">Subtotal</b-col>
-        <b-col class="text-right" col lg="2">$3,400.00</b-col>
+        <b-col class="text-right" col lg="2">{{ formatCurrency(subTotal) }}</b-col>
       </b-row>
 
       <b-row>
@@ -59,14 +60,14 @@
           </b-button-group>
         </b-col>
         <b-col class="text-right" cols="12" md="auto"><b>Total</b></b-col>
-        <b-col class="text-right" col lg="2"><b>$3,740.00</b></b-col>
+        <b-col class="text-right" col lg="2"><b>{{ formatCurrency(total) }}</b></b-col>
       </b-row>
     </b-container>
     <b-container>
       <b-row>
         <b-col></b-col>
         <b-col class="text-right" cols="12" md="auto">Payment</b-col>
-        <b-col class="text-right" col lg="2">{{ toCurrency(paymentAmount) }}</b-col>
+        <b-col class="text-right" col lg="2">{{ formatCurrency(paymentAmount) }}</b-col>
       </b-row>
       <b-row>
         <b-col></b-col>
@@ -101,6 +102,7 @@ import saleCusDropdown from '@/util/saleCusDropdown';
 import editingModal from '@/store/editingModal';
 import cart from '@/store/cart';
 import datetime from '@/util/datetime';
+import { formatCurrency } from '../util/helpers';
 
 export default {
   name: 'Sales',
@@ -117,7 +119,7 @@ export default {
       label: 'Ex. Price'
     }, last(Object.keys(sales[0]))]), */
     fields: [
-      'id', 'name', 'qty', 'price', 'extPrice', 'tax'
+      'id', 'name', 'quantity', 'price', 'extPrice', 'tax'
     ],
     bottomBar: [
       {
@@ -159,6 +161,18 @@ export default {
         cart.items = items;
       }
     },
+    subTotal () {
+      return cart.items.map(item => item.extPrice).reduce((a, b) => a + b, 0);
+    },
+    tax () {
+      return this.subTotal * 0.2;
+    },
+    count () {
+      return cart.items.map(item => item.quantity).reduce((a, b) => a + b, 0);
+    },
+    total () {
+      return this.subTotal + this.tax;
+    },
     paymentAmount () {
       return ['cash', 'cheque', 'credit', 'debit']
         .map(prop => this[prop + 'Amount'])
@@ -169,7 +183,7 @@ export default {
       return search.term;
     },
     filteredData () {
-      return this.sales.filter(i => i.name.toLowerCase().indexOf(this.term) > -1);
+      return this.sales;
     },
     salesActions () {
       return [
@@ -216,14 +230,9 @@ export default {
     }
   },
   methods: {
+    formatCurrency,
     print () {
       console.log('Should print...');
-    },
-    toCurrency (amount) {
-      return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-      }).format(amount);
     },
     updateEditingModal (title, prop) {
       editingModal.title = title;
@@ -232,7 +241,7 @@ export default {
     },
     updateQty (value, item) {
       const cartItem = cart.items.find(ci => ci.id === item.id);
-      cartItem.qty = value;
+      cartItem.quantity = value;
     }
   },
   beforeDestroy () {

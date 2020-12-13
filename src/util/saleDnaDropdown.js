@@ -7,7 +7,7 @@ export default {
     { name: 'On-Hold', icon: 'InboxIcon' },
     { name: 'End of Day', icon: 'LayersIcon' },
     null,
-    { name: 'History', icon: 'ActivityIcon' },
+    { name: 'History', icon: 'ActivityIcon', to: '/history' },
     null,
     { name: 'Open Cash Draw', icon: 'InboxIcon' },
     null,

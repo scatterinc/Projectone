@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import '@/assets/vendor/bootstrap.min.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css';
 import BootstrapVue from 'bootstrap-vue';
 import VueScrollbar from 'vue2-perfect-scrollbar';
