@@ -32,19 +32,23 @@ export default {
       icon: 'ServerIcon',
       tooltip: 'Server'
     }, {
-      icon: 'GlobeIcon'
+      icon: 'GlobeIcon',
+      tooltip: 'Internet'
     }, {
-      icon: 'HardDriveIcon'
+      icon: 'HardDriveIcon',
+      tooltip: 'Local Storage'
     }, {
-      icon: 'CloudIcon'
+      icon: 'CloudIcon',
+      tooltip: 'Cloud Storage'
     }, {
-      icon: 'FileIcon'
+      icon: 'HelpCircleIcon',
+      tooltip: 'Help'
     }, {
-      icon: 'HelpCircleIcon'
+      icon: 'InfoIcon',
+      tooltip: 'Info'
     }, {
-      icon: 'InfoIcon'
-    }, {
-      icon: 'AlertTriangleIcon'
+      icon: 'AlertTriangleIcon',
+      tooltip: 'Alert'
     }]
   }),
   components: {
