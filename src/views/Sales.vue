@@ -168,7 +168,7 @@ export default {
       return this.subTotal * 0.2;
     },
     count () {
-      return cart.items.map(item => item.quantity).reduce((a, b) => a + b, 0);
+      return cart.items.map(item => item.quantity).reduce((a, b) => a + Number(b) || 0, 0);
     },
     total () {
       return this.subTotal + this.tax;
