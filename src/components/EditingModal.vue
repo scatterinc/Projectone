@@ -11,7 +11,7 @@
           v-model="amount"
       />
     </b-form>
-    <template v-slot:modal-footer="{ clear, close }">
+    <template v-slot:modal-footer="{close }">
       <!-- Emulate built in modal footer ok and cancel button actions -->
       <b-button size="sm" variant="secondary" @click="reset">
         Clear

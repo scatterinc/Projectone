@@ -24,7 +24,7 @@
       <perfect-scrollbar>
         <b-table :items="filteredData" :fields="fields" :small="true">
           <template #cell(extPrice)="{item}">
-            {{ item.quantity * item.price }}
+            {{ formatCurrency(item.quantity * item.price) }}
           </template>
           <!----QUANTITY INPUT--->
           <template #cell(quantity)="{item, value}">
@@ -35,7 +35,7 @@
     </div>
     <b-container class="borders">
       <b-row>
-        <b-col class="text-center"><b> 12 Items</b></b-col>
+        <b-col class="text-center"><b> {{count}} Items</b></b-col>
         <b-col class="text-right" cols="12" md="auto">Subtotal</b-col>
         <b-col class="text-right" col lg="2">{{ formatCurrency(subTotal) }}</b-col>
       </b-row>
@@ -72,7 +72,7 @@
       <b-row>
         <b-col></b-col>
         <b-col class="text-right" cols="12" md="auto">Amount Due</b-col>
-        <b-col class="text-right" col lg="2">$3,740.00</b-col>
+        <b-col class="text-right" col lg="2">{{ formatCurrency(amountdue) }}</b-col>
       </b-row>
     </b-container>
 
@@ -168,7 +168,7 @@ export default {
       return this.subTotal * 0.2;
     },
     count () {
-      return cart.items.map(item => item.quantity).reduce((a, b) => a + b, 0);
+      return cart.items.map(item => item.quantity).reduce((a, b) => a + Number(b) || 0, 0);
     },
     total () {
       return this.subTotal + this.tax;
@@ -178,6 +178,9 @@ export default {
         .map(prop => this[prop + 'Amount'])
         .reduce((a, b) => a + Number(b) || 0, 0);
       // return Number(this.cashAmount || 0) + Number(this.checkAmount || 0) + Number(this.debitAmount || 0) + Number(this.chequeAmount || 0);
+    },
+    amountdue () {
+      return this.total - this.paymentAmount;
     },
     term () {
       return search.term;

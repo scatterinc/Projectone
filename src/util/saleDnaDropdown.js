@@ -7,7 +7,7 @@ export default {
     { name: 'On-Hold', icon: 'InboxIcon', dataModal: 'test-modal' },
     { name: 'End of Day', icon: 'LayersIcon' },
     null,
-    { name: 'History', icon: 'ActivityIcon', to: '/history' },
+    { name: 'History', icon: 'ActivityIcon', to: '/Saleshistory' },
     null,
     { name: 'Open Cash Draw', icon: 'InboxIcon' },
     null,
