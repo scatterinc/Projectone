@@ -1,5 +1,5 @@
 <template>
-  <b-dropdown-item v-b-modal="dataModal || undefined"
+  <b-dropdown-item v-b-modal="dataModal"
                    v-bind="$props"
                    :href="to ? undefined : href || '#'">
     <feather-icon size="1x" :icon="icon"/>
