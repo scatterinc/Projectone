@@ -4,7 +4,7 @@ export default {
   expanded: true,
   items: [
     { name: 'Return', icon: 'RotateCcwIcon' },
-    { name: 'On-Hold', icon: 'InboxIcon' },
+    { name: 'On-Hold', icon: 'InboxIcon', dataModal: 'test-modal' },
     { name: 'End of Day', icon: 'LayersIcon' },
     null,
     { name: 'History', icon: 'ActivityIcon', to: '/history' },
