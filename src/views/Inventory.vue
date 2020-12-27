@@ -33,7 +33,7 @@
       </perfect-scrollbar>
     </div>
       <div class="row mx-md-n5">
-  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Items 100</b></div></div>
+<div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Items 100</b></div></div>
   <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Cost $10,000</b></div></div>
   </div>
   <!-----------------This is just a test to remove--->
@@ -79,6 +79,9 @@ export default {
     },
     rows () {
       return inventory.data.map(item => zipObject(inventory.cols, item));
+    },
+    count () {
+      return inventory.data.map('tr').length;
     }
   },
   beforeDestroy () {
