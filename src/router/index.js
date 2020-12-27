@@ -66,9 +66,9 @@ const routes = [
     icon: 'SettingsIcon'
   },
   {
-    path: '/connection',
+    path: '/premium',
     name: 'Premium',
-    component: () => import(/* webpackChunkName: "connection" */ '../views/Connection.vue'),
+    component: () => import(/* webpackChunkName: "connection" */ '../views/Premium.vue'),
     icon: 'PocketIcon'
   },
   {
