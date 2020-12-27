@@ -10,6 +10,9 @@
       </b-row>
     </b-container>
     <editing-modal/>
+    <b-modal id="test-modal">
+      This is a test modal...
+    </b-modal>
   </div>
 </template>
 
