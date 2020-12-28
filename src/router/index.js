@@ -82,6 +82,12 @@ const routes = [
     name: 'Journal',
     component: () => import(/* webpackChunkName: "journal" */ '../views/Journal.vue'),
     icon: 'SettingsIcon'
+  },
+  {
+    path: '/salesgrid',
+    name: 'SalesGrid',
+    component: () => import(/* webpackChunkName: "salesgrid" */ '../views/SalesGrid.vue'),
+    icon: 'SettingsIcon'
   }
 ];
 

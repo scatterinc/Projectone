@@ -3,15 +3,12 @@ export default {
   icon: 'GridIcon',
   expanded: true,
   items: [
-    { name: 'Financial Reports', icon: 'FileTextIcon' },
-    { name: 'Ledger Report', icon: 'FileTextIcon' },
-    { name: 'Journal Report', icon: 'InboxIcon' },
+    { name: 'Company Info', icon: 'FileTextIcon' },
+    { name: 'Data', icon: 'FileTextIcon' },
     null,
-    { name: 'Receivables Report', icon: 'ClipboardIcon' },
-    { name: 'Payables Report', icon: 'ClipboardIcon' },
+    { name: 'Company Preference', icon: 'ClipboardIcon' },
+    { name: 'Workstation', icon: 'ClipboardIcon' },
     null,
-    { name: 'Bank', icon: 'ActivityIcon' },
-    null,
-    { name: 'Taxes', icon: 'ToolIcon' }
+    { name: 'Placeholder', icon: 'ToolIcon' }
   ]
 };

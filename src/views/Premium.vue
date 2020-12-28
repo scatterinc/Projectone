@@ -19,6 +19,21 @@
     </b-row>
   </b-container>
   <p class="border-top"></p>
+ <b-button size="mh:100" variant="secondary" class="mh:100 w:120px">
+             </b-button>
+             <b-button variant="secondary"><feather-icon size="3x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+             <a/>
+             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
   </div>
 </template>
 <script>

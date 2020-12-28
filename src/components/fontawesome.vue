@@ -1,5 +1,4 @@
-<!---<script>
-
+<script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,6 +16,3 @@ export default {
   }
 };
 </script>
-
-https://github.com/FortAwesome/vue-fontawesome#installation
---->
