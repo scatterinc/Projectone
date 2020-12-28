@@ -29,6 +29,7 @@ import accDropdown from '@/util/accDropdown';
 import finDropdown from '@/util/accFinDropdown';
 import accDnaDropdown from '@/util/accDnaDropdown';
 import userDropdown from '@/util/userDropdown';
+import accLedDropdown from '@/util/accLedDropdown';
 
 export default {
   components: { DropdownBarItem },
@@ -41,11 +42,11 @@ export default {
         { name: 'Journal Entry', icon: 'FileTextIcon' },
         { name: 'Budget Entry', icon: 'FileTextIcon' },
         null,
-        { name: 'Journal Template', icon: 'FileTextIcon' },
+        { name: 'Journal Template', icon: 'FileTextIcon', to: '/journal' },
         null,
         { name: 'Trial Balance', icon: 'FileTextIcon' }
       ]
-    }].concat(receivableDropdown, payablesDropdown, accDropdown, finDropdown, accDnaDropdown, userDropdown)
+    }].concat(accLedDropdown, receivableDropdown, payablesDropdown, accDropdown, finDropdown, accDnaDropdown, userDropdown)
   })
 };
 </script>

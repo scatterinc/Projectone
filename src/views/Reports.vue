@@ -26,7 +26,7 @@
   </div>
 </template>
 <script>
-import { repAccDropdown, repCusDropdown, repDnaDropdown, repEmpDropdown, repInvDropdown, repSalDropdown, userDropdown } from '@/util';
+import { repAccDropdown, repCusDropdown, repDnaDropdown, repEmpDropdown, repInvDropdown, repSalDropdown, userDropdown } from '@/util/';
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
 
 export default {
