@@ -59,7 +59,7 @@ export default {
       return router.options.routes;
     },
     filteredRoutes () {
-      return this.routes.filter(o => ['/', '/sales', '/inventory', '/customer', '/bank', '/accounting', '/vendor', '/employee', '/reports', '/preference', '/premium', '/journal'].includes(o.path));
+      return this.routes.filter(o => ['/', '/sales', '/inventory', '/customer', '/bank', '/accounting', '/vendor', '/employee', '/reports', '/preference', '/premium'].includes(o.path));
     }
   }
 };
