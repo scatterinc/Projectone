@@ -21,7 +21,59 @@
           <v-button>
           test
           </v-button>
-  </div>
+          <b-row variant="transparent">
+    <b-col class="border" cols="12" md="8">
+
+             <b-button variant="secondary"><feather-icon size="3x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+             <a/>
+             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+                          <a/>
+             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+                          <a/>
+             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+                          <a/>
+             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
+             ii
+             ii<p>test</p>
+             <p>test</p></b-button>
+    </b-col>
+    <b-col class="border" cols="6" md="4">
+                    <b-table :items="filteredData" :fields="fields" :small="true">
+          <template #cell(extPrice)="{item}">
+            {{ formatCurrency(item.quantity * item.price) }}
+          </template>
+        </b-table>
+    </b-col>
+          </b-row>
+    </div>
 
 </template>
 <script>
@@ -31,6 +83,9 @@ import userDropdown from '@/util/userDropdown';
 export default {
   components: { DropdownBarItem },
   data: () => ({
+    fields: [
+      'name', 'QTY', 'extPrice'
+    ],
     dropdownBar: [{
       name: '',
       icon: 'CropIcon',

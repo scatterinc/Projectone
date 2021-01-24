@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  name: 'MyComponent',
+  name: 'FontAwesome',
 
   data () {
     return {
