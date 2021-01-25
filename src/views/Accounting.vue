@@ -19,6 +19,14 @@
     </b-row>
   </b-container>
   <p class="border-top"></p>
+
+<b-container class="bv-example-row mb-3">
+  <b-row cols="4">
+    <b-col class="border">Column</b-col>
+<b-col class="border">Column</b-col><b-col class="border">Column</b-col><b-col class="border">Column</b-col>
+  </b-row>
+</b-container>
+
   </div>
 </template>
 <script>

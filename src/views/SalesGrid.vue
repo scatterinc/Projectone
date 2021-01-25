@@ -23,47 +23,43 @@
           </v-button>
           <b-row variant="transparent">
     <b-col class="border" cols="12" md="8">
+              <div class="col-md-6 col-xl-3"
+        ><div class="card card-stats mb-4" show-footer-line="true"><!----><!----><!---->
+        <div class="card-body"><!----><!---->
+        <div class="row"><div class="col"
+        ><h5 class="card-title text-uppercase text-muted mb-0">Total traffic</h5><span class="h2 font-weight-bold mb-0">350,897</span>
+        </div><div class="col-auto">
+          <div class="icon icon-shape text-white rounded-circle shadow bg-gradient-red">
+            <i class="ni ni-active-40"></i></div></div></div>
+            <p class="mt-3 mb-0 text-sm"><span class="text-success mr-2">3.48%</span><span class="text-nowrap">Since last month</span>
+            </p></div><!----><!----><!----><!----></div></div>
 
-             <b-button variant="secondary"><feather-icon size="3x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
-             <a/>
-             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
-                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
-                          <a/>
-             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
-                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
-                          <a/>
-             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
-                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
-                          <a/>
-             <b-button variant="secondary mx-5 button3"><feather-icon size="2x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
-                          <b-button variant="secondary"><feather-icon size="5x" icon="FilePlusIcon" />New
-             ii
-             ii<p>test</p>
-             <p>test</p></b-button>
+   <b-row class="center">
+      <b-col md="2">
+        <b-button type="primary" block class="mb-4" @click="modals.classic = true">Default</b-button>
+
+      </b-col>
+
+      <b-col md="2">
+        <b-button type="warning" block class="mb-3" @click="modals.notice = true">Notification</b-button>
+        </b-col>
+
+      <b-col md="2">
+        <b-button type="default" block class="mb-3" @click="modals.form = true">Form</b-button>
+      </b-col>
+
+      <b-col md="2">
+        <b-button type="default" block class="mb-3" @click="modals.form = true">Form</b-button>
+        <b-button type="default" block class="mb-3" @click="modals.form = true">Form</b-button>
+      </b-col>
+
+       <b-col md="2">
+        <b-button type="default" block class="mb-3" @click="modals.form = true">Form</b-button>
+        <b-button type="default" block class="mb-3" @click="modals.form = true">Form</b-button>
+      </b-col>
+
+  </b-row>
+
     </b-col>
     <b-col class="border" cols="6" md="4">
                     <b-table :items="filteredData" :fields="fields" :small="true">
