@@ -4,8 +4,7 @@
       <b-row>
         <b-col><h1>Sales</h1></b-col>
         <b-col class="d-flex align-items-center">
-          {{ new Date(Date.now()).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}
-          {{ new Date(Date.now()).toLocaleTimeString('en-US') }}
+          {{ timeString }}
         </b-col>
         <b-col class="d-flex align-items-center justify-content-end">
           <div>
@@ -114,6 +113,8 @@ export default {
   },
   mixins: [putOnHold],
   data: () => ({
+    timeString: '',
+    stopClock: false,
     /* fields: initial(Object.keys(sales[0])).concat([{
       key: 'extPrice',
       label: 'Ex. Price'
@@ -152,6 +153,13 @@ export default {
     datetime:
       [].concat(datetime)
   }),
+  mounted () {
+    this.nowTime();
+    const searchInput = document.querySelector('#searchInput');
+    if (searchInput) {
+      searchInput.focus();
+    }
+  },
   computed: {
     sales: {
       get () {
@@ -245,10 +253,19 @@ export default {
     updateQty (value, item) {
       const cartItem = cart.items.find(ci => ci.id === item.id);
       cartItem.quantity = value;
+    },
+    nowTime () {
+      this.timeString = new Date(Date.now()).toLocaleDateString('en-US',
+        { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) +
+        ' ' + new Date(Date.now()).toLocaleTimeString('en-US');
+      if (!this.stopClock) {
+        setTimeout(this.nowTime, 285);
+      }
     }
   },
   beforeDestroy () {
     search.term = '';
+    this.stopClock = true;
   }
 };
 </script>

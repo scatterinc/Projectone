@@ -13,13 +13,16 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="w-100">
         <b-nav-item class="flex-grow-1 search-container">
-          <b-form-input class="search-input" placeholder="Search" v-model="term"
+          <b-form-input class="search-input" placeholder="Search"
+                        ref="searchInput"
+                        id="searchInput"
+                        v-model="term"
                         @keydown.up="changeItemSelection(-1)"
                         autocomplete="off"
                         @keydown.down="changeItemSelection(1)"
                         @keydown.enter="addToCart(selectedItem)"
                         @input="searchItems" />
-          <div class="autocomplete-container" v-if="$route.path === '/sales' && this.filteredItems.length">
+          <div class="autocomplete-container" v-if="$route.path === '/sales' && this.filteredItems.length && this.term.length">
             <b-list-group>
               <b-list-group-item class="d-flex justify-content-between"
                                  v-for="(item, key) in filteredItems"
@@ -152,6 +155,9 @@ export default {
           }
         });
       }
+      this.term = '';
+      this.filteredItems = [];
+      this.$refs.searchInput.focus();
     }
   }
 };
@@ -159,6 +165,9 @@ export default {
 <style scoped lang="scss">
 .navbar-brand {
   width: 195px;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #18bc9c;
 }
 .navbar {
   height: 60px;
