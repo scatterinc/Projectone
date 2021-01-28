@@ -29,7 +29,12 @@
     </div>
     <div class="table-container">
       <perfect-scrollbar>
-        <b-table :items="filteredData" :fields="inventory.cols" :small="true"></b-table>
+        <b-table :items="filteredData"
+        :fields="inventory.cols"
+        :small="true">
+        </b-table>
+    >
+
       </perfect-scrollbar>
     </div>
       <div class="row mx-md-n5">
