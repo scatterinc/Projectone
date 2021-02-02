@@ -85,10 +85,9 @@
                                   <div>Members online</div></div>
                                     </div><div class="mt-3" style="height: 70px;">
                                     </div></div></div>
-<!-----------------------------Need Tao help
-                <container>
+<container>
                   <div class="card" style="--background:#3C3B3D; --text:white;">
-  <div class="multi-button"><--Don't need to say how many buttons there will be, handled on lines 42-93-
+  <div class="multi-button"><!--Don't need to say how many buttons there will be, handled on lines 42-93--->
     <button class="fas fa-heart"></button>
   </div>
   <div class="container"></div>
@@ -115,11 +114,53 @@
     <button class="fas fa-share-alt"></button>
     <button class="fas fa-trash"></button>
   </div>
-  <div class="container"></div>
+  <div class="container"> test</div>
+   <div class="container"> test</div>
 </div>
-                  </container>
-                  https://codepen.io/z00f9eb5633/pen/WNbMjEW
+</container>
+                  <!---https://codepen.io/z00f9eb5633/pen/WNbMjEW
+                  https://codepen.io/rafaelavlucas/pen/rQWJYG
                   ---------->
+ <div class="content">
+      <!-- card -->
+      <div class="card">
+
+            <div class="icon"><i class="material-icons md-36">face</i></div>
+            <p class="title">Profile</p>
+            <p class="text">Click to see or edit your profile page.</p>
+
+      </div>
+      <!-- end card -->
+      <!-- card -->
+      <div class="card">
+
+            <div class="icon"><i class="material-icons md-36">favorite_border</i></div>
+            <p class="title">Favourites</p>
+            <p class="text">Check all your favourites in one place.</p>
+
+      </div>
+      <!-- end card -->
+      <!-- card -->
+      <div class="card">
+
+            <div class="icon"><i class="material-icons md-36">alternate_email</i></div>
+            <p class="title">Contacts</p>
+            <p class="text">Add or change your contacts and links.</p>
+
+      </div>
+      <!-- end card -->
+
+      <!-- card -->
+      <div class="card">
+
+            <div class="icon"><i class="material-icons md-36">alternate_email</i></div>
+            <p class="title">Contacts</p>
+            <p class="text">Add or change your contacts and links.</p>
+
+      </div>
+      <!-- end card -->
+
+   </div>
 
   </div>
 
@@ -180,111 +221,284 @@ export default {
   }
 };
 </script>
+
 <style lang="scss">
 
-</style>
-<style lang="scss">
+.card {
+   width: 100vw;
+   background-color: #cee3f5;
+   margin: 0;
+   font-family: helvetica;
+}
 
-    .card {
-        --background:#FFFFFF;
-        --text:black;
-        position: relative;
-        height:12rem;
-        box-shadow:0 0 2rem -1rem rgba(0,0,0,.05);
-        .multi-button {
-            z-index:0;
-            position: absolute;
-            top:1.25rem;
-            left:1.25rem;
-            border-radius:100%;
-            width:0rem;
-            height:0rem;
-            transform: translate(-50%, -50%);
-            transition: .25s cubic-bezier(0.25, 0, 0, 1);
-            button {
-                display: grid;
-                place-items: center;
-                position: absolute;
-                width:2rem;
-                height:2rem;
-                border:none;
-                border-radius:100%;
-                background:var(--background);
-                color:var(--text);
-                transform: translate(-50%, -50%);
-                cursor: pointer;
-                transition: .25s cubic-bezier(0.25, 0, 0, 1);
-                box-shadow:0 0 0rem -.25rem var(--background);
-                &:hover {
-                    background:var(--text);
-                    color:var(--background);
-                    box-shadow:0 0 1rem -.25rem var(--background);
-                }
-                &:first-child:nth-last-child(1),
-                &:first-child:nth-last-child(1) ~ * { //If there is 1 child
-                    &:nth-child(1) {
-                        left:25%;
-                        top:25%;
-                    }
-                }
-                &:first-child:nth-last-child(2),
-                &:first-child:nth-last-child(2) ~ * { //If there are 2 children
-                    &:nth-child(1) {
-                        left:37.5%;
-                        top:18.75%;
-                    }
-                    &:nth-child(2) {
-                        left:18.75%;
-                        top:37.5%;
-                    }
-                }
-                &:first-child:nth-last-child(3),
-                &:first-child:nth-last-child(3) ~ * { //If there are 3 children
-                    &:nth-child(1) {
-                        left:50%;
-                        top:15.625%;
-                    }
-                    &:nth-child(2) {
-                        left:25%;
-                        top:25%;
-                    }
-                    &:nth-child(3) {
-                        left:15.625%;
-                        top:50%;
-                    }
-                }
-                &:first-child:nth-last-child(4), //If there are 4 children, if first child is also 4th item from bottom get self, and
-                &:first-child:nth-last-child(4) ~ * { //If there are 4 children, if first child is also 4th item from bottom get siblings
-                    &:nth-child(1) {
-                        left:62.5%;
-                        top:18.75%;
-                    }
-                    &:nth-child(2) {
-                        left:37.5%;
-                        top:18.75%;
-                    }
-                    &:nth-child(3) {
-                        left:18.75%;
-                        top:37.5%;
-                    }
-                    &:nth-child(4) {
-                        left:18.75%;
-                        top:62.5%;
-                    }
-                }
+.about {
+   $cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
+   $transition: 0.6s $cubic;
+   $size: 40px;
+   position: fixed;
+   z-index: 10;
+   bottom: 10px;
+   right: 10px;
+   width: $size;
+   height: $size;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   transition: all 0.2s ease;
+
+   .bg_links {
+      width: $size;
+      height: $size;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(#fff, 0.2);
+      border-radius: 100%;
+      backdrop-filter: blur(5px);
+      position: absolute;
+   }
+
+   .logo {
+      width: $size;
+      height: $size;
+      z-index: 9;
+      background-image: url(https://rafaelalucas91.github.io/assets/codepen/logo_white.svg);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: 10px 7px;
+      opacity: 0.9;
+      transition: all 1s 0.2s ease;
+      bottom: 0;
+      right: 0;
+   }
+
+   .social {
+      opacity: 0;
+      right: 0;
+      bottom: 0;
+
+      .icon {
+         width: 100%;
+         height: 100%;
+         background-size: 20px;
+         background-repeat: no-repeat;
+         background-position: center;
+         background-color: transparent;
+         display: flex;
+         transition: all 0.2s ease, background-color 0.4s ease;
+         opacity: 0;
+         border-radius: 100%;
+      }
+
+      &.portfolio {
+         transition: all 0.8s ease;
+
+         .icon {
+            background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg);
+         }
+      }
+
+      &.dribbble {
+         transition: all 0.3s ease;
+         .icon {
+            background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg);
+         }
+      }
+
+      &.linkedin {
+         transition: all 0.8s ease;
+         .icon {
+            background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg);
+         }
+      }
+   }
+
+   &:hover {
+      width: 105px;
+      height: 105px;
+      transition: all $transition;
+
+      .logo {
+         opacity: 1;
+         transition: all 0.6s ease;
+      }
+
+      .social {
+         opacity: 1;
+
+         .icon {
+            opacity: 0.9;
+         }
+
+         &:hover {
+            background-size: 28px;
+            .icon {
+               background-size: 65%;
+               opacity: 1;
             }
-        }
-        .container {
-            position: absolute;
-            width:100%;
-            height:100%;
-            border-radius:1rem;
-            background:var(--background);
-            color:var(--text);
-        }
-        &:hover .multi-button, .multi-button:focus-within { //Hover or a button inside is focused
-            width:10rem;
-            height:10rem;
-        }
-    }
+         }
+
+         &.portfolio {
+            right: 0;
+            bottom: calc(100% - 40px);
+            transition: all 0.3s 0s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #698fb7;
+               }
+            }
+         }
+
+         &.dribbble {
+            bottom: 45%;
+            right: 45%;
+            transition: all 0.3s 0.15s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #ea4c89;
+               }
+            }
+         }
+
+         &.linkedin {
+            bottom: 0;
+            right: calc(100% - 40px);
+            transition: all 0.3s 0.25s $cubic;
+            .icon {
+               &:hover {
+                  background-color: #0077b5;
+               }
+            }
+         }
+      }
+   }
+}
+
+.wrapper {
+   width: 100vw;
+   margin: 0 auto;
+   height: 400px;
+   background-color: #161616;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+   .wrapper {
+      height: 700px;
+   }
+}
+
+.content {
+   max-width: 1024px;
+   width: 100%;
+   padding: 0 4%;
+   padding-top: 250px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+   .content {
+      padding-top: 300px;
+      flex-direction: column;
+   }
+}
+
+.card {
+   width: 100%;
+   max-width: 300px;
+   min-width: 200px;
+   height: 250px;
+   background-color: #292929;
+   margin: 10px;
+   border-radius: 10px;
+   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+   border: 2px solid rgba(7, 7, 7, 0.12);
+   font-size: 16px;
+   transition: all 0.3s ease;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.icon {
+   margin: 0 auto;
+   width: 100%;
+   height: 80px;
+   max-width:80px;
+   background: linear-gradient(90deg, #FF7E7E 0%, #FF4848 40%, rgba(0, 0, 0, 0.28) 60%);
+   border-radius: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   transition: all 0.8s ease;
+   background-position: 0px;
+   background-size: 200px;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.card .title {
+   width: 100%;
+   margin: 0;
+   text-align: center;
+   margin-top: 30px;
+   color: white;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+}
+
+.card .text {
+   width: 80%;
+   margin: 0 auto;
+   font-size: 13px;
+   text-align: center;
+   margin-top: 20px;
+   color: white;
+   font-weight: 200;
+   letter-spacing: 2px;
+   opacity: 0;
+   max-height:0;
+   transition: all 0.3s ease;
+}
+
+.card:hover {
+   height: 270px;
+}
+
+.card:hover .info {
+   height: 90%;
+}
+
+.card:hover .text {
+   transition: all 0.3s ease;
+   opacity: 1;
+   max-height:40px;
+}
+
+.card:hover .icon {
+   background-position: -120px;
+   transition: all 0.3s ease;
+}
+
+.card:hover .icon i {
+   opacity: 1;
+   transition: all 0.3s ease;
+}
 </style>
