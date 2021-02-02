@@ -1,6 +1,6 @@
 <template>
-  <b-modal id="modal-center" centered title="Add Item">
-    <p class="my-1">Item Name
+  <b-modal id="modal-center" size="lg" centered title="Add Item">
+    <p class="my-4">Item Name
       <b-input />
       <b-row bordertop="black">
         <!---Leftside-->
