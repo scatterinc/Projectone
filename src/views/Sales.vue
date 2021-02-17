@@ -78,7 +78,7 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col class="text-left">
-          <b-button variant="light">
+          <b-button v-b-modal.modal-sm  variant="light">
             <feather-icon size="1x" icon="MoreHorizontalIcon"/>
           </b-button>
         </b-col>
@@ -87,6 +87,9 @@
         </b-col>
       </b-row>
     </b-container>
+
+ <b-modal id="modal-sm" size="sm" title="Small Modal">Hello Small Modal!</b-modal>
+
   </div>
 </template>
 <script>

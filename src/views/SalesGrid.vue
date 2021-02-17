@@ -134,6 +134,7 @@
 </template>
 <script>
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
+import saleDnaDropdown from '@/util/saleDnaDropdown';
 import userDropdown from '@/util/userDropdown';
 
 export default {
@@ -148,19 +149,7 @@ export default {
     fields: [
       'name', 'QTY', 'extPrice'
     ],
-    dropdownBar: [{
-      name: '',
-      icon: 'CropIcon',
-      expanded: true,
-      items: [
-        { name: 'Test', icon: 'FileTextIcon' },
-        { name: 'Test1', icon: 'FileTextIcon' },
-        null,
-        { name: 'Test2', icon: 'FileTextIcon' },
-        null,
-        { name: 'Test3', icon: 'FileTextIcon' }
-      ]
-    }].concat(userDropdown)
+    dropdownBar: [].concat(saleDnaDropdown, userDropdown)
   }),
   mounted () {
     this.nowTime();
