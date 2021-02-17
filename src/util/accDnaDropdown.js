@@ -3,7 +3,7 @@ export default {
   icon: 'CropIcon',
   expanded: true,
   items: [
-    { name: 'Chart Of Account', icon: 'FileTextIcon' },
+    { name: 'Chart Of Account', icon: 'FileTextIcon', to: '/ChartofAccounts' },
     { name: 'Items', icon: 'FileTextIcon' },
     { name: 'Template', icon: 'AwardIcon' },
     null,

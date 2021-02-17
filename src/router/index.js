@@ -84,6 +84,12 @@ const routes = [
     icon: 'SettingsIcon'
   },
   {
+    path: '/chartofaccounts',
+    name: 'ChartofAccounts',
+    component: () => import(/* webpackChunkName: "chartofaccounts" */ '../views/ChartofAccounts.vue'),
+    icon: 'SettingsIcon'
+  },
+  {
     path: '/salesgrid',
     name: 'SalesGrid',
     component: () => import(/* webpackChunkName: "salesgrid" */ '../views/SalesGrid.vue'),

@@ -20,7 +20,7 @@
   </b-container>
   <p class="border-top"></p>
 
-<div class="header pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success bg-success">
+<div class="header pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success bg-light">
   <div class="container-fluid">
     <div class="header-body">
       <div class="row">
