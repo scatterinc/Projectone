@@ -22,25 +22,15 @@
           </v-button>
           <b-row variant="transparent">
     <b-col class="border" cols="12" md="8">
-              <div class="col-md-6 col-xl-3"
-        ><div class="card card-stats mb-4" show-footer-line="true"><!----><!----><!---->
-        <div class="card-body"><!----><!---->
-        <div class="row"><div class="col"
-        ><h5 class="card-title text-uppercase text-muted mb-0">Total traffic</h5><span class="h2 font-weight-bold mb-0">350,897</span>
-        </div><div class="col-auto">
-          <div class="icon icon-shape text-white rounded-circle shadow bg-gradient-red">
-            <i class="ni ni-active-40"></i></div></div></div>
-            <p class="mt-3 mb-0 text-sm"><span class="text-success mr-2">3.48%</span><span class="text-nowrap">Since last month</span>
-            </p></div><!----><!----><!----><!----></div></div>
 
    <b-row class="center row container-fluid">
         <div class="row container-fluid">
 
             <div class="col-sm-6 col-lg-3 mt-3">
 
-            <div class="card bg-primary text-white">
+            <div class="card fluid bg-primary text-white">
               <div class="multi-button">
-              <div class="card-body pb-0 d-flex justify-content-between">
+              <div class="card-body pb-1 md-flex justify-content-between">
                 <div>
                   <div class="text-value-lg">9.823
                     </div>
@@ -48,7 +38,7 @@
                       </div>
                       </div>
                     </div>
-                    <div class="mt-3 mx-3" style="height: 70px;">
+                    <div class="mt-2 mx-2" style="height: 35px;">
                     </div>
                     </div>
                     </div>
@@ -59,7 +49,7 @@
                           <div class="card-body pb-0 d-flex justify-content-between">
                           <div><div class="text-value-lg">9.823</div><div>Members online</div></div>
                           </div>
-                              <div class="mt-3 mx-3" style="height: 70px;">
+                              <div class="mt-3 mx-3" style="height: 50px;">
                                 </div></div></div>
 
                             <div class="col-sm-6 col-lg-3 mt-3">
@@ -75,7 +65,7 @@
                                       <div class="text-value-lg">9.823</div>
                                   <div>Members online</div></div>
                                   </div>
-                                      <div class="mt-3 mx-3" style="height: 70px;">
+                                      <div class="mt-3 mx-3" style="height: 50px;">
                                         </div></div>
                                         </div>
 
@@ -85,82 +75,46 @@
                                   <div>Members online</div></div>
                                     </div><div class="mt-3" style="height: 70px;">
                                     </div></div></div>
-<container>
-                  <div class="card" style="--background:#3C3B3D; --text:white;">
-  <div class="multi-button"><!--Don't need to say how many buttons there will be, handled on lines 42-93--->
-    <button class="fas fa-heart"></button>
-  </div>
-  <div class="container"></div>
-</div>
-<div class="card">
-  <div class="multi-button">
-    <button class="fas fa-heart"></button>
-    <button class="fas fa-clipboard"></button>
-  </div>
-  <div class="container"></div>
-</div>
-<div class="card" style="--background:#EC87C0; --text:white;">
-  <div class="multi-button">
-    <button class="fas fa-heart"></button>
-    <button class="fas fa-comment"></button>
-    <button class="fas fa-share-alt"></button>
-  </div>
-  <div class="container"></div>
-</div>
-<div class="card" style="--background:#5D9CEC; --text:white;">
-  <div class="multi-button">
-    <button class="fas fa-heart"></button>
-    <button class="fas fa-comment"></button>
-    <button class="fas fa-share-alt"></button>
-    <button class="fas fa-trash"></button>
-  </div>
-  <div class="container"> test</div>
-   <div class="container"> test</div>
-</div>
-</container>
-                  <!---https://codepen.io/z00f9eb5633/pen/WNbMjEW
-                  https://codepen.io/rafaelavlucas/pen/rQWJYG
-                  ---------->
- <div class="content">
-      <!-- card -->
-      <div class="card">
 
-            <div class="icon"><i class="material-icons md-36">face</i></div>
-            <p class="title">Profile</p>
-            <p class="text">Click to see or edit your profile page.</p>
+                                  <div class="col-sm-6 col-lg-3 mt-3">
+                                    <div class="card bg-danger text-white"><div class="card-body pb-0 d-flex justify-content-between">
+                                    <div>
+                                      <div class="text-value-lg">9.823</div>
+                                  <div>Members online</div></div>
+                                  </div>
+                                      <div class="mt-3 mx-3" style="height: 50px;">
+                                        </div></div>
+                                        </div>
 
-      </div>
-      <!-- end card -->
-      <!-- card -->
-      <div class="card">
+                                                                          <div class="col-sm-6 col-lg-3 mt-3">
+                                    <div class="card bg-danger text-white"><div class="card-body pb-0 d-flex justify-content-between">
+                                    <div>
+                                      <div class="text-value-lg">9.823</div>
+                                  <div>Members online</div></div>
+                                  </div>
+                                      <div class="mt-3 mx-3" style="height: 50px;">
+                                        </div></div>
+                                        </div>
 
-            <div class="icon"><i class="material-icons md-36">favorite_border</i></div>
-            <p class="title">Favourites</p>
-            <p class="text">Check all your favourites in one place.</p>
+                                                                          <div class="col-sm-6 col-lg-3 mt-3">
+                                    <div class="card bg-danger text-white"><div class="card-body pb-0 d-flex justify-content-between">
+                                    <div>
+                                      <div class="text-value-lg">9.823</div>
+                                  <div>Members online</div></div>
+                                  </div>
+                                      <div class="mt-3 mx-3" style="height: 50px;">
+                                        </div></div>
+                                        </div>
 
-      </div>
-      <!-- end card -->
-      <!-- card -->
-      <div class="card">
-
-            <div class="icon"><i class="material-icons md-36">alternate_email</i></div>
-            <p class="title">Contacts</p>
-            <p class="text">Add or change your contacts and links.</p>
-
-      </div>
-      <!-- end card -->
-
-      <!-- card -->
-      <div class="card">
-
-            <div class="icon"><i class="material-icons md-36">alternate_email</i></div>
-            <p class="title">Contacts</p>
-            <p class="text">Add or change your contacts and links.</p>
-
-      </div>
-      <!-- end card -->
-
-   </div>
+                                                                          <div class="col-sm-6 col-lg-3 mt-3">
+                                    <div class="card bg-danger text-white"><div class="card-body pb-0 d-flex justify-content-between">
+                                    <div>
+                                      <div class="text-value-lg">9.823</div>
+                                  <div>Members online</div></div>
+                                  </div>
+                                      <div class="mt-3 mx-3" style="height: 50px;">
+                                        </div></div>
+                                        </div>
 
   </div>
 
@@ -259,62 +213,7 @@ export default {
       position: absolute;
    }
 
-   .logo {
-      width: $size;
-      height: $size;
-      z-index: 9;
-      background-image: url(https://rafaelalucas91.github.io/assets/codepen/logo_white.svg);
-      background-size: 50%;
-      background-repeat: no-repeat;
-      background-position: 10px 7px;
-      opacity: 0.9;
-      transition: all 1s 0.2s ease;
-      bottom: 0;
-      right: 0;
-   }
-
-   .social {
-      opacity: 0;
-      right: 0;
-      bottom: 0;
-
-      .icon {
-         width: 100%;
-         height: 100%;
-         background-size: 20px;
-         background-repeat: no-repeat;
-         background-position: center;
-         background-color: transparent;
-         display: flex;
-         transition: all 0.2s ease, background-color 0.4s ease;
-         opacity: 0;
-         border-radius: 100%;
-      }
-
-      &.portfolio {
-         transition: all 0.8s ease;
-
-         .icon {
-            background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg);
-         }
-      }
-
-      &.dribbble {
-         transition: all 0.3s ease;
-         .icon {
-            background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg);
-         }
-      }
-
-      &.linkedin {
-         transition: all 0.8s ease;
-         .icon {
-            background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg);
-         }
-      }
-   }
-
-   &:hover {
+      &:hover {
       width: 105px;
       height: 105px;
       transition: all $transition;
@@ -385,12 +284,6 @@ export default {
    align-items: center;
    position: relative;
    transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 767px) {
-   .wrapper {
-      height: 700px;
-   }
 }
 
 .content {
