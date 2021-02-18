@@ -263,27 +263,6 @@ export default {
             }
          }
 
-         &.dribbble {
-            bottom: 45%;
-            right: 45%;
-            transition: all 0.3s 0.15s $cubic;
-            .icon {
-               &:hover {
-                  background-color: #ea4c89;
-               }
-            }
-         }
-
-         &.linkedin {
-            bottom: 0;
-            right: calc(100% - 40px);
-            transition: all 0.3s 0.25s $cubic;
-            .icon {
-               &:hover {
-                  background-color: #0077b5;
-               }
-            }
-         }
       }
    }
 }

@@ -105,7 +105,6 @@ import editingModal from '@/store/editingModal';
 import cart from '@/store/cart';
 import datetime from '@/util/datetime';
 import { formatCurrency } from '../util/helpers';
-// import Saleviewswitch from '../components/Saleviewswitch.vue';
 
 export default {
   name: 'Sales',
@@ -114,7 +113,6 @@ export default {
     SalesActions,
     FeatherIcon,
     DropdownBarItem
-    // Saleviewswitch
   },
   mixins: [putOnHold],
   data: () => ({
