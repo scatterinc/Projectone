@@ -116,6 +116,31 @@
                                         </div></div>
                                         </div>
 
+                                                              <div class="col-sm-6 col-lg-3 mt-3">
+                        <div class="card bg-info text-white">
+                          <div class="card-body pb-0 d-flex justify-content-between">
+                          <div><div class="text-value-lg">9.823</div><div>Members online</div></div>
+                          </div>
+                              <div class="mt-3 mx-3" style="height: 50px;">
+                                </div></div></div>
+
+                            <div class="col-sm-6 col-lg-3 mt-3">
+                              <div class="card bg-warning text-white"><div class="card-body pb-0 d-flex justify-content-between">
+                              <div><div class="text-value-lg">9.823</div>
+                              <div>Members online</div></div>
+                                </div><div class="mt-3" style="height: 70px;">
+                                 </div></div></div>
+
+                                  <div class="col-sm-6 col-lg-3 mt-3">
+                                    <div class="card bg-danger text-white"><div class="card-body pb-0 d-flex justify-content-between">
+                                    <div>
+                                      <div class="text-value-lg">9.823</div>
+                                  <div>Members online</div></div>
+                                  </div>
+                                      <div class="mt-3 mx-3" style="height: 50px;">
+                                        </div></div>
+                                        </div>
+
   </div>
 
   </b-row>

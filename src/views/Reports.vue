@@ -26,7 +26,13 @@
   </div>
 </template>
 <script>
-import { repAccDropdown, repCusDropdown, repDnaDropdown, repEmpDropdown, repInvDropdown, repSalDropdown, userDropdown } from '@/util/';
+import repAccDropdown from '@/util/repAccDropdown';
+import repSalDropdown from '@/util/repSalDropdown';
+import repEmpDropdown from '@/util/repEmpDropdown';
+import repInvDropdown from '@/util/repInvDropdown';
+import repCusDropdown from '@/util/repCusDropdown';
+import repDnaDropdown from '@/util/repDnaDropdown';
+import userDropdown from '@/util/userDropdown';
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
 
 export default {
