@@ -9,12 +9,12 @@
     <b-tab title="Basic Info" active><p>
 
        <b-container fluid >
-    <b-row class="my-1" v-for="type in types" :key="type">
+    <b-row class="my-1" v-for="(field, label) in fields" :key="label">
       <b-col sm="3">
-        <label :for="`type-${type}`">Type <code>{{ type }}</code>:</label>
+        <label :for="`type-${field.type}`">{{ label }}:</label>
       </b-col>
       <b-col sm="9">
-        <b-form-input :id="`type-${type}`" :type="type"></b-form-input>
+        <b-form-input :id="`type-${filed.type}`" v-model="field.model" :type="field.type"></b-form-input>
       </b-col>
     </b-row>
   </b-container>
@@ -61,33 +61,17 @@
 <script>
 export default {
   name: 'AddInventoryItem.vue',
-  data () {
-    return {
-      types: [
-        'text',
-        'test',
-        'text',
-        'text',
-        'text',
-        'number',
-        'number',
-        'number',
-        'number'
-
-      ],
-      Invinfo: [
-        'Type',
-        'Department',
-        'Item Description',
-        'Size',
-        'Attributes',
-        'Price',
-        'Cost',
-        'Tax',
-        'UPC'
-      ]
-    };
-  }
+  data: () => ({
+    fields: {
+      Type: { type: 'text', model: '' },
+      Department: { type: 'text', model: '' },
+      Item_Description: { type: 'text', model: '' },
+      Size: { type: 'text', model: '' },
+      Attributes: { type: 'number', model: '' },
+      Tax: { type: 'text', model: '' },
+      UPC: { type: 'text', model: '' }
+    }
+  })
 };
 </script>
 

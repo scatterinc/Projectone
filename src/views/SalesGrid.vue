@@ -152,6 +152,8 @@
             {{ formatCurrency(item.quantity * item.price) }}
           </template>
         </b-table>
+
+        <b-button size="lg"/>
     </b-col>
           </b-row>
     </div>
@@ -387,4 +389,38 @@ export default {
    opacity: 1;
    transition: all 0.3s ease;
 }
+.salesGrid {
+  .table-header-borders {
+    height: 34px;
+  }
+  .table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    height: 400px;
+
+    .ps {
+      height: 400px;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background-color: white;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+    }
+
+    .btn-space {
+      margin-right: 5px;
+    }
+  }
+}
+
 </style>

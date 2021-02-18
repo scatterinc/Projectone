@@ -71,6 +71,7 @@ export default {
     inventory,
     dropdownBar: []
       .concat(invRecDropdown, invDnaDropdown, userDropdown)
+
   }),
   computed: {
     term () {
