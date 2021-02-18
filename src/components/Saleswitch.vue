@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Saleviewswitch.vue'
+  name: 'Saleswitch.vue'
 };
 </script>
 <style scoped>

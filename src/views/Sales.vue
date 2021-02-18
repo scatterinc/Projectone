@@ -105,14 +105,17 @@ import editingModal from '@/store/editingModal';
 import cart from '@/store/cart';
 import datetime from '@/util/datetime';
 import { formatCurrency } from '../util/helpers';
+/* import Saleswitch from '../components/Saleswitch.vue'; */
 
 export default {
   name: 'Sales',
-  // eslint-disable-next-line vue/no-unused-components
+  /* eslint-disable-next-line vue/no-unused-components */
   components: {
     SalesActions,
     FeatherIcon,
     DropdownBarItem
+    /* Saleswitch */
+
   },
   mixins: [putOnHold],
   data: () => ({
