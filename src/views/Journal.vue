@@ -26,6 +26,33 @@
     </b-row>
   </b-container>
   <p class="border-top"></p>
+
+  <b-row>
+    <b-col> <b>Date </b>
+        <b-input-group class="mb-3">
+      <b-form-input
+        id="example-input"
+        v-model="value"
+        type="text"
+        placeholder="YYYY-MM-DD"
+        autocomplete="off"
+      ></b-form-input>
+      <b-input-group-append>
+        <b-form-datepicker
+          v-model="value"
+          button-only
+          right
+          locale="en-US"
+          aria-controls="example-input"
+          @context="onContext"
+        ></b-form-datepicker>
+      </b-input-group-append>
+    </b-input-group>
+  </b-col>
+    <b-col>2 of 3</b-col>
+    <b-col>3 of 3</b-col>
+  </b-row>
+
   </div>
 </template>
 <script>

@@ -60,8 +60,8 @@
 
 <script>
 export default {
-  name: 'AddInventoryItem.vue',
-  data: () => ({
+  name: 'AddInventoryItem.vue'
+  /* data: () => ({
     fields: {
       Type: { type: 'text', model: '' },
       Department: { type: 'text', model: '' },
@@ -71,7 +71,7 @@ export default {
       Tax: { type: 'text', model: '' },
       UPC: { type: 'text', model: '' }
     }
-  })
+  }) */
 };
 </script>
 
