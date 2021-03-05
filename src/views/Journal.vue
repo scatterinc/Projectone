@@ -27,30 +27,59 @@
   </b-container>
   <p class="border-top"></p>
 
-  <b-row>
-    <b-col> <b>Date </b>
-        <b-input-group class="mb-3">
+<!-----First Row--->
+  <b-row class="fluid">
+    <b-col class=text-right> <b>Date </b>
+       </b-col>
+    <b-col>
+        <b-input-group class="mb-2">
       <b-form-input
         id="example-input"
+        class="mx-5"
         v-model="value"
-        type="text"
+        type="date"
         placeholder="YYYY-MM-DD"
         autocomplete="off"
       ></b-form-input>
-      <b-input-group-append>
-        <b-form-datepicker
-          v-model="value"
-          button-only
-          right
-          locale="en-US"
-          aria-controls="example-input"
-          @context="onContext"
-        ></b-form-datepicker>
-      </b-input-group-append>
+
     </b-input-group>
   </b-col>
-    <b-col>2 of 3</b-col>
-    <b-col>3 of 3</b-col>
+    <b-col><!---leave blank--></b-col>
+    <b-col class="text-right">Debit</b-col>
+    <b-col class="border mb-2 mx-4 text-right">$10,000</b-col>
+  </b-row>
+
+   <!-----Row Two--->
+<!-----First Row--->
+  <b-row>
+    <b-col class=text-right> <b>Jounral Entry No. </b>
+       </b-col>
+    <b-col>
+        <b-input-group class="mb-2">
+      <b-form-input
+        id="example-input"
+        class="mx-5"
+        v-model="value"
+        type="text"
+        placeholder=""
+        autocomplete="off"
+      ></b-form-input>
+       </b-input-group>
+  </b-col>
+    <b-col><!---leave blank--></b-col>
+    <b-col class="text-right">Credit</b-col>
+    <b-col class="border mb-2 mx-4 text-right">-$10,000</b-col>
+  </b-row>
+   <!-----First Row--->
+  <b-row>
+    <b-col class=text-right> <b>Adjusted Entry </b>
+       </b-col>
+    <b-col >
+<b-form-checkbox class="mx-4" ></b-form-checkbox>
+  </b-col>
+    <b-col><!---leave blank--></b-col>
+    <b-col class="text-right">Difference</b-col>
+    <b-col class="border mx-4 text-right">$0,00</b-col>
   </b-row>
 
   </div>
