@@ -1,5 +1,5 @@
 <template>
-  <b-modal id="modal-center" size="lg" centered title="Add Inventory Item">
+  <b-modal id="modal-center" size="lg" centered title="Add Recipe">
     <p class="md-1"><b>Item Name</b>
       <b-input />
 </p>
@@ -34,11 +34,7 @@
     <b-col class='text-right' cols="3"> Price</b-col>
     <b-col cols="6"><b-input/></b-col>
   </b-row>
-      <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> Cost </b-col>
-    <b-col cols="6"><b-input/></b-col>
-  </b-row>
-        <b-row class='mb-2'>
+       <b-row class='mb-2'>
     <b-col class='text-right' cols="3"> UPC </b-col>
     <b-col cols="6"><b-input/></b-col>
   </b-row>
@@ -53,41 +49,57 @@
   </b-row>
       </p></b-tab>
       <!-----Second tab--->
-    <b-tab title="More Info">
-       <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> Item Description</b-col>
-    <b-col cols="6">
-        <b-form-textarea
-      id="textarea"
-      v-model="text"
-      placeholder="Enter something..."
-      rows="3"
-      max-rows="3"
-    ></b-form-textarea>
+    <b-tab title="Ingredients">
 
-    </b-col>
- </b-row>
       <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> Vendor</b-col>
-    <b-col cols="6"><b-input/></b-col>
-    <b-col class='text-left' cols="2"> <b-btn variant="transparent"><feather-icon size="1x" icon="PlusCircleIcon"/></b-btn></b-col>
+    <b-col class='text-center' cols="5"> <b>Item </b></b-col>
+    <b-col class='text-center' cols="2">Quantity</b-col>
+    <b-col class='text-center' cols="2">cost</b-col>
+    <b-col class='text-center' cols="2">Ext Cost</b-col>
+      </b-row>
+           <b-row class='mb-2'>
+    <b-col class='text-center' cols="5"><b-input/></b-col>
+    <b-col class='text-center' cols="2"><b-input/></b-col>
+    <b-col class='text-center' cols="2">$20</b-col>
+    <b-col class='text-center' cols="2">{{RecipeExtCost}}</b-col>
+      </b-row>
+        <b-row class='mb-2'>
+    <b-col class='text-center' cols="5"><b-input/></b-col>
+    <b-col class='text-center' cols="2"><b-input/></b-col>
+    <b-col class='text-center' cols="2">$20</b-col>
+    <b-col class='text-center' cols="2">{{RecipeExtCost}}</b-col>
+      </b-row>
+              <b-row class='mb-2'>
+    <b-col class='text-center' cols="5"><b-input/></b-col>
+    <b-col class='text-center' cols="2"><b-input/></b-col>
+    <b-col class='text-center' cols="2">$20</b-col>
+    <b-col class='text-center' cols="2">{{RecipeExtCost}}</b-col>
+      </b-row>
+              <b-row class='mb-2'>
+    <b-col class='text-center' cols="5"><b-input/></b-col>
+    <b-col class='text-center' cols="2"><b-input/></b-col>
+    <b-col class='text-center' cols="2">$20</b-col>
+    <b-col class='text-center' cols="2">{{RecipeExtCost}}</b-col>
+      </b-row>
+              <b-row class='mb-2'>
+    <b-col class='text-center' cols="5"><b-input/></b-col>
+    <b-col class='text-center' cols="2"><b-input/></b-col>
+    <b-col class='text-center' cols="2">$20</b-col>
+    <b-col class='text-center' cols="2">{{RecipeExtCost}}</b-col>
+      </b-row>
+              <b-row class='mb-2'>
+    <b-col class='text-center' cols="5"><b-input/></b-col>
+    <b-col class='text-center' cols="2"><b-input/></b-col>
+    <b-col class='text-center' cols="2">$20</b-col>
+    <b-col class='text-center' cols="2">{{RecipeExtCost}}</b-col>
+      </b-row>
+      <a class="border-top"/>
+              <b-row class='mb-1'>
+                <b-col class='text-center' cols="2"><!---blank---></b-col>
+    <b-col class='text-center' cols="2"><!---blank---></b-col>
+    <b-col class='text-right' cols="4" style="color:red"> <b>Total Cost</b> </b-col>
+    <b-col  class='text-right' cols="3" style="color:red"><b>$25,000</b></b-col>
   </b-row>
-     <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> Manufacturer</b-col>
-    <b-col cols="6"><b-input/></b-col>
-  </b-row>
-       <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> Reorder Point</b-col>
-    <b-col cols="6"><b-input/></b-col>
-  </b-row>
-       <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> Item Image</b-col>
-    <b-col cols="6">
-<b-img src='../assets/img.png' width="150px" height="150px"></b-img>
-
-    </b-col>
-  </b-row>
-
   </b-tab>
 <!-----Third tab--->
    <b-tab title="Notes">
@@ -106,21 +118,6 @@
  </b-row>
    </b-tab>
 
-<!----- Fourth tab--->
-  <b-tab title="Pricing">
-         <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> Regular Price</b-col>
-    <b-col cols="6"><b-input/></b-col>
-         </b-row>
-           <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> WholeSale Price</b-col>
-    <b-col cols="6"><b-input/></b-col>
-     </b-row>
-           <b-row class='mb-2'>
-    <b-col class='text-right' cols="3"> Sales Price</b-col>
-    <b-col cols="6"><b-input/></b-col>
-     </b-row>
-    </b-tab>
      <!-----Final Tab tab--->
     <b-tab title="Margins">
              <b-row class='mb-2'>
@@ -146,18 +143,7 @@
 
 <script>
 export default {
-  name: 'AddInventoryItem.vue',
-  /* data: () => ({
-    fields: {
-      Type: { type: 'text', model: '' },
-      Department: { type: 'text', model: '' },
-      Item_Description: { type: 'text', model: '' },
-      Size: { type: 'text', model: '' },
-      Attributes: { type: 'number', model: '' },
-      Tax: { type: 'text', model: '' },
-      UPC: { type: 'text', model: '' }
-    }
-  }) */
+  name: 'AddRecipe.vue',
   data () {
     return {
       selected: 'Yes',

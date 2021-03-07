@@ -5,6 +5,6 @@ export default {
   items: [
     { name: 'Add Recipe', icon: 'PlusCircleIcon' },
     null,
-    { name: 'All Recipe', icon: 'ListIcon' }
+    { name: 'All Recipe', icon: 'ListIcon', to: '/recipe' }
   ]
 };

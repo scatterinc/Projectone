@@ -30,24 +30,14 @@
 <script>
 // @ is an alias to /src
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
+import calendarPickerDropdown from '@/util/calendarPickerDropdown';
 import userDropdown from '@/util/userDropdown';
+
 export default {
   components: { DropdownBarItem },
   name: 'Home',
   data: () => ({
-    dropdownBar: [{
-      name: 'Today',
-      icon: 'CalendarIcon',
-      expanded: true,
-      items: [
-        { name: 'This Week', icon: 'CalendarIcon' },
-        { name: 'This Month', icon: 'CalendarIcon' },
-        null,
-        { name: 'This Year', icon: 'CalendarIcon' },
-        null,
-        { name: 'Custom', icon: 'CalendarIcon' }
-      ]
-    }].concat(userDropdown),
+    dropdownBar: [].concat(calendarPickerDropdown, userDropdown), /** why is this not working, but works in other */
     items: []
   }),
   mounted () {

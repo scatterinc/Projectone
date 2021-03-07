@@ -24,6 +24,13 @@
           </b-row>
         </b-container>
         <p class="border-top"></p>
+          <b-row>
+<!----Items count --->
+    <b-col cols="2" style="color:red"><h6><i>Total Item(s)</i></h6></b-col>
+    <b-col cols="3" class=" mx-2 text-left"><b>0</b></b-col>
+
+  </b-row>
+
         <div class="position-relative">
       <div class="table-header-borders"></div>
     </div>
@@ -37,10 +44,7 @@
 
       </perfect-scrollbar>
     </div>
-      <div class="row mx-md-n5">
-  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Items 100</b></div></div>
-  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Cost $10,000</b></div></div>
-  </div>
+
   <!-----------------This is just a test to remove--->
           <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
       <div class="px-3 py-2">

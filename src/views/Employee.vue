@@ -12,37 +12,10 @@
         </b-col>
         <b-col class="text-right">
            <div>
-              <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="FileTextIcon" /> Scheduling</b-dropdown-item>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LayersIcon" /> Tasks</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="WatchIcon" /> Time Sheet</b-dropdown-item>
-               <b-dropdown-divider></b-dropdown-divider>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="SmileIcon" /> Raise & Promotion</b-dropdown-item>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="ClockIcon" /> Payroll</b-dropdown-item>
-               <b-dropdown-divider></b-dropdown-divider>
-               <b-dropdown-item href="#"><feather-icon size="1x" icon="ToolIcon" /> Settings</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="CropIcon" />
-              </template>
-            </b-dropdown>
-                <b-dropdown variant="transparent">
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="SettingsIcon" /> Settings</b-dropdown-item>
-               <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="BellIcon" /> Notification
-                <b-badge variant="info" pill>14</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-item href="#"> <feather-icon size="1x" icon="MessageSquareIcon" /> Message
-                <b-badge variant="info" pill>6</b-badge>
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LogOutIcon" /> Logout</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item href="#"><feather-icon size="1x" icon="LockIcon" /> Lock</b-dropdown-item>
-              <template #button-content>
-                <feather-icon size="1x" icon="UserIcon" /> John Doe
-              </template>
-            </b-dropdown>
+
+                             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
+                               v-bind="dd"
+                               :key="key" />
           </div>
         </b-col>
           </b-row>
@@ -51,8 +24,15 @@
         </div>
 </template>
 <script>
+import DropdownBarItem from '@/components/DropdownBarItem.vue';
 import FeatherIcon from '@/components/FeatherIcon';
+import empDnaDropdown from '@/util/empDnaDropdown';
+import userDropdown from '@/util/userDropdown';
+
 export default {
-  components: { FeatherIcon }
+  components: { DropdownBarItem, FeatherIcon },
+  data: () => ({
+    dropdownBar: [].concat(empDnaDropdown, userDropdown)
+  })
 };
 </script>
