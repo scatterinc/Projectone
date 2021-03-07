@@ -4,7 +4,8 @@
       <b-row>
         <b-col><h1>Sales</h1></b-col>
         <b-col class="d-flex align-items-center">
-          {{ timeString }}
+          {{ new Date(Date.now()).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}
+          {{ new Date(Date.now()).toLocaleTimeString('en-US') }}
         </b-col>
         <b-col class="d-flex align-items-center justify-content-end">
           <div>
@@ -78,7 +79,7 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col class="text-left">
-          <b-button v-b-modal.modal-sm  variant="light">
+          <b-button variant="light">
             <feather-icon size="1x" icon="MoreHorizontalIcon"/>
           </b-button>
         </b-col>
@@ -87,9 +88,6 @@
         </b-col>
       </b-row>
     </b-container>
-
-<b-modal id="modal-sm" size="sm" centered title="Saleviewswitch">Hello Small Modal!</b-modal>
-
   </div>
 </template>
 <script>
@@ -105,22 +103,17 @@ import editingModal from '@/store/editingModal';
 import cart from '@/store/cart';
 import datetime from '@/util/datetime';
 import { formatCurrency } from '../util/helpers';
-/* import Saleswitch from '../components/Saleswitch.vue'; */
 
 export default {
   name: 'Sales',
-  /* eslint-disable-next-line vue/no-unused-components */
+  // eslint-disable-next-line vue/no-unused-components
   components: {
     SalesActions,
     FeatherIcon,
     DropdownBarItem
-    /* Saleswitch */
-
   },
   mixins: [putOnHold],
   data: () => ({
-    timeString: '',
-    stopClock: false,
     /* fields: initial(Object.keys(sales[0])).concat([{
       key: 'extPrice',
       label: 'Ex. Price'
@@ -159,13 +152,6 @@ export default {
     datetime:
       [].concat(datetime)
   }),
-  mounted () {
-    this.nowTime();
-    const searchInput = document.querySelector('#searchInput');
-    if (searchInput) {
-      searchInput.focus();
-    }
-  },
   computed: {
     sales: {
       get () {
@@ -259,19 +245,10 @@ export default {
     updateQty (value, item) {
       const cartItem = cart.items.find(ci => ci.id === item.id);
       cartItem.quantity = value;
-    },
-    nowTime () {
-      this.timeString = new Date(Date.now()).toLocaleDateString('en-US',
-        { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) +
-        ' ' + new Date(Date.now()).toLocaleTimeString('en-US');
-      if (!this.stopClock) {
-        setTimeout(this.nowTime, 285);
-      }
     }
   },
   beforeDestroy () {
     search.term = '';
-    this.stopClock = true;
   }
 };
 </script>

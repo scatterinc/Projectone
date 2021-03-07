@@ -81,7 +81,12 @@
     <b-col class="text-right">Difference</b-col>
     <b-col class="border mx-4 text-right">$0,00</b-col>
   </b-row>
+  <p/>
+                    <b-table striped hover :items="filteredData" :fields="fields" :small="true"
+                    class="Mx-4"
+                    >
 
+        </b-table>
   </div>
 </template>
 <script>
@@ -91,6 +96,9 @@ import userDropdown from '@/util/userDropdown';
 export default {
   components: { DropdownBarItem },
   data: () => ({
+    fields: [
+      '#', 'Account Number', 'Account Name', 'Description', 'Debit', 'Credit' /* icon */
+    ],
     dropdownBar: [{
       name: '',
       icon: 'CropIcon',
@@ -107,3 +115,37 @@ export default {
   })
 };
 </script>
+<style lang="scss">
+.journal {
+  .table-header-borders {
+    height: 34px;
+  }
+  .table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    height: 400px;
+
+    .ps {
+      height: 400px;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background-color: white;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+    }
+
+    .btn-space {
+      margin-right: 5px;
+    }
+  }
+}
