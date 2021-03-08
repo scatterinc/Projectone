@@ -31,7 +31,7 @@
   <b-row class="fluid">
     <b-col class=text-right> <b>Date </b>
        </b-col>
-    <b-col>
+    <b-col cols='3'>
         <b-input-group class="mb-2">
       <b-form-input
         id="example-input"
@@ -54,12 +54,12 @@
   <b-row>
     <b-col class=text-right> <b>Jounral Entry No. </b>
        </b-col>
-    <b-col>
+    <b-col cols='3'>
         <b-input-group class="mb-2">
       <b-form-input
         id="example-input"
         class="mx-5"
-        v-model="value"
+        v-model="value2"
         type="text"
         placeholder=""
         autocomplete="off"
@@ -74,8 +74,8 @@
   <b-row>
     <b-col class=text-right> <b>Adjusted Entry </b>
        </b-col>
-    <b-col >
-<b-form-checkbox class="mx-4" ></b-form-checkbox>
+    <b-col cols='3'>
+<b-form-checkbox class="ml-4" ></b-form-checkbox>
   </b-col>
     <b-col><!---leave blank--></b-col>
     <b-col class="text-right">Difference</b-col>

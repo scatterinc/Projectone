@@ -19,6 +19,7 @@
                  <dropdown-bar-item v-for="(dd, key) in dropdownBar"
                                v-bind="dd"
                                :key="key" />
+
           </div>
         </b-col>
           </b-row>
@@ -44,7 +45,10 @@
 
       </perfect-scrollbar>
     </div>
-
+      <div class="row mx-md-n5">
+  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Items 100</b></div></div>
+  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Cost $10,000</b></div></div>
+  </div>
   <!-----------------This is just a test to remove--->
           <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
       <div class="px-3 py-2">
