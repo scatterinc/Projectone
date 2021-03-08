@@ -14,14 +14,20 @@
             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
                                v-bind="dd"
                                :key="key" />
+
+                                <new-reconciliation foo="bar"/>
+
                 </div>
+
         </div>
       </b-col>
     </b-row>
 
   </b-container>
   <p class="border-top"></p>
+
   <!----Test--->
+
 <b-modal id="Transfer" centered title="Transfer">
   <b-container fluid>
     <b-row class="my-1" v-for="(field, label) in fields" :key="label">
@@ -47,10 +53,11 @@ import bankSecDropdown from '@/util/bankSecDropdown';
 import bankDnaDropdown from '@/util/bankDnaDropdown';
 import userDropdown from '@/util/userDropdown';
 import BankTransfer from '@/components/BankTransfer';
+import NewReconciliaition from '@/components/NewReconciliation';
 
 export default {
   // eslint-disable-next-line vue/no-unused-components
-  components: { FeatherIcon, DropdownBarItem, BankTransfer },
+  components: { FeatherIcon, DropdownBarItem, BankTransfer, NewReconciliaition },
   data: () => ({
     dropdownBar: [
     ].concat(bankChqDropdown, bankDepDropdown, bankCcDropdown, bankLoanDropdown, bankSecDropdown, bankDnaDropdown, userDropdown),
@@ -67,6 +74,7 @@ export default {
       test10: { type: 'range', model: '' },
       test11: { type: 'color', model: '' }
     }
+    /* Transfer(BankTransfer) - how do i get modal from drop down to go through component? */
   })
 };
 </script>

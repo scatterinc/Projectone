@@ -21,6 +21,10 @@
           </b-row>
         </b-container>
         <p class="border-top"></p>
+          <b-row>
+    <b-col cols="2" style="color:red"><h6><i>Number of Employee(s)</i></h6></b-col>
+    <b-col cols="6" class=" mx-2 text-left"><b>0</b></b-col>
+  </b-row>
         </div>
 </template>
 <script>

@@ -3,7 +3,7 @@ export default {
   icon: 'CropIcon',
   expanded: true,
   items: [
-    { name: 'Reconciliation', icon: 'FileTextIcon' },
+    { name: 'Reconciliation', icon: 'FileTextIcon', modalTarget: 'NewReconciliation' },
     { name: 'Authorization', icon: 'FileTextIcon' },
     { name: 'On-Hold', icon: 'InboxIcon' },
     null,

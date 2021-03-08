@@ -9,7 +9,7 @@
           <b-button v-b-modal.modal-center class="mr-1" variant="secondary"><feather-icon size="1x" icon="PlusCircleIcon" /> Add</b-button>
           <b-button variant="secondary"><feather-icon size="1x" icon="Edit3Icon" /> Edit</b-button>
 
-          <add-customer foo="bar"/>
+          <new-reconciliation foo="bar"/>
 
           </div>
         </b-col>
@@ -25,7 +25,7 @@
         </b-container>
         <p class="border-top"></p>
   <b-row>
-    <b-col cols="2" style="color:red"><h6><i>Number of Customer</i></h6></b-col>
+    <b-col cols="2" style="color:red"><h6><i>Number of Customer(s)</i></h6></b-col>
     <b-col cols="6" class=" mx-2 text-left"><b>0</b></b-col>
   </b-row>
 
@@ -36,10 +36,12 @@ import DropdownBarItem from '@/components/DropdownBarItem.vue';
 import FeatherIcon from '@/components/FeatherIcon';
 import cusDnaDropdown from '@/util/cusDnaDropdown';
 import userDropdown from '@/util/userDropdown';
-import AddCustomer from '../components/AddCustomer';
+/* import AddCustomer from '../components/AddCustomer';
+import BankTransfer from '@/components/BankTransfer'; */
+import NewReconciliation from '../components/NewReconciliation.vue';
 
 export default {
-  components: { DropdownBarItem, FeatherIcon, AddCustomer },
+  components: { DropdownBarItem, FeatherIcon, NewReconciliation },
   data: () => ({
     dropdownBar: [].concat(cusDnaDropdown, userDropdown)
   })
