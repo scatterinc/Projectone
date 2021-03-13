@@ -28,6 +28,11 @@
     <b-col cols="2" style="color:red"><h6><i>Number of Vendor(s)</i></h6></b-col>
     <b-col cols="6" class=" mx-2 text-left"><b>0</b></b-col>
   </b-row>
+                        <b-table striped hover :items="filteredData" :fields="fields" :small="true"
+                    class="Mx-4"
+                    >
+
+        </b-table>
         </div>
 </template>
 <script>
@@ -40,6 +45,9 @@ import AddVendor from '../components/AddVendor';
 export default {
   components: { DropdownBarItem, FeatherIcon, AddVendor },
   data: () => ({
+    fields: [
+      'Vender #', 'First Name', 'Last Name', 'Adress ', 'Phone No.', 'Email', 'Picture'
+    ],
     dropdownBar: [].concat(venDnaDropdown, userDropdown)
   })
 };

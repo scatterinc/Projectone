@@ -73,8 +73,14 @@ const routes = [
   },
   {
     path: '/saleshistory',
-    name: 'History',
+    name: 'Sales History',
     component: () => import(/* webpackChunkName: "saleshistory" */ '../views/SalesHistory.vue'),
+    icon: 'SettingsIcon'
+  },
+  {
+    path: '/itemhistory',
+    name: 'Item History',
+    component: () => import(/* webpackChunkName: "saleshistory" */ '../views/ItemHistory.vue'),
     icon: 'SettingsIcon'
   },
   {

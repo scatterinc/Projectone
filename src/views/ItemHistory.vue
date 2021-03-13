@@ -4,7 +4,7 @@
     <b-row>
       <b-col>
         <div class="d-flex justify-content-between">
-          <h1>Sale History</h1>
+          <h1>Item History</h1>
           <div>
             <b-button-group>
               <b-button variant="outline-secondary">Share</b-button>
@@ -19,12 +19,12 @@
     </b-row>
   </b-container>
   <p class="border-top"></p>
+
                       <b-table striped hover :items="filteredData" :fields="fields" :small="true"
                     class="Mx-4"
                     >
 
         </b-table>
-
   </div>
 </template>
 <script>
@@ -36,7 +36,7 @@ export default {
   components: { DropdownBarItem },
   data: () => ({
     fields: [
-      'Transaction #', 'Date', 'Activity', 'Reference # ', 'Amount', 'Payment Method', 'Customer', 'User'
+      'Transaction #', 'Date', 'item #', 'Item Name', 'Activity', 'Reference # ', 'Quantity', 'amount', 'ExtAmount', 'Customer', 'User'
     ],
     dropdownBar: [].concat(calendarPickerDropdown, userDropdown)
   })

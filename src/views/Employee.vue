@@ -25,6 +25,11 @@
     <b-col cols="2" style="color:red"><h6><i>Number of Employee(s)</i></h6></b-col>
     <b-col cols="6" class=" mx-2 text-left"><b>0</b></b-col>
   </b-row>
+                        <b-table striped hover :items="filteredData" :fields="fields" :small="true"
+                    class="Mx-4"
+                    >
+
+        </b-table>
         </div>
 </template>
 <script>
@@ -36,6 +41,9 @@ import userDropdown from '@/util/userDropdown';
 export default {
   components: { DropdownBarItem, FeatherIcon },
   data: () => ({
+    fields: [
+      'Employee #', 'First Name', 'Last Name', 'Adress ', 'Phone No.', 'Email', 'Picture'
+    ],
     dropdownBar: [].concat(empDnaDropdown, userDropdown)
   })
 };

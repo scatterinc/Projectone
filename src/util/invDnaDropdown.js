@@ -10,7 +10,7 @@ export default {
     { name: 'Physical Count', icon: 'ClipboardIcon' },
     { name: 'Logs', icon: 'ClipboardIcon' },
     null,
-    { name: 'History', icon: 'ActivityIcon' },
+    { name: 'History', icon: 'ActivityIcon', to: '/ItemHistory' },
     null,
     { name: 'Settings', icon: 'ToolIcon' }
   ]
