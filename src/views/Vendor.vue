@@ -46,7 +46,7 @@ export default {
   components: { DropdownBarItem, FeatherIcon, AddVendor },
   data: () => ({
     fields: [
-      'Vender #', 'First Name', 'Last Name', 'Adress ', 'Phone No.', 'Email', 'Picture'
+      'Vender #', 'First Name', 'Last Name', 'Address ', 'Phone No.', 'Email', 'Picture'
     ],
     dropdownBar: [].concat(venDnaDropdown, userDropdown)
   })

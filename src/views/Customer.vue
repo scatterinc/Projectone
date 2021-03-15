@@ -49,7 +49,7 @@ export default {
   components: { DropdownBarItem, FeatherIcon, AddCustomer },
   data: () => ({
     fields: [
-      'Cutomer #', 'First Name', 'Last Name', 'Adress ', 'Phone No.', 'Email', 'Picture'
+      'Cutomer #', 'First Name', 'Last Name', 'Address ', 'Phone No.', 'Email', 'Picture'
     ],
     dropdownBar: [].concat(cusDnaDropdown, userDropdown)
   })

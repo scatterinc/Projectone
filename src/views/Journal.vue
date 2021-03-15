@@ -52,7 +52,7 @@
    <!-----Row Two--->
 <!-----First Row--->
   <b-row>
-    <b-col class=text-right> <b>Jounral Entry No. </b>
+    <b-col class=text-right> <b>Journal Entry No. </b>
        </b-col>
     <b-col cols='3'>
         <b-input-group class="mb-2">

@@ -6,8 +6,9 @@
         <b-col>
           <div class="text-right">
           <b-button class="mr-1" variant="secondary"><feather-icon size="1x" icon="ListIcon" /> Detail</b-button>
-          <b-button class="mr-1" variant="secondary"><feather-icon size="1x" icon="PlusCircleIcon" /> Add</b-button>
+         <b-button v-b-modal.modal-center class="mr-1" variant="secondary"><feather-icon size="1x" icon="PlusCircleIcon" /> Hire</b-button>
           <b-button variant="secondary"><feather-icon size="1x" icon="Edit3Icon" /> Edit</b-button>
+           <add-employee foo="bar"/>
           </div>
         </b-col>
         <b-col class="text-right">
@@ -37,12 +38,13 @@ import DropdownBarItem from '@/components/DropdownBarItem.vue';
 import FeatherIcon from '@/components/FeatherIcon';
 import empDnaDropdown from '@/util/empDnaDropdown';
 import userDropdown from '@/util/userDropdown';
+import AddEmployee from '../components/AddEmployee.vue';
 
 export default {
-  components: { DropdownBarItem, FeatherIcon },
+  components: { DropdownBarItem, FeatherIcon, AddEmployee },
   data: () => ({
     fields: [
-      'Employee #', 'First Name', 'Last Name', 'Adress ', 'Phone No.', 'Email', 'Picture'
+      'Employee #', 'First Name', 'Last Name', 'Address ', 'Phone No.', 'Email', 'Picture'
     ],
     dropdownBar: [].concat(empDnaDropdown, userDropdown)
   })
