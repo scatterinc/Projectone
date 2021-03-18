@@ -16,18 +16,18 @@
         </b-col>
       </b-row>
           </b-container>
-          <p class="border-top"></p>
-          <v-button>
-          test
-          </v-button>
-          <b-row variant="transparent">
-    <b-col class="border" cols="12" md="8">
-<p/>
+          <p class="border-top mb-4"></p>
+                  <b-row variant="transparent">
+    <b-col class="border mb-4" cols="12" md="8">
+ <p/>
    <b-row class=" text-center center row container-fluid">
         <div class="row container-fluid">
 <div>
   <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">Cras justo odio</b-list-group-item>
+    <b-list-group-item  button class="mr-4 ml-4  mb-4">
+      <div class="text-left">Chicken Foot Soup</div>
+<div class="text-right">$2,000</div>
+    </b-list-group-item>
     <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
     <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
     <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
@@ -91,6 +91,7 @@
           </template>
         </b-table>
       </div>
+      <!-----
       <div>
         <b-row>
           <b-col class="border-top">
@@ -111,18 +112,20 @@
             <b-col class="border text-right">
             $10
           </b-col>
-        </b-row>
+        </b-row>--->
+        <div>
                 <b-row>
-          <b-col class="border-bottom">
+          <b-col class="border-bottom bg-primary">
           </b-col>
-          <b-col class="border-bottom text-right">
-            Total
+          <b-col class="border-bottom text-right bg-primary">
+            <b style="color:green" ><font size="5" >Total</font></b>
           </b-col>
-            <b-col class="border-bottom text-right">
-            $10,000
+            <b-col class="border-bottom text-right bg-primary">
+             <b style="color:green" ><font size="5" >$ 10,000</font></b>
           </b-col>
         </b-row>
       </div>
+      <!----
       <div>
   <b-list-group horizontal>
     <b-list-group-item button class="text-center">1</b-list-group-item>
@@ -146,7 +149,7 @@
     <b-list-group-item button class="text-center">9</b-list-group-item>
     <b-list-group-item button class="text-center">0</b-list-group-item>
   </b-list-group>
-</div>
+</div> --->
 <p/>
 <div>
   <b-list-group horizontal="md" class="mb-4 flex-fill">
@@ -186,7 +189,7 @@ export default {
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
-    height: 500px;
+    height: 450px;
 
     .ps {
       height: 400px;
