@@ -97,7 +97,7 @@ export default {
   components: { DropdownBarItem },
   data: () => ({
     fields: [
-      '#', 'Account Number', 'Account Name', 'Description', 'Debit', 'Credit' /* icon */
+      'Item', 'Entity ID', 'Account Number', 'Account Name', 'Description', 'Debit', 'Credit' /* icon */
     ],
     dropdownBar: [{
       name: '',
