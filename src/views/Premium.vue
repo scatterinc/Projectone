@@ -33,7 +33,8 @@
           <div class="icon icon-shape text-white rounded-circle shadow bg-gradient-red">
             <i class="ni ni-active-40"></i></div></div></div>
             <p class="mt-3 mb-0 text-sm"><span class="text-success mr-2">3.48%</span><span class="text-nowrap">Since last month</span>
-            </p></div><!----><!----><!----><!----></div></div>
+            </p></div><!---->
+                        <!----><!----><!----></div></div>
             <div class="col-md-6 col-xl-3">
               <div class="card card-stats mb-4" show-footer-line="true"><!----><!----><!----><div class="card-body"><!----><!----><div class="row">
                 <div class="col"><h5 class="card-title text-uppercase text-muted mb-0">Work Sheet</h5><span class="h2 font-weight-bold mb-0">2,356</span>
@@ -71,12 +72,13 @@ export default {
       icon: 'CropIcon',
       expanded: true,
       items: [
-        { name: 'Test', icon: 'FileTextIcon' },
-        { name: 'Test1', icon: 'FileTextIcon' },
+        { name: 'Payroll', icon: 'FileTextIcon', to: '/Payroll' },
         null,
-        { name: 'Test2', icon: 'FileTextIcon' },
+        { name: 'Worksheet', icon: 'FileTextIcon', to: '/WorkSheet' },
         null,
-        { name: 'Test3', icon: 'FileTextIcon' }
+        { name: 'TimeStamp', icon: 'FileTextIcon' },
+        null,
+        { name: 'Training', icon: 'FileTextIcon' }
       ]
     }].concat(userDropdown)
   })
