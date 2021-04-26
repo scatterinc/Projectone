@@ -82,9 +82,15 @@
     <b-col class="border mx-4 text-right">$0,00</b-col>
   </b-row>
   <p/>
-                    <b-table striped hover :items="filteredData" :fields="fields" :small="true"
+                    <b-table striped hover :items="items" :fields="fields"  :small="true"
                     class="Mx-4"
                     >
+    <template v-slot:cell(index)="{ index }">
+      {{ index + 1 }}
+      </template>
+                        <template v-slot:cell()="{ item, field: { key }}">
+      <b-form-input v-model="item[key]" />
+    </template>
 
         </b-table>
   </div>
@@ -96,9 +102,20 @@ import userDropdown from '@/util/userDropdown';
 export default {
   components: { DropdownBarItem },
   data: () => ({
-    fields: [
-      'Item', 'Entity ID', 'Account Number', 'Account Name', 'Description', 'Debit', 'Credit' /* icon */
+    items: [
+      { EntityID: '', AcctNum: '', AcctName: '', Descript: '', Debit: '', Credit: '' },
+      { EntityID: '', AcctNum: '', AcctName: '', Descript: '', Debit: '', Credit: '' },
+      { EntityID: '', AcctNum: '', AcctName: '', Descript: '', Debit: '', Credit: '' },
+      { EntityID: '', AcctNum: '', AcctName: '', Descript: '', Debit: '', Credit: '' }
     ],
+    fields: [
+      {
+        key: 'index',
+        label: '#'
+      },
+      'Entity ID', 'Account Number', 'Account Name', 'Description', 'Debit', 'Credit' /* icon */
+    ],
+
     dropdownBar: [{
       name: '',
       icon: 'CropIcon',

@@ -10,7 +10,7 @@ export default {
     nowTime () {
       this.timeString = new Date(Date.now()).toLocaleDateString('en-US',
         { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) +
-      ' ' + new Date(Date.now()).toLocaleTimeString('en-US');
+        ' ' + new Date(Date.now()).toLocaleTimeString('en-US');
       if (!this.stopClock) {
         setTimeout(this.nowTime, 285);
       }
