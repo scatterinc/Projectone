@@ -4,8 +4,6 @@
       <b-row>
         <b-col><h1>Sales</h1></b-col>
         <b-col class="d-flex align-items-center">
-          <!--{{ new Date(Date.now()).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}
-          {{ new Date(Date.now()).toLocaleTimeString('en-US') }}-->
           {{timeString}}
         </b-col>
         <b-col class="d-flex align-items-center justify-content-end">
@@ -26,6 +24,17 @@
         <b-table :items="filteredData" :fields="fields" :small="true">
           <template #cell(extPrice)="{item}">
             {{ formatCurrency(item.quantity * item.price) }}
+          </template>
+          <!--          <template #cell(delete)="{item}">
+            <span class="trash-icon" @click="deleteItem(item)">
+              <feather-icon size="1x" icon="Trash2Icon"/>
+            </span>
+          </template>-->
+          <template #cell(id)="{value}">
+            <span class="trash-icon mr-3" @click="deleteItem(value)">
+              <feather-icon size="1x" icon="Trash2Icon"/>
+            </span>
+            {{ value }}
           </template>
           <!----QUANTITY INPUT--->
           <template #cell(quantity)="{item, value}">
@@ -122,7 +131,7 @@ export default {
       label: 'Ex. Price'
     }, last(Object.keys(sales[0]))]), */
     fields: [
-      'id', 'name', 'quantity', 'price', 'extPrice', 'tax'
+      'id', /* { key: 'delete', label: '' }, */ 'name', 'quantity', 'price', 'extPrice', 'tax'
     ],
     bottomBar: [
       {
@@ -263,6 +272,9 @@ export default {
       if (!this.stopClock) {
         setTimeout(this.nowTime, 285);
       }
+    },
+    deleteItem (id) {
+      this.sales = this.sales.filter(i => i.id !== id);
     }
   },
   beforeDestroy () {
@@ -303,6 +315,19 @@ export default {
     .btn-space {
       margin-right: 5px;
     }
+  }
+  .trash-icon {
+    opacity: 0;
+    color: #c00;
+    transition: opacity .2s ease-out;
+    cursor: pointer;
+  }
+  tr:hover .trash-icon {
+    opacity: 1;
+  }
+
+    thead th:first-child div {
+    margin-left: 3.75rem;
   }
 }
 

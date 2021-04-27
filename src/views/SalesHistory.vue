@@ -30,7 +30,7 @@
 <script>
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
 import userDropdown from '@/util/userDropdown';
-import calendarPickerDropdown from '@/util/calendarPickerDropdown';
+// import calendarPickerDropdown from '@/util/calendarPickerDropdown';
 
 export default {
   components: { DropdownBarItem },
@@ -38,7 +38,7 @@ export default {
     fields: [
       'Transaction #', 'Date', 'Activity', 'Reference # ', 'Amount', 'Payment Method', 'Customer', 'User'
     ],
-    dropdownBar: [].concat(calendarPickerDropdown, userDropdown)
+    dropdownBar: [].concat(userDropdown)
   })
 };
 </script>

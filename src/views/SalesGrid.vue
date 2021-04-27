@@ -167,12 +167,12 @@
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
 import saleDnaDropdown from '@/util/saleDnaDropdown';
 import userDropdown from '@/util/userDropdown';
-import timeString from '@/util/datetime';
+import DateTime from '@/util/datetime';
 
 export default {
   components: { DropdownBarItem },
+  mixins: { DateTime },
   data: () => ({
-    timeString,
     /* fields: initial(Object.keys(sales[0])).concat([{
       key: 'extPrice',
       label: 'Ex. Price'

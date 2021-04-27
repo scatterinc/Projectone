@@ -1,6 +1,7 @@
 <template>
   <b-dropdown-item v-b-modal="modalTarget"
-  v-bind="$props" :href="to ? undefined : href || '#'">
+                   v-bind="$props"
+                   :href="to ? undefined : href || '#'">
     <feather-icon size="1x" :icon="icon"/>
     {{name}}
   </b-dropdown-item>

@@ -13,6 +13,8 @@
     <b-modal id="test-modal">
       This is a test modal...
     </b-modal>
+    <bank-transfer/>
+    <add-recipe />
   </div>
 </template>
 
@@ -20,9 +22,11 @@
 import LeftSidebar from '@/components/LeftSidebar';
 import TopNavbar from '@/components/TopNavbar';
 import EditingModal from '@/components/EditingModal';
+import BankTransfer from './components/BankTransfer';
+import AddRecipe from './components/AddRecipe';
 
 export default {
-  components: { EditingModal, TopNavbar, LeftSidebar }
+  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe }
 };
 </script>
 

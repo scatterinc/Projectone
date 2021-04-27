@@ -1,4 +1,5 @@
-export default {
+import Vue from 'vue';
+export default Vue.mixin({
   data: () => ({
     timeString: '',
     stopClock: false
@@ -19,4 +20,4 @@ export default {
   beforeDestroy () {
     this.stopClock = true;
   }
-};
+});

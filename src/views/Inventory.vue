@@ -1,56 +1,66 @@
 <template>
   <div class="inventory">
-     <b-container class="Inventory Header">
+    <b-container class="Inventory Header">
       <b-row>
         <b-col><h1>Inventory</h1></b-col>
         <b-col class="text-right">
           <div>
-            <b-button  v-b-toggle.sidebar-right class="mr-1" variant="secondary"><feather-icon size="1x" icon="ListIcon" /> Detail</b-button>
-            <b-button v-b-modal.modal-center class="mr-1" variant="secondary"><feather-icon size="1x" icon="PlusCircleIcon" /> Add</b-button>
-            <b-button variant="secondary"><feather-icon size="1x" icon="Edit3Icon" /> Edit</b-button>
+            <b-button v-b-toggle.sidebar-right class="mr-1" variant="secondary">
+              <feather-icon size="1x" icon="ListIcon"/>
+              Detail
+            </b-button>
+            <b-button v-b-modal.modal-center class="mr-1" variant="secondary">
+              <feather-icon size="1x" icon="PlusCircleIcon"/>
+              Add
+            </b-button>
+            <b-button variant="secondary">
+              <feather-icon size="1x" icon="Edit3Icon"/>
+              Edit
+            </b-button>
 
             <add-inventory-item foo="bar"/>
-          <div>
-        </div>
+            <div>
+            </div>
           </div>
         </b-col>
         <b-col class="text-right">
-           <div>
-                 <dropdown-bar-item v-for="(dd, key) in dropdownBar"
+          <div>
+            <dropdown-bar-item v-for="(dd, key) in dropdownBar"
                                v-bind="dd"
-                               :key="key" />
-
+                               :key="key"/>
           </div>
         </b-col>
-          </b-row>
-        </b-container>
-        <p class="border-top"></p>
-          <b-row>
-<!----Items count --->
-    <b-col cols="2" style="color:red"><h6><i>Total Item(s)</i></h6></b-col>
-    <b-col cols="3" class=" mx-2 text-left"><b>0</b></b-col>
+      </b-row>
+    </b-container>
+    <p class="border-top"></p>
+    <b-row>
+      <!----Items count --->
+      <b-col cols="2" style="color:red"><h6><i>Total Item(s)</i></h6></b-col>
+      <b-col cols="3" class=" mx-2 text-left"><b>{{ filteredData.length }}</b></b-col>
 
-  </b-row>
+    </b-row>
 
-        <div class="position-relative">
+    <div class="position-relative">
       <div class="table-header-borders"></div>
     </div>
     <div class="table-container">
       <perfect-scrollbar>
         <b-table :items="filteredData"
-        :fields="inventory.cols"
-        :small="true">
+                 :fields="inventory.cols"
+                 :small="true">
         </b-table>
-    >
-
       </perfect-scrollbar>
     </div>
-      <div class="row mx-md-n5">
-  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Items 100</b></div></div>
-  <div class="col px-md-5 text-center"><div class="p-3 border bg-light"><b>Total Cost $10,000</b></div></div>
-  </div>
-  <!-----------------This is just a test to remove--->
-          <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
+    <div class="row">
+      <div class="col px-md-5 text-center">
+        <div class="p-3 border bg-light"><b>Total Items 100</b></div>
+      </div>
+      <div class="col px-md-5 text-center">
+        <div class="p-3 border bg-light"><b>Total Cost $10,000</b></div>
+      </div>
+    </div>
+    <!-----------------This is just a test to remove--->
+    <b-sidebar id="sidebar-right" title="Sidebar" right :shadow="true">
       <div class="px-3 py-2">
         <p>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
@@ -59,7 +69,7 @@
         <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
       </div>
     </b-sidebar>
-    </div>
+  </div>
 </template>
 <script>
 import inventory from '@/assets/data/inventory.json';
@@ -74,7 +84,11 @@ import AddInventoryItem from '../components/AddInventoryItem';
 
 export default {
   name: 'Inventory',
-  components: { FeatherIcon, DropdownBarItem, AddInventoryItem },
+  components: {
+    FeatherIcon,
+    DropdownBarItem,
+    AddInventoryItem
+  },
   data: () => ({
     inventory,
     dropdownBar: []
@@ -85,6 +99,9 @@ export default {
     term () {
       return search.term;
     },
+    /* dataLength () {
+      return this.filteredData.length;
+    }, */
     filteredData () {
       return this.rows.filter(i => {
         return (i['Item Name'].toLowerCase().indexOf(this.term) > -1) ||
@@ -116,19 +133,24 @@ export default {
   width: 100%;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, .1), 0 0 1px 0 rgba(0, 0, 0, .07), 0 1px 1px -1px rgba(0, 0, 0, .06);
 }
+
 .ps__rail-y {
   z-index: 1;
 }
+
 .inventory {
-  height:calc(100vh - 190px);
+  height: calc(100vh - 190px);
+
   .table-container {
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
     height: 100%;
+
     .ps {
       height: 100%;
     }
+
     th {
       position: sticky;
       top: 0;

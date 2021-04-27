@@ -13,7 +13,7 @@
             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
                                v-bind="dd"
                                :key="key" />
-                </div>
+          </div>
         </div>
       </b-col>
     </b-row>

@@ -161,6 +161,7 @@ export default {
   data () {
     return {
       selected: 'Yes',
+      text: '',
       options: [
         { item: 'Yes', name: 'Inventory' },
         { item: 'No', name: 'Non Inventory' }
