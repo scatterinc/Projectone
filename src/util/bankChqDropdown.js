@@ -3,7 +3,7 @@ export default {
   icon: 'SidebarIcon',
   expanded: true,
   items: [
-    { name: 'Write Cheque', icon: 'FileTextIcon' },
+    { name: 'Write Cheque', icon: 'FileTextIcon', to: '/WriteCheque' },
     null,
     { name: 'Pay Bill', icon: 'FileTextIcon' },
     null,
