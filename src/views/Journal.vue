@@ -81,9 +81,9 @@
     <b-col class="text-right">Difference</b-col>
     <b-col class="border mx-4 text-right">$0,00</b-col>
   </b-row>
-  <p/>
+
                     <b-table striped hover :items="items" :fields="fields"  :small="true"
-                    class="Mx-4"
+                    class="Mx-4 mt-2"
                     >
     <template v-slot:cell(index)="{ index }">
       {{ index + 1 }}

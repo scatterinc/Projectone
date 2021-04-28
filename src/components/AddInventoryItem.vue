@@ -172,5 +172,7 @@ export default {
 </script>
 
 <style scoped>
-
+ ::v-deep .tab-content {
+   min-height: 385px;
+ }
 </style>
