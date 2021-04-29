@@ -5,7 +5,7 @@ export default {
   items: [
     { name: 'Accounts Payable', icon: 'FileTextIcon' },
     null,
-    { name: 'Enter Bill', icon: 'FileTextIcon' },
+    { name: 'Enter Bill', icon: 'FileTextIcon', to: '/EnterBills' },
     { name: 'Pay Bill', icon: 'AwardIcon' },
     null,
     { name: 'Purchase Order', icon: 'ToolIcon' }

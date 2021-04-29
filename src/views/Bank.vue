@@ -15,8 +15,7 @@
                                  v-bind="dd"
                                  :key="key"/>
 
-              <new-reconciliation foo="bar" />
-            </div>
+                          </div>
           </div>
         </b-col>
       </b-row>
@@ -33,13 +32,11 @@ import bankLoanDropdown from '@/util/bankLoanDropdown';
 import bankSecDropdown from '@/util/bankSecDropdown';
 import bankDnaDropdown from '@/util/bankDnaDropdown';
 import userDropdown from '@/util/userDropdown';
-import NewReconciliation from '@/components/NewReconciliation';
 
 export default {
   // eslint-disable-next-line vue/no-unused-components
   components: {
-    DropdownBarItem,
-    NewReconciliation
+    DropdownBarItem
   },
   data: () => ({
     dropdownBar: [].concat(bankChqDropdown, bankDepDropdown, bankCcDropdown, bankLoanDropdown, bankSecDropdown, bankDnaDropdown, userDropdown),

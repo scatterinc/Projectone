@@ -4,7 +4,7 @@ export default {
   expanded: true,
   items: [
     { name: 'Reconciliation', icon: 'FileTextIcon', to: '/BankReconciliation' },
-    { name: 'Authorization', icon: 'FileTextIcon' },
+    { name: 'Authorization', icon: 'FileTextIcon', modalTarget: 'NewReconciliation' },
     { name: 'On-Hold', icon: 'InboxIcon' },
     null,
     { name: 'Receive Payment', icon: 'ClipboardIcon' },

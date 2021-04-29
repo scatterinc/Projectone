@@ -4,7 +4,7 @@
     <b-row>
       <b-col>
         <div class="d-flex justify-content-between">
-          <h1>Cheque</h1>
+          <h1>Bill</h1>
           <div>
             <b-button-group>
               <b-button variant="outline-secondary">Print</b-button>
@@ -50,40 +50,33 @@
   </b-row>
    <!-----First Row--->
 
-  <!------Cheque ------->
+  <!------bill ------->
 
 <b-card class="mr-2 mb-3" style="max-width: 800px; min-length: 500px;" bg-variant="light" text-variant="white" title="" >
   <b-card-text>
-    <b-card bg-variant="secondary" text-variant="white">
+    <b-card bg-variant="success" text-variant="white">
   <b-card-text>
-      <!---Date--->
-             <div class="h-50">
-             <b-row class="h-50">
-              <b-col cols='8' class="text-right" style="font-size:20px">
-            <b>No.</b>
+      <!---Vendor & Date--->
+             <b-row class="mt-4">
+              <b-col cols='2' class="text-center" style="font-size:20px">
+            <b>VENDOR</b>
          </b-col>
-         <b-col class="text-left">
+         <b-col cols='5' class="text-left mr-3">
               <b-input-group>
                    <b-form-input
-        id="example-input"
-        style="height:30px"
+        id="billvendor-input"
         v-model="value"
-        type="text"
+        type="currency"
         placeholder=""
         autocomplete="off"
       ></b-form-input>
       </b-input-group>
          </b-col>
-          </b-row >
-                <!---Date--->
-             <b-row class="mt-2">
-              <b-col cols='8' class="text-right" style="font-size:20px">
-            <b>Date</b>
-         </b-col>
-         <b-col class="text-left">
+         <b-col cols='1.5' class="text-right" style="font-size:20px"><b>Date</b></b-col>
+           <b-col class="text-left">
               <b-input-group>
                    <b-form-input
-        id="example-input"
+        id="billdate-input"
         style="height:30px"
         v-model="value"
         type="date"
@@ -91,53 +84,88 @@
         autocomplete="off"
       ></b-form-input>
       </b-input-group>
+
          </b-col>
           </b-row>
-           <!---Amount--->
-             <b-row class="mt-2 mb-2">
-              <b-col cols='8' class="text-right" style="font-size:20px">
-            <b>$</b>
+
+      <!---ReF No --->
+             <div class="h-50">
+             <b-row class="h-50">
+        <b-col cols='2'>
+            <!---left blank--->
+                     </b-col>
+         <b-col cols='5' class="mr-3">
+         <!---left blank--->
          </b-col>
-         <b-col class="text-left">
+         <b-col cols='1.5' class="text-right" style="font-size:15px"><b>Ref No.</b></b-col>
+           <b-col class="text-left">
               <b-input-group>
                    <b-form-input
-        id="example-input"
+        id="billrefno-input"
         style="height:30px"
         v-model="value"
-        type="currency"
-        placeholder="0.00"
-        autocomplete="off"
-      ></b-form-input>
-      </b-input-group>
-         </b-col>
-          </b-row>
-          <!---Payto--->
-             <b-row class="mt-4">
-              <b-col class="text-center" style="font-size:15px">
-            <b>PAY TO THE ORDER OF</b>
-         </b-col>
-         <b-col cols='6' class="text-left mr-5">
-              <b-input-group>
-                   <b-form-input
-        id="example-input"
-        v-model="value"
-        type="currency"
+        type="text"
         placeholder=""
         autocomplete="off"
       ></b-form-input>
       </b-input-group>
-         </b-col>
-         <b-col></b-col>
-          </b-row>
 
-           <!---Amount--->
+         </b-col>
+          </b-row >
+                <!---Address & Amount--->
              <b-row class="mt-2">
-              <b-col cols='8' class="text-right border-bottom ml-4" >
-            <b><!---Amount in word goes here--></b>
+                <b-col cols='2' class="text-right" >
+            <b><i>Address</i></b>
          </b-col>
-         <b-col class="text-left">
-            <i> Dollars </i>
+         <b-col cols='5' class="text-left mr-3">
+            <i> John's Town </i>
          </b-col>
+         <b-col cols='1.5' class="text-right" style="font-size:15px"><b>Amount Due</b></b-col>
+           <b-col class="text-left">
+              <b-input-group>
+                   <b-form-input
+        id="billamountdue-input"
+        style="height:30px"
+        v-model="value"
+        type="text"
+        placeholder="0.00"
+        autocomplete="off"
+      ></b-form-input>
+      </b-input-group>
+
+         </b-col>
+                        </b-row>
+           <!---Address2--->
+             <b-row class="mt-2 mb-2">
+  <b-col cols='2' class="text-center" style="font-size:20px">
+            <!---Blank--->
+         </b-col>
+         <b-col cols='5' class="text-left mr-3">
+         <i>FLorida, US </i>
+              </b-col>
+         <b-col cols='1.5' class="text-right">Bill Due</b-col>
+           <b-col class="text-left mr-3 mt-2">
+              <b-input-group >
+                   <b-form-input
+        id="billbilldue-input"
+        style="height:20px"
+        v-model="value"
+        type="date"
+        placeholder="2021-04-28"
+        autocomplete="off"
+      ></b-form-input>
+      </b-input-group>
+
+         </b-col>
+          </b-row>
+                     <!---Terms--->
+             <b-row class="mt-2">
+              <b-col cols='1.5' class="text-left  ml-4">
+            <i> Terms</i>
+         </b-col>
+         <b-col class="text-right mt-2">
+              <b-input class="col-3" style="height:20px"/>
+                     </b-col>
           </b-row>
                      <!---Memo--->
              <b-row class="mt-2">
@@ -214,7 +242,7 @@ export default {
         null,
         { name: 'Document Centre', icon: 'ArchiveIcon' },
         null,
-        { name: 'Order Cheques', icon: 'UploadIcon' }
+        { name: 'Paybill', icon: 'UploadIcon' }
       ]
     }].concat(userDropdown)
   })

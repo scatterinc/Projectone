@@ -5,7 +5,7 @@ export default {
   items: [
     { name: 'Make Deposit', icon: 'FileTextIcon' },
     null,
-    { name: 'Transfer', icon: 'FileTextIcon', modalTarget: 'Transfer' },
+    { name: 'Transfer', icon: 'RepeatIcon', modalTarget: 'Transfer' },
     null,
     { name: 'Receive Payment', icon: 'FileIcon' }
   ]

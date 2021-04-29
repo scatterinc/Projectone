@@ -1,6 +1,6 @@
 <template>
     <div>
-    <b-modal id="modal-center" centered title ="New Bank Reconciliation" header-text-variant="red">
+    <b-modal id="NewReconciliation" centered title ="New Bank Reconciliation" header-text-variant="red">
     <p class="my-1">
         <b-row class='mb-1'>
     <b-col class='text-right md-2' cols="4"> Bank Account </b-col>
@@ -29,7 +29,7 @@
 </template>
 <script>
 export default {
-  name: 'NewReconciliaition.vue'
+  name: 'NewReconciliation.vue'
 };
 </script>
 
