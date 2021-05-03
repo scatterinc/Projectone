@@ -33,7 +33,10 @@
   <a class="border-top"></a>
           <b-row class='mb-1'>
     <b-col class='text-right' cols="4" style="color:red"> Status</b-col>
-    <b-col cols="3"><b-input/></b-col>
+    <b-col cols="3"><b-form-checkbox v-model="checked" name="AddVendcheck-button" switch>
+         Active
+    </b-form-checkbox>
+    </b-col>
   </b-row>
       </b-tab>
       <!-----Second tab--->
@@ -89,7 +92,10 @@
 
 <script>
 export default {
-  name: 'AddVendor.vue'
+  name: 'AddVendor.vue',
+  data: () => ({
+    checked: true
+  })
 
 };
 </script>

@@ -27,6 +27,8 @@
           <b-row>
     <b-col cols="2" style="color:red"><h6><i>Number of Vendor(s)</i></h6></b-col>
     <b-col cols="6" class=" mx-2 text-left"><b>0</b></b-col>
+    <b-col  class=" mx-2 text-right"><b-form-checkbox v-model="checked"  name="Customercheck-button"  switch>
+            </b-form-checkbox></b-col>
   </b-row>
                         <b-table striped hover :items="filteredData" :fields="fields" :small="true"
                     class="Mx-4"
@@ -48,7 +50,8 @@ export default {
     fields: [
       'Vender #', 'First Name', 'Last Name', 'Address ', 'Phone No.', 'Email', 'Picture'
     ],
-    dropdownBar: [].concat(venDnaDropdown, userDropdown)
+    dropdownBar: [].concat(venDnaDropdown, userDropdown),
+    checked: true
   })
 };
 </script>

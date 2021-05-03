@@ -144,7 +144,10 @@
 
 <script>
 export default {
-  name: 'AddEmployee.vue'
+  name: 'AddEmployee.vue',
+  data: () => ({
+    checked: true
+  })
   /**  data () {
     return {
 

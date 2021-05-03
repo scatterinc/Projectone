@@ -5,9 +5,9 @@ export default {
   items: [
     { name: 'Write Cheque', icon: 'FileTextIcon', to: '/WriteCheque' },
     null,
-    { name: 'Pay Bill', icon: 'FileTextIcon' },
+    { name: 'Pay Bill', icon: 'FileTextIcon', to: '/PayBill' },
     null,
-    { name: 'Print Cheque', icon: 'FileIcon' },
-    { name: 'Print Batch', icon: 'FileIcon' }
+    { name: 'Print Cheque', icon: 'PrinterIcon' },
+    { name: 'Print Batch', icon: 'PrinterIcon' }
   ]
 };

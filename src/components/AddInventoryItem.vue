@@ -48,7 +48,7 @@
   </b-row>
   <a class="border-top"></a>
           <b-row class='mb-1'>
-    <b-col class='text-right' cols="4" style="color:red"> Qunatity on Hand </b-col>
+    <b-col class='text-right' cols="4" style="color:red"> Quantity on Hand </b-col>
     <b-col cols="3"><b-input/></b-col>
   </b-row>
       </p></b-tab>

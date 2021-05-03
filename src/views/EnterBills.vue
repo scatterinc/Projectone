@@ -29,24 +29,13 @@
    <!-----Row Two--->
 <!-----First Row--->
   <b-row>
-    <b-col class="text-right" style="font-size:15px"> <b>BANK ACCOUNT</b>
+    <b-col class="text-right" style="font-size:15px">
        </b-col>
     <b-col cols='3'>
-        <b-input-group class="mb-2">
-      <b-form-input
-        id="example-input"
-        style="height:30px"
-        class="mx-2"
-        v-model="value2"
-        type="text"
-        placeholder=""
-        autocomplete="off"
-      ></b-form-input>
-       </b-input-group>
-  </b-col>
-    <b-col>ENDING BALANCE <b class="ml-2">$100,000.00</b> </b-col>
+        </b-col>
+    <b-col> <b class="ml-2"></b> </b-col>
     <b-col class="text-right"> <b-form-checkbox class="ml-4" ></b-form-checkbox> </b-col>
-    <b-col class="mb-2  text-left"><i>Print Later</i></b-col>
+    <b-col class="mb-1  text-left"><i>Print Later</i></b-col>
   </b-row>
    <!-----First Row--->
 

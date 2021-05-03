@@ -37,6 +37,8 @@
       <!----Items count --->
       <b-col cols="2" style="color:red"><h6><i>Total Item(s)</i></h6></b-col>
       <b-col cols="3" class=" mx-2 text-left"><b>{{ filteredData.length }}</b></b-col>
+          <b-col  class=" mx-2 text-right"><b-form-checkbox v-model="checked"  name="Customercheck-button"  switch>
+            </b-form-checkbox></b-col>
 
     </b-row>
 
@@ -92,7 +94,8 @@ export default {
   data: () => ({
     inventory,
     dropdownBar: []
-      .concat(invRecDropdown, invDnaDropdown, userDropdown)
+      .concat(invRecDropdown, invDnaDropdown, userDropdown),
+    checked: true
 
   }),
   computed: {

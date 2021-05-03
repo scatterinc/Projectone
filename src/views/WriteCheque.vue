@@ -212,6 +212,8 @@ export default {
         { name: 'Memorize', icon: 'CpuIcon' },
         { name: 'Template', icon: 'FileTextIcon' },
         null,
+        { name: 'Void Cheque', icon: 'FileMinusIcon' },
+        null,
         { name: 'Document Centre', icon: 'ArchiveIcon' },
         null,
         { name: 'Order Cheques', icon: 'UploadIcon' }

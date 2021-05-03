@@ -4,8 +4,8 @@ export default {
   expanded: true,
   items: [
     { name: 'Purchase Order', icon: 'FileTextIcon' },
-    { name: 'Purchase Invoice', icon: 'FileTextIcon' },
     null,
+    { name: 'Enter bill', icon: 'FileTextIcon', to: '/EnterBills' },
     { name: 'Pay bill', icon: 'CreditCardIcon', modalTarget: 'Transfer' },
     null,
     { name: 'Setting', icon: 'ToolIcon' }
