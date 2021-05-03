@@ -191,7 +191,7 @@
        </b-input-group>
     </b-col>
   <b-col class="text-center"  style="font-size: 0.9rem;  color:red">
-         <i><b>$50,000.00</b></i>
+         <b>$50,000.00</b>
     </b-col>
   <b-col class="text-center"  style="font-size: 0.9rem; color:red">
          <b>$50,000.00</b>
