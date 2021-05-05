@@ -26,7 +26,9 @@
 <b-col class="border">Column</b-col><b-col class="border">Column</b-col><b-col class="border">Column</b-col>
   </b-row>
 </b-container>
-
+ <div class="h2 mb-0">
+<b-icon icon="credit-card" aria-hidden="true"></b-icon> test
+ </div>
   </div>
 </template>
 <script>

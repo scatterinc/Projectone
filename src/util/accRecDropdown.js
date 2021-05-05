@@ -5,7 +5,7 @@ export default {
   items: [
     { name: 'Accounts Receivable', icon: 'FileTextIcon' },
     null,
-    { name: 'Invoice', icon: 'FileTextIcon' },
+    { name: 'Invoice', icon: 'FileTextIcon', to: '/Invoice' },
     { name: 'Estimate', icon: 'AwardIcon' },
     null,
     { name: 'Sales Receipt', icon: 'ToolIcon' },

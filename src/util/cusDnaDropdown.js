@@ -3,7 +3,7 @@ export default {
   icon: 'CropIcon',
   expanded: true,
   items: [
-    { name: 'invoice', icon: 'FileTextIcon' },
+    { name: 'Invoice', icon: 'FileTextIcon', to: '/invoice' },
     { name: 'Estimate', icon: 'FileTextIcon' },
     null,
     { name: 'Rewards', icon: 'AwardIcon', modalTarget: 'Transfer' },

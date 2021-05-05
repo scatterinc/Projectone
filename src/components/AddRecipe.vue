@@ -57,7 +57,12 @@
               <b-col class='text-right' cols="4" style="color:red"> Qunatity on Hand</b-col>
               <b-col cols="3">
                 <b-input/>
-              </b-col>
+                  </b-col>
+                                  <b-col class='text-left' style="color:red" cols="1"> Status</b-col>
+    <b-col><b-form-checkbox v-model="checked" name="AddInvcheck-button" switch>
+         Active
+    </b-form-checkbox>
+    </b-col>
             </b-row>
           </p>
         </b-tab>
@@ -191,6 +196,7 @@ export default {
       RecipeExtCost: '',
       text: '',
       selected: 'Yes',
+      checked: true,
       options: [
         {
           item: 'Yes',
