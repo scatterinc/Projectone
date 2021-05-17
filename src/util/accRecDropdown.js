@@ -9,7 +9,7 @@ export default {
     { name: 'Estimate', icon: 'AwardIcon' },
     null,
     { name: 'Sales Receipt', icon: 'ToolIcon' },
-    { name: 'Receive Payment', icon: 'ToolIcon' },
+    { name: 'Receive Payment', icon: 'ToolIcon', to: '/customerpayment' },
     null,
     { name: 'Statement', icon: 'ToolIcon' }
   ]

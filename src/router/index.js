@@ -144,6 +144,12 @@ const routes = [
     icon: 'SettingsIcon'
   },
   {
+    path: '/customerpayment',
+    name: 'CustomerPayment',
+    component: () => import(/* webpackChunkName: "chartofaccounts" */ '../views/CustomerPayment.vue'),
+    icon: 'SettingsIcon'
+  },
+  {
     path: '/salesgrid',
     name: 'SalesGrid',
     component: () => import(/* webpackChunkName: "salesgrid" */ '../views/SalesGrid.vue'),
