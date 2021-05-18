@@ -7,6 +7,6 @@ export default {
     null,
     { name: 'Transfer', icon: 'RepeatIcon', modalTarget: 'Transfer' },
     null,
-    { name: 'Receive Payment', icon: 'FileIcon' }
+    { name: 'Receive Payment', icon: 'FileIcon', to: '/customerpayment' }
   ]
 };

@@ -117,6 +117,29 @@ const routes = [
     path: '/worksheet',
     name: 'WorkSheet',
     component: () => import(/* webpackChunkName: "chartofaccounts" */ '../views/WorkSheet.vue'),
+    children: [
+      {
+        path: '/worksheet',
+        name: 'WorkSheet',
+        props: true,
+        component: () =>
+          import(/* webpackChunkName: "target" */ '../views/WorkSheet/WorkSheet.vue')
+      },
+      {
+        path: '/worksheet/workingtb',
+        name: 'WorkingTb',
+        props: true,
+        component: () =>
+          import(/* webpackChunkName: "target" */ '../views/WorkSheet/WorkingTb.vue')
+      },
+      {
+        path: '/worksheet/leadschedule',
+        name: 'LeadSchedule',
+        props: true,
+        component: () =>
+          import(/* webpackChunkName: "target" */ '../views/WorkSheet/LeadSchedule.vue')
+      }
+    ],
     icon: 'SettingsIcon'
   },
   {

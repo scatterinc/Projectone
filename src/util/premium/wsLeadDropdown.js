@@ -5,6 +5,6 @@ export default {
   items: [
     { name: 'Mapping', icon: 'FileTextIcon' },
     null,
-    { name: 'Schedules', icon: 'FileIcon' }
+    { name: 'Schedules', icon: 'FileIcon', to: '/WorkSheet/LeadSchedule' }
   ]
 };

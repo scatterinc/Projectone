@@ -7,6 +7,6 @@ export default {
     null,
     { name: 'Adjusting Journal', icon: 'FileTextIcon' },
     null,
-    { name: 'Working Trial Balance', icon: 'FileIcon' }
+    { name: 'Working Trial Balance', icon: 'FileIcon', to: '/WorkSheet/WorkingTB' }
   ]
 };
