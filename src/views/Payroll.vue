@@ -18,8 +18,8 @@
       </b-col>
     </b-row>
   </b-container>
-  <p class="border-top"></p>
-
+  <div class="border-top"></div>
+<router-view><div>Test</div></router-view>
   </div>
 </template>
 <script>

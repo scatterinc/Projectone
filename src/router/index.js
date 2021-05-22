@@ -111,6 +111,31 @@ const routes = [
     path: '/payroll',
     name: 'Payroll',
     component: () => import(/* webpackChunkName: "chartofaccounts" */ '../views/Payroll.vue'),
+    children: [
+      {
+        path: '/payroll',
+        name: 'PayrollHome',
+        props: true,
+        component: () =>
+          import(/* webpackChunkName: "target" */ '../views/Payroll/PayrollHome.vue'),
+        children: [
+          {
+            path: '/payroll/timesheet',
+            name: 'PayrollTimeSheet',
+            props: true,
+            component: () =>
+              import(/* webpackChunkName: "target" */ '../views/Payroll/PayrollTimeSheet.vue')
+          },
+          {
+            path: '/payroll/otherincome',
+            name: 'PayrollOtherIncome',
+            props: true,
+            component: () =>
+              import(/* webpackChunkName: "target" */ '../views/Payroll/PayrollOtherIncome.vue')
+          }
+        ]
+      }
+    ],
     icon: 'SettingsIcon'
   },
   {

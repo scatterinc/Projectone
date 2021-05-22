@@ -8,6 +8,7 @@
           <div>
             <b-button-group class="mr-3">
               <b-button v-b-modal.WsUpload variant="outline-secondary"><feather-icon size="1x" icon="UploadIcon" /> Upload</b-button>
+               <b-button variant="outline-secondary"><feather-icon size="1x" icon="PaperclipIcon" /> Attach</b-button>
                    </b-button-group>
                    <ws-upload foo="bar"/>
             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
@@ -24,7 +25,6 @@
 </template>
 <script>
 import DropdownBarItem from '@/components/DropdownBarItem.vue';
-import wsLeadDropdown from '@/util/premium/wsLeadDropdown';
 import wsWorkingPaperDropdown from '@/util/premium/wsWorkingPaperDropdown';
 import wsAnalysisDropdown from '@/util/premium/wsAnalysisDropdown';
 import wsStatementDropdown from '@/util/premium/wsStatementDropdown';
@@ -36,7 +36,7 @@ import WsUpload from '../components/WsUpload';
 export default {
   components: { DropdownBarItem, WsUpload },
   data: () => ({
-    dropdownBar: [].concat(wsLeadDropdown, wsWorkingPaperDropdown, wsAnalysisDropdown, wsStatementDropdown, wsUtilityDropdown, worksheetDnaDropdown, userDropdown)
+    dropdownBar: [].concat(wsWorkingPaperDropdown, wsAnalysisDropdown, wsStatementDropdown, wsUtilityDropdown, worksheetDnaDropdown, userDropdown)
   })
 };
 </script>

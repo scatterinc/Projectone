@@ -5,7 +5,7 @@ export default {
   items: [
     { name: 'Run Payroll', icon: 'FileIcon' },
     null,
-    { name: 'Other Income', icon: 'FileTextIcon' },
+    { name: 'Other Income', icon: 'FileTextIcon', to: '/Payroll/OtherIncome' },
     { name: 'Make Retroactive Pay', icon: 'FileTextIcon' },
     null,
     { name: 'Voluntary Deduction', icon: 'FileIcon' },
