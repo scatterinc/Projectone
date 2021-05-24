@@ -10,6 +10,6 @@ export default {
     null,
     { name: 'Document Centre', icon: 'FileIcon' },
     null,
-    { name: 'Settings', icon: 'FileIcon' }
+    { name: 'Import Hours', icon: 'FileIcon' }
   ]
 };

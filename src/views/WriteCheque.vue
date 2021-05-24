@@ -216,6 +216,7 @@ export default {
         null,
         { name: 'Document Centre', icon: 'ArchiveIcon' },
         null,
+        { name: 'Cheque Register', icon: 'UploadIcon' },
         { name: 'Order Cheques', icon: 'UploadIcon' }
       ]
     }].concat(userDropdown)

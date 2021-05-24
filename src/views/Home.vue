@@ -43,7 +43,21 @@ export default {
   name: 'Home',
   mixins: { DateTime },
   data: () => ({
-    dropdownBar: [].concat(userDropdown),
+    dropdownBar: [{
+      name: '',
+      icon: 'CropIcon',
+      expanded: true,
+      items: [
+        { name: 'Memorize', icon: 'CpuIcon' },
+        { name: 'Template', icon: 'FileTextIcon' },
+        null,
+        { name: 'Void Cheque', icon: 'FileMinusIcon' },
+        null,
+        { name: 'Document Centre', icon: 'ArchiveIcon' },
+        null,
+        { name: 'Settings', icon: 'UploadIcon' }
+      ]
+    }].concat(userDropdown),
     /** why is this not working, but works in other */
     items: [],
     period: { id: 'day', text: 'Today' }

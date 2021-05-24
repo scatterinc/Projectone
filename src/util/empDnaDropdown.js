@@ -9,7 +9,7 @@ export default {
     { name: 'Time Sheet', icon: 'WatchIcon' },
     null,
     { name: 'Raise & Promotion', icon: 'SmileIcon' },
-    { name: 'Payroll', icon: 'ClockIcon' },
+    { name: 'Payroll', icon: 'ClockIcon', to: '/Payroll' },
     null,
     { name: 'Custom', icon: 'CalendarIcon' }
   ]

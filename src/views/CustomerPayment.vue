@@ -218,7 +218,7 @@
      <b-col class="text-right" style="font-size: 0.8rem;">
                   </b-col>
         </b-row>
-  <p class="border-top"></p>
+  <div class="border-top mb-2"></div>
 
   <!----Reconciliation table--->
   <b-row>
