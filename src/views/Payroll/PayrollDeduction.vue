@@ -2,7 +2,7 @@
         <div>
         <b-row>
             <b-col cols="2" offset-md="2">
-            <h4>Other Income</h4>
+            <h4>Deductions</h4>
             </b-col>
                         <b-col class="mb-2">
                 <b-button variant="transparent"><feather-icon size="1x" icon="FilePlusIcon" /> New</b-button>
@@ -23,10 +23,10 @@
 </template>
 <script>
 export default {
-  name: 'PayrollOtherIncome',
+  name: 'PayrollDeduction',
   data: () => ({
     fields: [
-      { label: 'Name' }, 'Amount', 'Frequency', 'Effective', 'Terminate'
+      { label: 'Deduction Name' }, 'Amount', 'Deduct', 'Type', 'Effective Date', 'End Date', 'Frequency'
     ]
   })
 };

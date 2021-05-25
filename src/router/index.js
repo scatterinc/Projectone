@@ -132,6 +132,13 @@ const routes = [
             props: true,
             component: () =>
               import(/* webpackChunkName: "target" */ '../views/Payroll/PayrollOtherIncome.vue')
+          },
+          {
+            path: '/payroll/deduction',
+            name: 'PayrollDedcution',
+            props: true,
+            component: () =>
+              import(/* webpackChunkName: "target" */ '../views/Payroll/PayrollDeduction.vue')
           }
         ]
       }

@@ -8,7 +8,7 @@ export default {
     { name: 'Other Income', icon: 'FileTextIcon', to: '/Payroll/OtherIncome' },
     { name: 'Make Retroactive Pay', icon: 'FileTextIcon' },
     null,
-    { name: 'Voluntary Deduction', icon: 'FileIcon' },
+    { name: 'Voluntary Deduction', icon: 'FileIcon', to: '/Payroll/Deduction' },
     null,
     { name: 'Reverse Payroll', icon: 'FileIcon' },
     null,

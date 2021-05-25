@@ -8,7 +8,7 @@
                 <b-button variant="transparent"><feather-icon size="1x" icon="FilePlusIcon" /> New</b-button>
                 <b-button variant="transparent"><feather-icon size="1x" icon="SaveIcon" /> Save</b-button>
                 <b-button class='mr-4' variant="transparent"><feather-icon size="1x" icon="DeleteIcon" /> Delete</b-button>
-            </b-col>
+                                    </b-col>
         </b-row>
         <!----Time Sheet Add area--->
                 <b-row>
