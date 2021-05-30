@@ -1,6 +1,6 @@
 export default {
   name: 'Analysis',
-  icon: 'FileIcon',
+  icon: 'TrendingUpIcon',
   expanded: true,
   items: [
     { name: 'Year Over Year', icon: 'FileTextIcon' },

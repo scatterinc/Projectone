@@ -16,6 +16,7 @@
     <bank-transfer/>
     <add-recipe />
     <new-reconciliation/>
+    <right-sidebar/>
   </div>
 </template>
 
@@ -26,9 +27,10 @@ import EditingModal from '@/components/EditingModal';
 import BankTransfer from './components/BankTransfer';
 import AddRecipe from './components/AddRecipe';
 import NewReconciliation from './components/NewReconciliation.vue';
+import RightSidebar from './components/RightSidebar.vue';
 
 export default {
-  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation }
+  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, RightSidebar }
 };
 </script>
 

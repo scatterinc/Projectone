@@ -1,6 +1,6 @@
 export default {
   name: 'Working Paper ',
-  icon: 'FileIcon',
+  icon: 'MapIcon',
   expanded: true,
   items: [
     { name: 'Unadjusted TB', icon: 'FileTextIcon' },

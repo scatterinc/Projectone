@@ -74,7 +74,7 @@ export default {
       items: [
         { name: 'Payroll', icon: 'FileTextIcon', to: '/Payroll' },
         null,
-        { name: 'Worksheet', icon: 'FileTextIcon', to: '/WorkSheet' },
+        { name: 'Worksheet', icon: 'LayersIcon', to: '/WorkSheet' },
         null,
         { name: 'TimeStamp', icon: 'FileTextIcon' },
         null,

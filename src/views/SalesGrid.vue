@@ -16,148 +16,118 @@
         </b-col>
       </b-row>
           </b-container>
-          <p class="border-top mb-4"></p>
+          <div class="border-top"></div>
                   <b-row variant="transparent">
-    <b-col class="border mb-4" cols="12" md="8">
- <p/>
-   <b-row class=" text-center center row container-fluid">
-        <div class="row container-fluid">
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">
-      <div class="text-left">Chicken Foot Soup</div>
-<div class="text-right">$2,000</div>
-    </b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4 mb-4">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
+    <b-col>
 
-  </div>
-
-  </b-row>
-
+<router-view></router-view>
     </b-col>
-    <b-col class="border" cols="6" md="4">
-      <p/>
-      <div>
-  <b-list-group horizontal="md" class="mb-2 flex-fill">
-    <b-list-group-item  button class="mr-4 text-center" >Customer</b-list-group-item>
-    <b-list-group-item  button class="mr-4  border-left text-center" >Table</b-list-group-item>
-       </b-list-group>
+    <b-col class="bg-light border-left" cols="6" md="4">
+            <div>
+                     <b-list-group horizontal="md" class="row rounded flex-fill ">
+            <b-list-group-item button class="col rounded border-right shadow">
+              <div class="text-center" style="font-size: 0.8rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center" style="font-size: 0.8rem;"><b>Customer</b></div>
+                          </b-list-group-item>
+            <b-list-group-item button class="col  rounded shadowr"
+              ><div class="text-center" style="font-size: 0.8rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center" style="font-size: 0.8rem;"><b>Orders</b></div></b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left shadow"
+              ><div class="text-center" style="font-size: 0.8rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center" style="font-size: 0.8rem;"><b>Table Plan</b></div></b-list-group-item
+            >
+           </b-list-group>
 </div>
       <div class="table-gridcontainer">
-                    <b-table class="text-center" :items="filteredData" :fields="fields" :small="true">
+                    <b-table class="text-center"  :items="filteredData" :fields="fields" :small="true">
           <template #cell(extPrice)="{item}">
             {{ formatCurrency(item.quantity * item.price) }}
           </template>
         </b-table>
       </div>
-      <!-----
+      <!----Total Screen--->
       <div>
+          <!----Total Screen Row1--->
+        <b-row class="border-top">
+          <b-col class="text-left">
+            Items
+          </b-col>
+          <b-col class="border-right text-left mr-1" style="font-size: 0.9rem;">
+             0
+          </b-col>
+                    <b-col class="text-rigt ml-1" style="font-size: 1.1rem;">
+           <b>TOTAL</b>
+          </b-col>
+          <b-col class="text-right" style="font-size: 0.9rem;">
+           <h5> $0.00</h5>
+          </b-col>
+        </b-row>
+                  <!----Total Screen Row2--->
         <b-row>
-          <b-col class="border-top">
+          <b-col class="text-left">
+          Discount
           </b-col>
-          <b-col class="border-top text-right">
-            Subtotal
+          <b-col class="border-right text-left mr-1" style="font-size: 0.9rem;">
+           $0.00
           </b-col>
-            <b-col class="border-top text-right">
-            $10,000
+                    <b-col class=" text-rigt ml-1">
+            Due
           </b-col>
-        </b-row>
-                <b-row>
-          <b-col class="border">
-          </b-col>
-          <b-col class="border text-right">
-            Tax
-          </b-col>
-            <b-col class="border text-right">
-            $10
-          </b-col>
-        </b-row>--->
-        <div>
-                <b-row>
-          <b-col class="border-bottom bg-primary">
-          </b-col>
-          <b-col class="border-bottom text-right bg-primary">
-            <b style="color:green" ><font size="5" >Total</font></b>
-          </b-col>
-            <b-col class="border-bottom text-right bg-primary">
-             <b style="color:green" ><font size="5" >$ 10,000</font></b>
+          <b-col class="text-right" style="font-size: 0.9rem; color:red">
+            $0.00
           </b-col>
         </b-row>
+                  <!----Total Screen Row3--->
+        <b-row class="shadow">
+          <b-col class="text-left ml-3 col-2">
+                   </b-col>
+          <b-col class="text-right mr-1" style="font-size: 0.8rem;">
+                     </b-col>
+                    <b-col class="text-left mr-3 col-6">
+                       <b-form-checkbox switch size="sm"> Serivice charge</b-form-checkbox>
+                    </b-col>
+          <b-col class="text-right" style="font-size: 0.9rem;">
+            $0.00
+          </b-col>
+        </b-row>
+                 </div>
+<!----Action BUTTONS--->
+            <div>
+                     <b-list-group horizontal="md" class="row rounded flex-fill ">
+            <b-list-group-item button class="col mr-1 rounded border-right shadow">
+              <div class="text-center" style="font-size: 0.7rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center" style="font-size: 0.7rem;"><b>Eat In Option</b></div>
+                          </b-list-group-item>
+            <b-list-group-item button class="col mr-1 rounded shadowr"
+              ><div class="text-center"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center" style="font-size: 0.7rem;"><b>Misc Product</b></div></b-list-group-item
+            >
+            <b-list-group-item button class="col mr-1 rounded border shadow"
+              ><div class="text-center" style="font-size: 0.7rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center" style="font-size: 0.7rem;"><b>Print</b></div></b-list-group-item
+            >
+                        <b-list-group-item button class="col mr-1 rounded border shadow"
+              ><div class="text-center" style="font-size: 0.7rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center "  style="font-size: 0.7rem;"><b>No Sale</b></div></b-list-group-item
+            >
+           </b-list-group>
+</div>
+      <!----FINAL BUTTONS--->
+           <div>
+          <b-list-group horizontal="md" class="row rounded flex-fill ">
+            <b-list-group-item button class="col-3 rounded border mr-2 shadow" variant="warning" cols="1">
+              <div class="text-center"><h5>Delete</h5></div>
+                          </b-list-group-item>
+            <b-list-group-item button class="col mr-2 rounded border shadow" variant="info"
+              ><div class="text-center"><h5>Order</h5></div></b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border shadow" variant="success"
+              ><div class="text-center"><h5>Pay</h5></div></b-list-group-item
+            >
+           </b-list-group>
       </div>
-      <!----
-      <div>
-  <b-list-group horizontal>
-    <b-list-group-item button class="text-center">1</b-list-group-item>
-    <b-list-group-item button class="text-center">2</b-list-group-item>
-    <b-list-group-item button class="text-center">3</b-list-group-item>
-    <b-list-group-item button class="text-center">Clr</b-list-group-item>
-  </b-list-group>
-</div>
-       <div>
-  <b-list-group horizontal='sm'>
-    <b-list-group-item button class="text-center">4</b-list-group-item>
-    <b-list-group-item button class="text-center">5</b-list-group-item>
-    <b-list-group-item button class="text-center"> 6</b-list-group-item>
-    <b-list-group-item button class="text-center">OK</b-list-group-item>
-  </b-list-group>
-</div>
-       <div>
-  <b-list-group horizontal>
-    <b-list-group-item button class="text-center">7</b-list-group-item>
-    <b-list-group-item button class="text-center">8</b-list-group-item>
-    <b-list-group-item button class="text-center">9</b-list-group-item>
-    <b-list-group-item button class="text-center">0</b-list-group-item>
-  </b-list-group>
-</div> --->
-<p/>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 mb-4 text-center" variant="danger">Delete</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left text-center" variant="info" >Order</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left text-center" variant="success">Pay</b-list-group-item>
-   </b-list-group>
-</div>
+
     </b-col>
           </b-row>
     </div>
@@ -183,13 +153,14 @@ export default {
     dropdownBar: [].concat(saleDnaDropdown, userDropdown)
   })
 };
+
 </script>
 <style lang="scss">
   .table-gridcontainer {
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
-    height: 450px;
+    height: 395px;
 
     .ps {
       height: 400px;

@@ -138,10 +138,14 @@
 </b-row>
 <!-----fourth Row--->
 <b-row>
-    <b-col class="text-left" style="font-size: 0.9rem;">
-           </b-col>
-     <b-col class="text-left" style="font-size: 0.9rem;"><b>
+    <b-col class="text-right" style="font-size: 0.9rem;">
+      <b>
+       Terms
          </b>
+           </b-col>
+     <b-col class="text-left" style="font-size: 0.9rem;">
+              <b-input class="col-10" style="height:20px"/>
+
     </b-col>
     <b-col class="text-left"  style="font-size: 0.9rem;">
             </b-col>
