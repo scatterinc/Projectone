@@ -4,7 +4,7 @@
     <b-row>
       <b-col>
         <div class="d-flex justify-content-between">
-          <h1>Work Sheets <b-button v-b-toggle.sidebar-right variant="transparent"><feather-icon size="1x" icon="LayersIcon" /></b-button></h1>
+          <h1>Work Sheets <b-button v-b-toggle.wsdocs variant="transparent"><feather-icon size="1x" icon="LayersIcon" /></b-button></h1>
                                 <div>
             <b-button-group class="mr-3">
               <b-button v-b-modal.WsUpload variant="outline-secondary"><feather-icon size="1x" icon="UploadIcon" /> Upload</b-button>
@@ -20,7 +20,7 @@
     </b-row>
   </b-container>
     <!-----------------This is just a test to remove--->
-    <b-sidebar id="sidebar-right" title="Document Manager" right :shadow="true">
+    <b-sidebar id="wsdocs" title="Document Manager" right :shadow="true">
       <div class="px-3 py-2">
         <div class="text-right">
                   <b-button variant="light" @click="$router.push('/worksheet')"><b-icon icon="back"></b-icon></b-button>

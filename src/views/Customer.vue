@@ -5,7 +5,7 @@
         <b-col><h1>Customer</h1></b-col>
         <b-col>
           <div class="text-right">
-          <b-button class="mr-1" variant="secondary"><feather-icon size="1x" icon="ListIcon" /> Detail</b-button>
+          <b-button v-b-toggle.sidebar-right class="mr-1" variant="secondary"><feather-icon size="1x" icon="ListIcon" /> Detail</b-button>
           <b-button v-b-modal.modal-center class="mr-1" variant="secondary"><feather-icon size="1x" icon="PlusCircleIcon" /> Add</b-button>
           <b-button variant="secondary"><feather-icon size="1x" icon="Edit3Icon" /> Edit</b-button>
 

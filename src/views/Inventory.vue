@@ -61,16 +61,7 @@
         <div class="p-3 border bg-light"><b>Total Cost $10,000</b></div>
       </div>
     </div>
-    <!-----------------This is just a test to remove--->
-    <b-sidebar id="sidebar-right" title="Sidebar" right :shadow="true">
-      <div class="px-3 py-2">
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-          in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-        </p>
-        <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
-      </div>
-    </b-sidebar>
+
   </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
-
-  <b-sidebar id="RightSidebar" title="Sidebar" right :shadow="true">
+  <div>
+        <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
       <div class="px-3 py-2">
         <p>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
@@ -9,10 +9,11 @@
         <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
       </div>
     </b-sidebar>
-
+  </div>
 </template>
+
 <script>
 export default {
-  name: 'RightSidebar'
+  name: 'sidebar-right'
 };
 </script>

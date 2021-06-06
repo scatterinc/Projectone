@@ -170,6 +170,20 @@ const routes = [
         props: true,
         component: () =>
           import(/* webpackChunkName: "target" */ '../views/WorkSheet/LeadSchedule.vue')
+      },
+      {
+        path: '/worksheet/unadjustedtb',
+        name: 'UnadjustedTb',
+        props: true,
+        component: () =>
+          import(/* webpackChunkName: "target" */ '../views/WorkSheet/UnadjustedTb.vue')
+      },
+      {
+        path: '/worksheet/adjustingjournal',
+        name: 'AdjustingJournal',
+        props: true,
+        component: () =>
+          import(/* webpackChunkName: "target" */ '../views/WorkSheet/AdjustingJournal.vue')
       }
     ],
     icon: 'SettingsIcon'
