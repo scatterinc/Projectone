@@ -11,8 +11,7 @@
         :key="`item${key}`"
         button
         class="col mr-1 ml-1 rounded border shadow"
-        variant="'variant'"
-      >
+              >
         <template v-if="item.left">
           <div class="text-left">{{ item.left }}</div>
           <div class="text-right">{{ item.right }}</div>

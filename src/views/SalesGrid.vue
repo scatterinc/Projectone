@@ -104,7 +104,7 @@
               <div class="text-center" style="font-size: 0.7rem;"><b>Misc Product</b></div></b-list-group-item
             >
             <b-list-group-item button class="col mr-1 rounded border shadow"
-              ><div class="text-center" style="font-size: 0.7rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              ><div class="text-center" style="font-size: 0.7rem;"><feather-icon size="1x" icon="PrinterIcon" /></div>
               <div class="text-center" style="font-size: 0.7rem;"><b>Print</b></div></b-list-group-item
             >
                         <b-list-group-item button class="col mr-1 rounded border shadow"
