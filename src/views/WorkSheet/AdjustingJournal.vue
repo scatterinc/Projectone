@@ -7,7 +7,7 @@
     <h6 class="mb-1"> Financial Year Ended December 31, 2021</h6>
           </b-col>
           <b-col>
-             <b-button class="mr-2" variant="info"><feather-icon size="1x" icon="PlusSquareIcon" /> New</b-button>
+             <b-button class="mr-2" variant="info" v-b-modal.NewAdjJournal><feather-icon size="1x" icon="PlusSquareIcon" /> New</b-button>
               <b-button class="mr-2" variant="success"><feather-icon size="1x" icon="EditIcon" /> Edit</b-button>
                <b-button variant="danger"><feather-icon size="1x" icon="MinusSquareIcon" /> Delete</b-button>
           </b-col>

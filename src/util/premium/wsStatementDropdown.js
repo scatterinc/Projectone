@@ -1,6 +1,6 @@
 export default {
   name: 'Statement',
-  icon: 'FileIcon',
+  icon: 'FileTextIcon',
   expanded: true,
   items: [
     { name: 'Profit & Loss', icon: 'FileTextIcon' },

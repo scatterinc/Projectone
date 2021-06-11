@@ -17,6 +17,9 @@
     <add-recipe />
     <new-reconciliation />
     <sidebar-right />
+    <sale-switch/>
+    <roll-forward/>
+    <new-adj-journal/>
   </div>
 </template>
 
@@ -28,13 +31,17 @@ import BankTransfer from './components/BankTransfer';
 import AddRecipe from './components/AddRecipe';
 import NewReconciliation from './components/NewReconciliation.vue';
 import SidebarRight from './components/RightSidebar.vue';
+import SaleSwitch from './components/SaleSwitch';
+import RollForward from './components/RollForward.vue';
+import NewAdjJournal from './components/NewAdjJournal.vue';
 
 export default {
-  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight }
+  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal }
 };
 </script>
 
-<style lang="scss">
+,
+    RollForward<style lang="scss">
 #app {
   padding-top: 60px;
   min-height: 100vh;

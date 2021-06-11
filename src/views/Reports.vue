@@ -18,11 +18,11 @@
           </div>
         </b-col>
       </b-row>
+        </b-container>
+    <p class="border-top"></p>
       <b-row>
         <font-awesome-icon icon="user" />
       </b-row>
-    </b-container>
-    <p class="border-top"></p>
   </div>
 </template>
 <script>

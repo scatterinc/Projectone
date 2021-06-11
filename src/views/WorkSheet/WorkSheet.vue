@@ -6,7 +6,7 @@
             </b-col>
                         <b-col class="mb-4">
                 <b-button class="mr-2" variant="info"><feather-icon size="1x" icon="FilePlusIcon" /> Add New</b-button>
-                <b-button variant="success"><feather-icon size="1x" icon="RotateCwIcon" />  Roll Forward</b-button>
+                <b-button variant="success" v-b-modal.RollForward><feather-icon size="1x" icon="RotateCwIcon" />  Roll Forward</b-button>
                                                     </b-col>
         </b-row>
                           <b-table striped hover :items="filteredData" :fields="fields" :small="true"

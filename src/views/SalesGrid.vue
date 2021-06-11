@@ -5,7 +5,7 @@
       <b-row>
         <b-col><h1>Sales <i>Grid</i></h1></b-col>
         <b-col class="d-flex align-items-center">
-           {{ timeString }} test
+           {{ timeString }}
         </b-col>
         <b-col class="d-flex align-items-center justify-content-end">
           <div>
@@ -26,15 +26,15 @@
             <div>
                      <b-list-group horizontal="md" class="row rounded flex-fill ">
             <b-list-group-item button class="col rounded border-right shadow">
-              <div class="text-center" style="font-size: 0.8rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center" style="font-size: 0.8rem;"><font-awesome-icon size="3x" :icon="['fas', 'user']" /></div>
               <div class="text-center" style="font-size: 0.8rem;"><b>Customer</b></div>
                           </b-list-group-item>
             <b-list-group-item button class="col  rounded shadowr"
-              ><div class="text-center" style="font-size: 0.8rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              ><div class="text-center" style="font-size: 0.8rem;"><font-awesome-icon size="3x" :icon="['fas', 'clipboard']" /></div>
               <div class="text-center" style="font-size: 0.8rem;"><b>Orders</b></div></b-list-group-item
             >
             <b-list-group-item button class="col mr-2 rounded border-left shadow"
-              ><div class="text-center" style="font-size: 0.8rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              ><div class="text-center" style="font-size: 0.8rem;"><font-awesome-icon size="3x" :icon="['fas', 'chair']" /></div>
               <div class="text-center" style="font-size: 0.8rem;"><b>Table Plan</b></div></b-list-group-item
             >
            </b-list-group>
@@ -96,19 +96,19 @@
             <div>
                      <b-list-group horizontal="md" class="row rounded flex-fill ">
             <b-list-group-item button class="col mr-1 rounded border-right shadow">
-              <div class="text-center" style="font-size: 0.7rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              <div class="text-center" style="font-size: 0.7rem;"><font-awesome-icon size="2x" :icon="['fas', 'utensils']" /></div>
               <div class="text-center" style="font-size: 0.7rem;"><b>Eat In Option</b></div>
                           </b-list-group-item>
             <b-list-group-item button class="col mr-1 rounded shadowr"
-              ><div class="text-center"><feather-icon size="1x" icon="UploadIcon" /></div>
+              ><div class="text-center"><font-awesome-icon size="2x" :icon="['fas', 'plus-circle']" /></div>
               <div class="text-center" style="font-size: 0.7rem;"><b>Misc Product</b></div></b-list-group-item
             >
             <b-list-group-item button class="col mr-1 rounded border shadow"
-              ><div class="text-center" style="font-size: 0.7rem;"><feather-icon size="1x" icon="PrinterIcon" /></div>
+              ><div class="text-center" style="font-size: 0.7rem;"><font-awesome-icon size="2x" :icon="['fas', 'scroll']" /></div>
               <div class="text-center" style="font-size: 0.7rem;"><b>Print</b></div></b-list-group-item
             >
                         <b-list-group-item button class="col mr-1 rounded border shadow"
-              ><div class="text-center" style="font-size: 0.7rem;"><feather-icon size="1x" icon="UploadIcon" /></div>
+              ><div class="text-center" style="font-size: 0.7rem;"><font-awesome-icon size="3x" :icon="['fas', 'times-circle']" /></div>
               <div class="text-center "  style="font-size: 0.7rem;"><b>No Sale</b></div></b-list-group-item
             >
            </b-list-group>
@@ -122,8 +122,8 @@
             <b-list-group-item button class="col mr-2 rounded border shadow" variant="info"
               ><div class="text-center"><h5>Order</h5></div></b-list-group-item
             >
-            <b-list-group-item button class="col mr-2 rounded border shadow" variant="success"
-              ><div class="text-center"><h5>Pay</h5></div></b-list-group-item
+            <b-list-group-item  button class="col mr-2 rounded border shadow" variant="success"
+             @click="$router.push('/salesgrid/payment')" ><div class="text-center"><h5>Pay</h5></div></b-list-group-item
             >
            </b-list-group>
       </div>
@@ -148,7 +148,7 @@ export default {
       label: 'Ex. Price'
     }, last(Object.keys(sales[0]))]), */
     fields: [
-      'name', 'QTY', 'extPrice'
+      'Product', 'QTY', 'Each', 'Total'
     ],
     dropdownBar: [].concat(saleDnaDropdown, userDropdown)
   })

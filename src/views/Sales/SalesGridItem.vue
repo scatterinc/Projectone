@@ -4,14 +4,15 @@
      v-for="(row, n) in list"
     :key="`row${n}`"
     class="text-center center row container-fluid mb-2"
+
   >
-    <b-list-group horizontal="md" class="row px-md-6 flex-fill">
+    <b-list-group horizontal="md" class="row px-md-6 flex-fill" >
       <b-list-group-item
         v-for="(item, key) in row"
         :key="`item${key}`"
         button
         class="col mr-1 ml-1 rounded border shadow"
-              >
+                      >
         <template v-if="item.left">
           <div class="text-left">{{ item.left }}</div>
           <div class="text-right">{{ item.right }}</div>

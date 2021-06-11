@@ -89,7 +89,7 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col class="text-left">
-          <b-button variant="light">
+          <b-button variant="light"  v-b-modal.SaleSwitch >
             <feather-icon size="1x" icon="MoreHorizontalIcon"/>
           </b-button>
         </b-col>

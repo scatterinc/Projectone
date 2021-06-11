@@ -10,16 +10,19 @@ import BootstrapVueTreeview from 'bootstrap-vue-treeview';
 import VueScrollbar from 'vue2-perfect-scrollbar';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import FeatherIcon from './components/FeatherIcon';
+library.add(fas);
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
 Vue.use(BootstrapVueTreeview);
 Vue.use(VueScrollbar);
 Vue.use(VueAxios, axios);
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
 
-Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('feather-icon', FeatherIcon);
 
 new Vue({
