@@ -26,7 +26,19 @@
                   <b-button variant="light" @click="$router.push('/worksheet')"><b-icon icon="back"></b-icon></b-button>
         </div>
         <p>
-        <b-tree-view  style="color:red" :data="treeData"></b-tree-view>
+<tree :data="treeData0" >
+            <span class="tree-text" slot-scope="{ node }">
+              <template v-if="!node.hasChildren()">
+               <feather-icon size="1x" icon="FileTextIcon"/>
+                {{ node.text }}
+              </template>
+
+              <template v-else>
+              <feather-icon size="1x" icon="FolderIcon"/>
+                             {{ node.text }}
+              </template>
+            </span>
+          </tree>
         </p>
              </div>
     </b-sidebar>
@@ -48,52 +60,34 @@ export default {
   components: { DropdownBarItem, WsUpload },
   data: () => ({
     dropdownBar: [].concat(wsWorkingPaperDropdown, wsAnalysisDropdown, wsStatementDropdown, wsUtilityDropdown, worksheetDnaDropdown, userDropdown),
-    treeData: [{
-      id: 2,
-      name: 'Entity name',
-      children: [{
-        id: 3,
-        name: 'Working Paper Index'
-      },
+    treeData0: [
       {
-        id: 4,
-        name: 'Financial Reports'
-      },
-      {
-        id: 5,
-        name: 'Completion Documents'
-      },
-      {
-        id: 6,
-        name: 'General Work',
-        Children: [{
-
-          id: 7,
-          name: 'Working Trial Balance '
-        },
-        {
-          id: 8,
-          name: 'General Documentation',
-          children: [{
-            id: 20,
-            name: 'Financial Statement Areas',
-            Children: [{
-
-              id: 10,
-              name: 'Assets '
-            },
-            {
-              id: 11,
-              name: 'Liabilities '
-            },
-            {
-              id: 12,
-              name: 'Equity'
-            }]
-          }]
-        }]
-      }]
-    }]
+        text: 'Disc C:',
+        state: { expanded: true },
+        children: [
+          { text: 'PerfLogs' },
+          {
+            text: 'Users',
+            children: [
+              { text: 'User 1' },
+              { text: 'User 2' },
+              { text: 'User 3' }
+            ]
+          },
+          { text: 'tomcat' },
+          { text: 'sysCache' },
+          {
+            text: 'Program Files',
+            children: [
+              { text: 'Intel' },
+              { text: 'Internet Explorer' },
+              { text: 'Opera' },
+              { text: 'Oracle' }
+            ]
+          }
+        ]
+      }
+    ]
   })
 };
 </script>
