@@ -3,7 +3,7 @@ export default {
   icon: 'DownloadIcon',
   expanded: true,
   items: [
-    { name: 'Make Deposit', icon: 'FileTextIcon' },
+    { name: 'Make Deposit', icon: 'FileTextIcon', to: '/deposit' },
     null,
     { name: 'Transfer', icon: 'RepeatIcon', modalTarget: 'Transfer' },
     null,

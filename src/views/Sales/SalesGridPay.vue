@@ -39,7 +39,7 @@
                        <b-col>
                            <b-row>
                                <b-col style="font-size: 2.25rem;" class="bg-light border shadow text-right ml-3 mb-3" md="11" >
-                                   0.00
+                                  <div class="display">{{current || '0.00'}}</div>
                                </b-col>
                            </b-row>
                                <b-row
@@ -54,10 +54,11 @@
         :key="`item${key}`"
         button
         class="col mr-1 ml-1 rounded border shadow"
-                      >
+        value={value}
+                              >
         <template v-if="item.paynum">
-          <div class="text-center"><h4>{{ item.paynum }}</h4></div>
-               </template>
+          <div class="text-center" @click="append(item.number)"><h4>{{ item.paynum }}</h4></div>
+                       </template>
         <span v-else> {{ item }} </span>
       </b-list-group-item>
     </b-list-group>
@@ -71,7 +72,7 @@
               <div class="text-center"><b>POINTS [0/0.00]</b></div>
                           </b-list-group-item>
 
-              <b-list-group-item button class="col-3 rounded border mr-2 shadow" variant="info" cols="1">
+              <b-list-group-item v-b-modal.ChangeDue button class="col-3 rounded border mr-2 shadow" variant="info" cols="1">
               <div class="text-center"><b>CASH</b></div>
                           </b-list-group-item>
 
@@ -95,33 +96,58 @@
 <script>
 export default {
   name: 'SalesGridPay',
+  methods: {
+    append (number) {
+      if (this.operatorClicked) {
+        this.current = '';
+        this.operatorClicked = false;
+      }
+      /* this will check if the number is 150 */
+      if (number === 'clear') {
+        /* if it is actually 150 , it will clear */
+        this.current = '';
+      } else {
+        /* if its not it will print the number */
+        this.current = `${this.current}${number}`;
+      }
+    },
+    clear () {
+      this.current = '';
+    }
+  },
   data: () => ({
+    previous: null,
+    current: '',
+    operator: null,
+    operatorClicked: false,
+
     list: [
       [
-        { paynum: '1' },
-        { paynum: '2' },
-        { paynum: '3' },
-        { paynum: '$5' }
-
-      ], [
-        { paynum: '4' },
-        { paynum: '5' },
-        { paynum: '6' },
-        { paynum: '$10' }
-      ], [
-        { paynum: '7' },
-        { paynum: '8' },
-        { paynum: '9' },
-        { paynum: '$20' }
-
-      ], [
-        { paynum: '.' },
-        { paynum: '0' },
-        { paynum: 'X', inconz: 'th' },
-        { paynum: '$55' }
-
+        { paynum: '1', type: 'number', number: '1' },
+        { paynum: '2', type: 'number', number: '2' },
+        { paynum: '3', type: 'number', number: '3' },
+        { paynum: '$5', type: 'USD', number: '5' }
+      ],
+      [
+        { paynum: '4', type: 'number', number: '4' },
+        { paynum: '5', type: 'number', number: '5' },
+        { paynum: '6', type: 'number', number: '6' },
+        { paynum: '$10', type: 'USD', number: '10' }
+      ],
+      [
+        { paynum: '7', type: 'number', number: '7' },
+        { paynum: '8', type: 'number', number: '8' },
+        { paynum: '9', type: 'number', number: '9' },
+        { paynum: '$20', type: 'USD', number: '20' }
+      ],
+      [
+        { paynum: '.', type: 'number', number: '.' },
+        { paynum: '0', type: 'number', number: '0' },
+        { paynum: 'X', type: 'text', number: 'clear' },
+        { paynum: '$50', type: 'USD', number: '50' }
       ]
-    ]
+    ],
+    numFormatted: 0.00
   })
 };
 </script>

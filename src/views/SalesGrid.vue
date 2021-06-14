@@ -43,7 +43,7 @@
                     <b-table class="text-center"  :items="filteredData" :fields="fields" :small="true">
           <template #cell(extPrice)="{item}">
             {{ formatCurrency(item.quantity * item.price) }}
-          </template>
+                   </template>
         </b-table>
       </div>
       <!----Total Screen--->
@@ -95,7 +95,7 @@
 <!----Action BUTTONS--->
             <div>
                      <b-list-group horizontal="md" class="row rounded flex-fill ">
-            <b-list-group-item button class="col mr-1 rounded border-right shadow">
+            <b-list-group-item @click="$router.push('/salesgrid')" button class="col mr-1 rounded border-right shadow">
               <div class="text-center" style="font-size: 0.7rem;"><font-awesome-icon size="2x" :icon="['fas', 'utensils']" /></div>
               <div class="text-center" style="font-size: 0.7rem;"><b>Eat In Option</b></div>
                           </b-list-group-item>

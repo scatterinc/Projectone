@@ -18,7 +18,7 @@
           <div class="text-right">{{ item.right }}</div>
         </template>
         <span v-else> {{ item }} </span>
-      </b-list-group-item>
+              </b-list-group-item>
     </b-list-group>
   </b-row>
 </div>

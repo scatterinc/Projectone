@@ -20,6 +20,7 @@
     <sale-switch/>
     <roll-forward/>
     <new-adj-journal/>
+    <change-due/>
   </div>
 </template>
 
@@ -34,11 +35,13 @@ import SidebarRight from './components/RightSidebar.vue';
 import SaleSwitch from './components/SaleSwitch';
 import RollForward from './components/RollForward.vue';
 import NewAdjJournal from './components/NewAdjJournal.vue';
+import ChangeDue from './components/ChangeDue.vue';
 
 export default {
-  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal }
+  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal, ChangeDue }
 };
-</script>
+</script>,
+    ChangeDue
 
 ,
     RollForward<style lang="scss">
