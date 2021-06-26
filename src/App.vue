@@ -21,6 +21,11 @@
     <roll-forward/>
     <new-adj-journal/>
     <change-due/>
+    <salary-calculator/>
+    <payroll-input-tax/>
+    <utility/>
+     <ingredients/>
+
   </div>
 </template>
 
@@ -36,9 +41,13 @@ import SaleSwitch from './components/SaleSwitch';
 import RollForward from './components/RollForward.vue';
 import NewAdjJournal from './components/NewAdjJournal.vue';
 import ChangeDue from './components/ChangeDue.vue';
+import SalaryCalculator from './components/SalaryCalculator.vue';
+import PayrollInputTax from './components/PayrollInputTax.vue';
+import Utility from './components/Utility.vue';
+import Ingredients from './components/Ingredients.vue';
 
 export default {
-  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal, ChangeDue }
+  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal, ChangeDue, SalaryCalculator, PayrollInputTax, Utility, Ingredients }
 };
 </script>,
     ChangeDue

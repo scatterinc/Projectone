@@ -5,7 +5,7 @@ export default {
   items: [
     { name: 'Time Sheet', icon: 'FileIcon', to: '/Payroll/TimeSheet' },
     null,
-    { name: 'Payroll Input tax', icon: 'FileTextIcon' },
+    { name: 'Payroll Input tax', icon: 'FileTextIcon', modalTarget: 'PayrollInputTax' },
     { name: 'Year & Holidays', icon: 'FileTextIcon' },
     null,
     { name: 'Document Centre', icon: 'FileIcon' },

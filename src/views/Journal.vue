@@ -122,7 +122,7 @@ export default {
       expanded: true,
       items: [
         { name: 'Memorize', icon: 'CpuIcon' },
-        { name: 'Template', icon: 'FileTextIcon' },
+        { name: 'Use Template', icon: 'FileTextIcon' },
         null,
         { name: 'Document Centre', icon: 'ArchiveIcon' },
         null,

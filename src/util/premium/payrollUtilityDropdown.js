@@ -3,7 +3,7 @@ export default {
   icon: 'FileIcon',
   expanded: true,
   items: [
-    { name: 'Salary Calculator', icon: 'FileIcon' },
+    { name: 'Salary Calculator', icon: 'FileIcon', modalTarget: 'SalaryCalculator' },
     null,
     { name: 'View', icon: 'FileIcon' },
     null,

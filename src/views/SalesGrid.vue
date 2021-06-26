@@ -99,7 +99,7 @@
               <div class="text-center" style="font-size: 0.7rem;"><font-awesome-icon size="2x" :icon="['fas', 'utensils']" /></div>
               <div class="text-center" style="font-size: 0.7rem;"><b>Eat In Option</b></div>
                           </b-list-group-item>
-            <b-list-group-item button class="col mr-1 rounded shadowr"
+            <b-list-group-item @click="$router.push('/salesgrid/miscitems')" button class="col mr-1 rounded shadowr"
               ><div class="text-center"><font-awesome-icon size="2x" :icon="['fas', 'plus-circle']" /></div>
               <div class="text-center" style="font-size: 0.7rem;"><b>Misc Product</b></div></b-list-group-item
             >

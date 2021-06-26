@@ -237,6 +237,13 @@ const routes = [
           import(/* webpackChunkName: "target" */ '../views/Sales/SalesGridItem.vue')
       },
       {
+        path: '/salesgrid/miscitems',
+        name: 'SalesMiscItems',
+        props: true,
+        component: () =>
+          import(/* webpackChunkName: "target" */ '../views/Sales/SalesMiscItems.vue')
+      },
+      {
         path: '/salesgrid/payment',
         name: 'SalesGridPay',
         props: true,

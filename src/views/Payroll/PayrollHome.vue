@@ -4,7 +4,7 @@
             <b-col>
                 <router-view><div></div></router-view>
             </b-col>
-            <b-col style="min-height:800px" cols="2" class="bg-light border-left">
+            <b-col style="min-height:800px" cols="3" class="bg-light border-left">
                 <div class="text-right">
              <b-form-checkbox v-model="checked"  name="PayrollEmployeecheck-button"  switch>
             </b-form-checkbox></div>

@@ -1,0 +1,82 @@
+{
+	"cols": [
+		"#",
+		"Account Number",
+		"Account name",
+		"Account type"
+	],
+	"data": [
+		[
+			1,
+			"1000-000",
+			"Bank Account",
+			"Cash"
+		],
+		[
+			2,
+			"2000-000",
+			"Accounts Receivable",
+			"Accounts Receivable"
+		],
+		[
+			3,
+			"2100-000",
+			"Other Current",
+			"Current Assets"
+		],
+		[
+			4,
+			"3000-000",
+			"Building",
+			"Non-Current Asset"
+		],
+		[
+			5,
+			"4000-000",
+			"Accounts Payable",
+			"Accounts Payable"
+		],
+		[
+			6,
+			"4100-000",
+			"Other current liabilities",
+			"Current Liabilities"
+		],
+		[
+			7,
+			"5000-000",
+			"Loan",
+			"Non-Current Liabilities"
+		],
+		[
+			8,
+			"6000-000",
+			"Retained Earnings",
+			"Retained Earnings"
+		],
+		[
+			9,
+			"7000-000",
+			"Income",
+			"Income"
+		],
+		[
+			10,
+			"7100-000",
+			"Other Income",
+			"Income"
+		],
+		[
+			11,
+			"8000",
+			"Cost of goods sold",
+			"Expense"
+		],
+		[
+			12,
+			"9000",
+			"General Expense",
+			"Expense"
+		]
+	]
+}

@@ -11,6 +11,7 @@
       <b-list-group-item class="custom-nav-item">
         <b-btn v-for="(n, key) in bottomButtons" :key="key"
                variant="light"
+               v-b-modal.Utility
                class="mr-0.05 mb-0.05"
                v-b-tooltip.hover :title="n.tooltip || ''">
           <feather-icon :icon="n.icon" />
