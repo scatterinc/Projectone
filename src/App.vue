@@ -23,6 +23,7 @@
     <change-due/>
     <salary-calculator/>
     <payroll-input-tax/>
+    <add-chart-accounts/>
     <utility/>
      <ingredients/>
 
@@ -45,9 +46,10 @@ import SalaryCalculator from './components/SalaryCalculator.vue';
 import PayrollInputTax from './components/PayrollInputTax.vue';
 import Utility from './components/Utility.vue';
 import Ingredients from './components/Ingredients.vue';
+import AddChartAccounts from './components/AddChartAccounts';
 
 export default {
-  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal, ChangeDue, SalaryCalculator, PayrollInputTax, Utility, Ingredients }
+  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal, ChangeDue, SalaryCalculator, PayrollInputTax, Utility, Ingredients, AddChartAccounts }
 };
 </script>,
     ChangeDue

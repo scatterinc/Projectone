@@ -10,7 +10,7 @@
               <b-button variant="outline-secondary">Share</b-button>
               <b-button class="mr-2" variant="outline-secondary">Export</b-button>
                          </b-button-group>
-                           <b-button variant="transparent"><feather-icon size="1x" icon="FilePlusIcon" /> New</b-button>
+                           <b-button b-button v-b-modal.AddChartAccounts variant="transparent"><feather-icon size="1x" icon="FilePlusIcon" /> New</b-button>
                            <b-button variant="transparent"><feather-icon size="1x" icon="SaveIcon" /> Save</b-button>
                            <b-button class='mr-4' variant="transparent"><feather-icon size="1x" icon="DeleteIcon" /> Delete</b-button>
                             <dropdown-bar-item v-for="(dd, key) in dropdownBar"
