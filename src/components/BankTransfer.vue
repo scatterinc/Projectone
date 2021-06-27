@@ -53,7 +53,10 @@
 </template>
 <script>
 export default {
-  name: 'BankTransfer'
+  name: 'BankTransfer',
+  data: () => ({
+    text: ''
+  })
 };
 </script>
 <style scoped>

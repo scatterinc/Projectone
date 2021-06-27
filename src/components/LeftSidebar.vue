@@ -12,9 +12,11 @@
         <b-btn v-for="(n, key) in bottomButtons" :key="key"
                variant="light"
                v-b-modal.Utility
+               @click="setUtilityIcon(n.feather)"
                class="mr-0.05 mb-0.05"
-               v-b-tooltip.hover :title="n.tooltip || ''">
-          <feather-icon :icon="n.icon" />
+               v-b-tooltip.hover
+               :title="n.tooltip || ''">
+          <feather-icon :icon="n.feather" />
         </b-btn>
       </b-list-group-item>
     </b-list-group>
@@ -23,34 +25,11 @@
 <script>
 import router from '@/router';
 import FeatherIcon from '@/components/FeatherIcon';
+import { icons } from '../util/helpers';
 export default {
   name: 'left-sidebar',
   data: () => ({
-    bottomButtons: [{
-      icon: 'DatabaseIcon',
-      tooltip: 'Database'
-    }, {
-      icon: 'ServerIcon',
-      tooltip: 'Server'
-    }, {
-      icon: 'GlobeIcon',
-      tooltip: 'Internet'
-    }, {
-      icon: 'HardDriveIcon',
-      tooltip: 'Local Storage'
-    }, {
-      icon: 'CloudIcon',
-      tooltip: 'Cloud Storage'
-    }, {
-      icon: 'HelpCircleIcon',
-      tooltip: 'Help'
-    }, {
-      icon: 'InfoIcon',
-      tooltip: 'Info'
-    }, {
-      icon: 'AlertTriangleIcon',
-      tooltip: 'Alert'
-    }]
+    bottomButtons: icons
   }),
   components: {
     FeatherIcon
@@ -61,6 +40,11 @@ export default {
     },
     filteredRoutes () {
       return this.routes.filter(o => ['/', '/sales', '/inventory', '/customer', '/bank', '/accounting', '/vendor', '/employee', '/reports', '/preference', '/premium', '/salesgrid'].includes(o.path));
+    }
+  },
+  methods: {
+    setUtilityIcon (icon) {
+      this.$store.commit('setUtilityIcon', icon.replace('Icon', '').toLowerCase());
     }
   }
 };
