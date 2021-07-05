@@ -102,7 +102,7 @@ export default {
         this.current = '';
         this.operatorClicked = false;
       }
-      /* this will check if the number is 150 */
+      /* this will check if the number is 150  -this need tos change */
       if (number === 'clear') {
         /* if it is actually 150 , it will clear */
         this.current = '';
