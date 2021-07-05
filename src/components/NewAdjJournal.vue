@@ -64,7 +64,8 @@ export default {
         label: '#'
       },
       'Account No.', 'Account Name', 'Description', 'Debit', 'Credit' /* icon */
-    ]
+    ],
+    items: []
   })
 };
 </script>

@@ -35,7 +35,8 @@ export default {
         label: '#'
       },
       'Enitty Name', 'Enitty Number', 'Financial Year' /* icon */
-    ]
+    ],
+    items: []
   })
 };
 </script>
