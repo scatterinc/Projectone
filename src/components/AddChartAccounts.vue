@@ -18,6 +18,24 @@
      </b-row>
 
     </b-tab>
+       <!-----Tab 2--->
+    <b-tab title="Description">
+             <b-row class='mb-2'>
+        <b-col cols="4"></b-col>
+         </b-row>
+           <b-row class='mb-2'>
+             <b-col>
+          <b-form-textarea
+      id="textarea"
+      v-model="text"
+      placeholder="Enter something..."
+      rows="5"
+      max-rows="7"
+    ></b-form-textarea>
+             </b-col>
+     </b-row>
+
+    </b-tab>
      <!-----Final Tab tab--->
     <b-tab title="Controls">
              <b-row class='mb-2'>

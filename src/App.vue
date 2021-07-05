@@ -26,6 +26,7 @@
     <add-chart-accounts/>
     <utility/>
      <ingredients/>
+      <payroll-year-holiday/>
 
   </div>
 </template>
@@ -47,9 +48,10 @@ import PayrollInputTax from './components/PayrollInputTax.vue';
 import Utility from './components/Utility.vue';
 import Ingredients from './components/Ingredients.vue';
 import AddChartAccounts from './components/AddChartAccounts';
+import PayrollYearHoliday from './components/PayrollYearHoliday.vue';
 
 export default {
-  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal, ChangeDue, SalaryCalculator, PayrollInputTax, Utility, Ingredients, AddChartAccounts }
+  components: { EditingModal, TopNavbar, LeftSidebar, BankTransfer, AddRecipe, NewReconciliation, SidebarRight, SaleSwitch, RollForward, NewAdjJournal, ChangeDue, SalaryCalculator, PayrollInputTax, Utility, Ingredients, AddChartAccounts, PayrollYearHoliday }
 };
 </script>,
     ChangeDue
