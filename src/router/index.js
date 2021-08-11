@@ -201,6 +201,12 @@ const routes = [
     icon: 'SettingsIcon'
   },
   {
+    path: '/calendar',
+    name: 'Calendar',
+    component: () => import(/* webpackChunkName: "chartofaccounts" */ '../views/Calendar.vue'),
+    icon: 'SettingsIcon'
+  },
+  {
     path: '/paybill',
     name: 'PayBill',
     component: () => import(/* webpackChunkName: "chartofaccounts" */ '../views/PayBill.vue'),

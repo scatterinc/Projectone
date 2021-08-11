@@ -76,6 +76,8 @@ export default {
         null,
         { name: 'Worksheet', icon: 'LayersIcon', to: '/WorkSheet' },
         null,
+        { name: 'Calendar', icon: 'LayersIcon', to: '/Calendar' },
+        null,
         { name: 'TimeStamp', icon: 'FileTextIcon' },
         null,
         { name: 'Training', icon: 'FileTextIcon' }

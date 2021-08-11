@@ -3,7 +3,7 @@ export default {
   icon: 'CropIcon',
   expanded: true,
   items: [
-    { name: 'Payroll Input tax', icon: 'FileTextIcon' },
+    { name: 'Payroll Input tax', icon: 'FileTextIcon', modalTarget: 'PayrollInputTax' },
     { name: 'Year & Holidays', icon: 'FileTextIcon' },
     null,
     { name: 'Document Centre', icon: 'FileIcon' },
